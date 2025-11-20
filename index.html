@@ -699,25 +699,25 @@
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    function navigate(pageId) {
-        document.querySelectorAll('.page-section').forEach(section => {
-            section.classList.add('hidden');
-        });
-        document.getElementById(pageId).classList.remove('hidden');
-        window.scrollTo(0, 0);
+   function navigate(pageId) {
+    // Hide all page sections
+    document.querySelectorAll('.page-section').forEach(section =>
+        section.classList.add('hidden')
+    );
 
-        document.getElementById('mobile-menu').classList.add('hidden');
+    // Show selected page
+    document.getElementById(pageId).classList.remove('hidden');
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.dataset.page === pageId) {
-                link.classList.add('text-stone-900');
-                link.classList.remove('text-stone-500');
-            } else {
-                link.classList.remove('text-stone-900');
-                link.classList.add('text-stone-500');
-            }
-        });
+    // SHOW hero only on home
+    if (pageId === 'home') {
+        document.getElementById('home-hero').classList.remove('hidden');
+    } else {
+        document.getElementById('home-hero').classList.add('hidden');
     }
+
+    window.scrollTo(0, 0);
+}
+
 
     function toggleMenu() {
         document.getElementById('mobile-menu').classList.toggle('hidden');
