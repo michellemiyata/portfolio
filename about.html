@@ -1,164 +1,113 @@
-<!-- HEADER -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-200 px-6 py-5 md:px-12">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    
-    <!-- Logo / Name -->
-    <a href="index.html" class="font-semibold text-xl tracking-tight text-stone-900">
-      MiyataCreative
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About • MiyataCreative</title>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-10">
-      <a href="index.html" class="nav-link text-sm text-stone-600 hover:text-stone-900">Home</a>
-      <a href="work.html" class="nav-link text-sm text-stone-600 hover:text-stone-900">Work</a>
-      <a href="about.html" class="nav-link text-sm text-stone-600 hover:text-stone-900">About</a>
-      <a href="contact.html" class="nav-link text-sm text-stone-600 hover:text-stone-900">Contact</a>
-    </nav>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Mobile Menu Icon (optional; can be removed for now) -->
-    <button class="md:hidden p-2 text-stone-600">
-      <i data-lucide="menu"></i>
-    </button>
-  </div>
-</header>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <style>
+    /* PHOTO HOVER EFFECT */
+    .profile-photo {
+      filter: grayscale(100%);
+      transition: filter 0.5s ease, transform 0.4s ease;
+    }
+    .profile-photo:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
 
-<!-- ABOUT PAGE SECTION -->
-<section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+<body class="bg-white text-stone-900">
 
-  <!-- LEFT SIDE — PHOTO -->
-  <div class="flex justify-center">
-    <img 
-      src="IMG_0205 (1).JPG"
-      alt="Michelle Miyata Portrait"
-      class="profile-photo w-full max-w-lg rounded-xl shadow-lg object-cover"
-    >
-  </div>
+  <!-- ▬▬▬▬▬▬▬ HEADER (appears on every page) ▬▬▬▬▬▬▬ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-200 px-6 py-5 md:px-12 transition-all">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
 
-  <!-- RIGHT SIDE — COMPLETE TEXT -->
-  <div class="space-y-8">
+      <!-- Logo -->
+      <a href="index.html" class="font-semibold text-xl tracking-tight text-stone-900">
+        MiyataCreative
+      </a>
 
-    <!-- INTRO -->
-    <div>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-10">
+        <a href="index.html" class="text-sm text-stone-600 hover:text-stone-900">Home</a>
+        <a href="work.html" class="text-sm text-stone-600 hover:text-stone-900">Work</a>
+        <a href="about.html" class="text-sm text-stone-900 font-medium">About</a>
+        <a href="contact.html" class="text-sm text-stone-600 hover:text-stone-900">Contact</a>
+      </nav>
+
+      <!-- Mobile Icon (optional) -->
+      <button class="md:hidden p-2 text-stone-600">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ▬▬▬▬▬▬▬ ABOUT PAGE CONTENT ▬▬▬▬▬▬▬ -->
+  <section class="max-w-7xl mx-auto px-6 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+    <!-- LEFT SIDE — PHOTO -->
+    <div class="flex justify-center">
+      <img
+        src="IMG_0205 (1).JPG"
+        alt="Michelle Miyata Portrait"
+        class="profile-photo w-full max-w-lg rounded-xl shadow-lg object-cover"
+      >
+    </div>
+
+    <!-- RIGHT SIDE — TEXT -->
+    <div class="space-y-6">
+
       <h1 class="text-5xl font-semibold text-stone-900 mb-4">Hi, I'm Michelle.</h1>
 
-      <p class="text-stone-700 leading-relaxed mb-4">
-        I’m a Digital Experience Designer who specializes in emotional UX, accessibility, and 
-        inclusive design. My work blends gentle visual language, thoughtful structure, and user-centered 
-        research to create experiences that feel calm, intuitive, and human.
+      <p class="text-stone-700 leading-relaxed">
+        I’m a Digital Experience Designer who specializes in emotional UX,
+        accessibility, and inclusive design. My work blends gentle visual language,
+        thoughtful structure, and user-centered research to create experiences that feel
+        calm, intuitive, and human.
       </p>
 
       <p class="text-stone-700 leading-relaxed">
-        I pay attention to the quiet parts of design — the subtle feelings, the rhythms, 
-        the emotional cues users don’t always say out loud. I aim to build digital spaces 
-        that help people feel grounded, supported, and seen.
+        I pay attention to the quiet parts of design — the subtle feelings, the rhythms,
+        the emotional cues users don’t always say out loud. My goal is to build digital
+        spaces that help people feel grounded, supported, and seen.
       </p>
-    </div>
 
-
-    <!-- AREAS OF INTEREST -->
-    <div>
-      <h2 class="text-2xl font-semibold text-stone-900 mb-3">Areas of Interest</h2>
-      <ul class="list-disc ml-5 text-stone-700 leading-relaxed space-y-1">
+      <!-- Areas of Interest -->
+      <h2 class="text-xl font-semibold pt-4">Areas of Interest</h2>
+      <ul class="list-disc ml-6 text-stone-700 space-y-1">
         <li>Emotional experience design</li>
         <li>Accessibility & inclusive design</li>
-        <li>Calm and intuitive user interfaces</li>
+        <li>Calm and intuitive UI</li>
         <li>Interaction design & micro-experiences</li>
-        <li>UX research & behavioural insights</li>
+        <li>User research & behavioural insights</li>
       </ul>
-    </div>
 
-
-    <!-- PRIMARY SKILLS -->
-    <div>
-      <h2 class="text-2xl font-semibold text-stone-900 mb-3">Primary Skills</h2>
-      <ul class="list-disc ml-5 text-stone-700 leading-relaxed space-y-1">
+      <!-- Primary Skills -->
+      <h2 class="text-xl font-semibold pt-6">Primary Skills</h2>
+      <ul class="list-disc ml-6 text-stone-700 space-y-1">
         <li>UX/UI Design</li>
         <li>Emotional Experience Design</li>
         <li>Accessibility (WCAG & inclusive design)</li>
         <li>Interaction Design</li>
         <li>Wireframing & Prototyping</li>
-        <li>User Research</li>
-        <li>Visual Design Systems</li>
       </ul>
+
     </div>
 
+  </section>
 
-    <!-- PROJECT EXPERIENCE -->
-    <div>
-      <h2 class="text-2xl font-semibold text-stone-900 mb-4">Project Experience</h2>
+  <script>
+    lucide.createIcons();
+  </script>
 
-      <div class="space-y-6 text-stone-700 leading-relaxed">
-
-        <div>
-          <p class="font-semibold text-stone-900">Lead UX/UI Designer — UnionMoods (AR Experience)</p>
-          <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-          <ul class="list-disc text-sm ml-5 space-y-1">
-            <li>Emotional design & TTC-inspired branding</li>
-            <li>QR-based AR interactions</li>
-            <li>Inclusive and accessible design considerations</li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="font-semibold text-stone-900">UX/UI Designer — StudyBuddy App</p>
-          <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-          <ul class="list-disc text-sm ml-5 space-y-1">
-            <li>Wireframes & user flows</li>
-            <li>Transcribe & voice input accessibility tools</li>
-            <li>Focused on cognitive accessibility & ease of use</li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="font-semibold text-stone-900">Designer — Puzzle Piece Emotional Design Project</p>
-          <p class="text-sm text-stone-500 mb-1">Summer 2025</p>
-          <ul class="list-disc text-sm ml-5 space-y-1">
-            <li>Emotional storytelling through visual metaphor</li>
-            <li>Soft pastel palettes & minimal composition</li>
-            <li>Exploration of emotional alignment & “the click”</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- EDUCATION -->
-    <div>
-      <h2 class="text-2xl font-semibold text-stone-900 mb-3">Education</h2>
-      <ul class="list-disc ml-5 text-stone-700 leading-relaxed space-y-1">
-        <li>Honours Bachelor of Digital Experience Design — George Brown College</li>
-        <li>Interaction Design Advanced Diploma — George Brown College</li>
-      </ul>
-    </div>
-
-
-    <!-- HIGHLIGHTS -->
-    <div>
-      <h2 class="text-2xl font-semibold text-stone-900 mb-3">Highlights</h2>
-      <ul class="list-disc ml-5 text-stone-700 leading-relaxed space-y-1">
-        <li>Designs with emotional intelligence and quiet storytelling</li>
-        <li>Strong relationships with instructors across the program</li>
-        <li>Deep interest in calm, reflective interfaces</li>
-        <li>Experienced with TTC-inspired design language & AR concepts</li>
-        <li>Committed to building inclusive, accessible experiences</li>
-      </ul>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PHOTO HOVER EFFECT -->
-<style>
-  .profile-photo {
-    filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.4s ease;
-  }
-  .profile-photo:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-  }
-</style>
+</body>
+</html>
 
