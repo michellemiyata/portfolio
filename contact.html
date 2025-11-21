@@ -1,111 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact • Michelle Miyata</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – MiyataCreative</title>
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { background: #fafafa; }
     </style>
 </head>
 
-<body class="bg-stone-50 text-stone-800 antialiased">
+<body class="text-stone-900">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-stone-200 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-semibold tracking-tight text-stone-900">
-            MiyataCreative
-        </a>
-        <nav class="hidden md:flex gap-10 text-sm font-medium">
-            <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
-            <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
-            <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-stone-200 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+
+        <nav class="flex gap-8 text-stone-700">
+            <a href="index.html" class="hover:text-stone-900">Home</a>
+            <a href="work.html" class="hover:text-stone-900">Work</a>
+            <a href="about.html" class="hover:text-stone-900">About</a>
             <a href="contact.html" class="text-stone-900 font-semibold">Contact</a>
         </nav>
     </div>
 </header>
 
-<!-- MAIN CONTENT -->
-<main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
-    <div class="text-center mb-16">
-        <h1 class="text-5xl font-semibold text-stone-900 mb-6">Let’s Create Something Meaningful.</h1>
-        <p class="text-xl text-stone-600 font-light leading-relaxed">
-            Whether you’d like to collaborate, ask a question, or explore an idea —
-            I’d love to hear from you.
-        </p>
-    </div>
+<!-- CONTACT SECTION -->
+<section class="max-w-4xl mx-auto px-6 pt-40 pb-24">
 
-    <!-- CONTACT FORM CARD -->
-    <div class="bg-white shadow-sm border border-stone-200 rounded-2xl p-10">
-        <form action="#" method="POST" class="space-y-8">
-
-            <!-- Name + Email -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-semibold text-stone-600 mb-2">Name</label>
-                    <input type="text"
-                        class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-stone-400 focus:border-stone-400 outline-none transition"
-                        required>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-semibold text-stone-600 mb-2">Email</label>
-                    <input type="email"
-                        class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-stone-400 focus:border-stone-400 outline-none transition"
-                        required>
-                </div>
-            </div>
-
-            <!-- Message -->
-            <div>
-                <label class="block text-sm font-semibold text-stone-600 mb-2">Message</label>
-                <textarea rows="6"
-                    class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-stone-400 focus:border-stone-400 outline-none transition"
-                    placeholder="Tell me about your project or question..."
-                    required></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <button
-                type="submit"
-                class="w-full py-4 bg-stone-900 text-white rounded-lg text-lg font-medium hover:bg-stone-700 transition">
-                Send Message
-            </button>
-
-        </form>
-    </div>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-stone-200 py-16 text-center text-stone-500">
-    <p class="text-lg text-stone-800 mb-6">
-        Every connection starts with a small moment.
+    <h1 class="text-4xl font-semibold mb-6">Contact</h1>
+    <p class="text-lg text-stone-600 mb-12">
+        Feel free to reach out for collaborations, questions, or project inquiries.
     </p>
 
-    <div class="flex justify-center gap-8 mb-8">
-        <a href="contact.html" class="hover:text-stone-900">Contact →</a>
-        <a href="https://www.linkedin.com/in/michellemiyata" class="hover:text-stone-900">LinkedIn →</a>
+    <!-- CONTACT BOX -->
+    <div class="bg-white border border-stone-200 rounded-2xl shadow p-10 space-y-10">
+
+        <!-- Email -->
+        <div>
+            <h2 class="text-xl font-semibold mb-2">Email</h2>
+            <p class="text-stone-700">
+                <a href="mailto:michellemiyata@gmail.com" class="text-blue-600 hover:underline">
+                    miyatacreative@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <!-- LinkedIn -->
+        <div>
+            <h2 class="text-xl font-semibold mb-2">LinkedIn</h2>
+            <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank"
+               class="text-blue-600 hover:underline">
+                linkedin.com/in/michelle-miyata
+            </a>
+        </div>
+
+        <!-- GitHub -->
+        <div>
+            <h2 class="text-xl font-semibold mb-2">GitHub</h2>
+            <a href="https://github.com/michellemiyata"
+               target="_blank"
+               class="text-blue-600 hover:underline">
+                github.com/michellemiyata
+            </a>
+        </div>
+
     </div>
-
-    <p class="text-sm">&copy; <span id="year"></span> Michelle Miyata.</p>
-</footer>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    lucide.createIcons();
-</script>
+</section>
 
 </body>
 </html>
+
 
