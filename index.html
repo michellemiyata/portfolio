@@ -4,1242 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelle Miyata | Portfolio</title>
-    
-    <!-- Tailwind CSS -->
+
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 
 <body class="bg-stone-50 text-stone-800 antialiased">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-100 px-6 py-5 md:px-12 transition-all">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <div class="font-semibold text-xl cursor-pointer tracking-tight text-stone-900" onclick="navigate('home')">
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-stone-200 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-semibold tracking-tight text-stone-900">
             MiyataCreative
-        </div>
-
-        <nav class="hidden md:flex items-center gap-10">
-            <button onclick="navigate('home')" class="nav-link text-sm text-stone-500 hover:text-stone-900" data-page="home">Home</button>
-            <button onclick="navigate('work')" class="nav-link text-sm text-stone-500 hover:text-stone-900" data-page="work">Work</button>
-            <button onclick="navigate('about')" class="nav-link text-sm text-stone-500 hover:text-stone-900" data-page="about">About</button>
-            <button onclick="navigate('contact')" class="nav-link text-sm text-stone-500 hover:text-stone-900" data-page="contact">Contact</button>
+        </a>
+        <nav class="hidden md:flex gap-10 text-sm font-medium">
+            <a href="index.html" class="text-stone-900 hover:text-stone-600">Home</a>
+            <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
+            <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
+            <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
         </nav>
-
-        <button class="md:hidden p-2 text-stone-600" onclick="toggleMenu()">
-            <i data-lucide="menu"></i>
-        </button>
     </div>
 </header>
 
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="hidden fixed inset-0 top-20 z-40 bg-stone-50 px-6 pb-10 md:hidden overflow-y-auto border-t border-stone-100">
-    <div class="flex flex-col space-y-6 pt-6">
-        <button onclick="navigate('home')" class="text-xl text-stone-800">Home</button>
-        <button onclick="navigate('work')" class="text-xl text-stone-800">Work</button>
-        <button onclick="navigate('about')" class="text-xl text-stone-800">About</button>
-        <button onclick="navigate('contact')" class="text-xl text-stone-800">Contact</button>
-    </div>
-</div>
-
-<!-- HERO (Home Only) -->
-<div id="home-hero">
-<section class="relative w-full h-[85vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
-  style="background-image: url('ChatGPT Image Nov 20, 2025, 02_03_58 PM.png');">
-
-  <!-- Soft overlay -->
-  <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
-
-  <!-- Text -->
-  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-    <h1 class="text-7xl font-bold mb-8 text-white drop-shadow-2xl">
-      Designing quiet, meaningful digital experiences.
-    </h1>
-
-    <p class="text-2xl text-white mb-10 drop-shadow-xl">
-      Emotional UX • Interaction Design • Accessibility
-    </p>
-
-   <button
-  onclick="navigate('work')"
-  class="px-7 py-3 bg-white border rounded-full shadow-lg hover:shadow-xl transition">
-  View My Work
-</button>
-
-  </div>
-
-  <!-- Soft fade -->
-  <div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
-</section>
-</div>
-
-    <!-- MAIN CONTENT -->
-<main class="pt-20 pb-20 px-6 md:px-12 max-w-6xl mx-auto min-h-screen">
-
-    <!-- HOME PAGE -->
-    <div id="home" class="page-section fade-in">
-
-        <!-- Intro Statement -->
-        <section class="max-w-3xl mx-auto text-center mb-32">
-            <p class="text-2xl md:text-3xl leading-relaxed font-light text-stone-800">
-                I’m Michelle Miyata — a Digital Experience Designer who creates gentle, emotionally attuned interactions.
-            </p>
-            <div class="w-12 h-px bg-stone-300 mx-auto my-8"></div>
-            <p class="text-lg text-stone-500 font-light">
-                My work focuses on clarity, accessibility, and the small moments that help people feel grounded.
-            </p>
-        </section>
-
-        <!-- Design Approach & Skills -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 border-t border-stone-200 pt-16">
-            <div>
-                <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">My Approach</h3>
-                <ul class="space-y-3 text-stone-700 font-light text-lg">
-                    <li class="flex items-center gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-stone-300"></div>
-                        Emotional storytelling
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-stone-300"></div>
-                        Accessibility-focused UX
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-stone-300"></div>
-                        Soft visual identity
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-1.5 h-1.5 rounded-full bg-stone-300"></div>
-                        Clear, human-centered structure
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">Skills Snapshot</h3>
-                <div class="flex flex-wrap gap-4">
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    UX/UI Design
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    AR Interaction Design
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    Emotional Experience Design
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    Accessibility
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    User Research
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    Prototyping
-  </span>
-
-  <span class="px-4 py-2 bg-stone-100 rounded-lg text-stone-700 
-               transition-all duration-200 hover:bg-stone-200 
-               hover:shadow-md hover:-translate-y-1">
-    Wireframing
-  </span>
-
-</div>
-
-            </div>
-        </section>
-
-        <!-- Featured Projects -->
-        <section class="mb-32">
-            <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-12 text-center">
-                Featured Projects
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-                <!-- Project 1 -->
-                <div class="group cursor-pointer" onclick="navigate('case-study-1')">
-                    <div class="aspect-[4/3] bg-stone-200 rounded-lg mb-6 overflow-hidden relative">
-                        <img src="Screenshot 2025-11-19 145016.png"
-                            alt="Abstract Puzzle"
-                            class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <h4 class="text-xl font-medium text-stone-900 mb-1">Puzzle Piece</h4>
-                    <p class="text-stone-500 font-light text-sm mb-4">Emotional Interaction</p>
-                    <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">
-                        A visual micro-interaction exploring “the click”—that quiet moment of emotional alignment.
-                    </p>
-                    <span class="text-sm font-medium text-stone-900 border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
-                        Case Study →
-                    </span>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group cursor-pointer" onclick="navigate('case-study-2')">
-                    <div class="aspect-[4/3] bg-stone-200 rounded-lg mb-6 overflow-hidden relative">
-                        <img src="Screenshot 2025-10-08 143959.png"
-                            alt="Aura Gradient"
-                            class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <h4 class="text-xl font-medium text-stone-900 mb-1">
-                        Emotional Journey: Finch to Union — Line 1 TTC
-                    </h4>
-                    <p class="text-stone-500 font-light text-sm mb-4">Mapping Emotions Across TTC Stations</p>
-                    <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">
-                        A TTC-inspired emotional map revealing how commuters shift moods during a Line 1 ride.
-                    </p>
-                    <span class="text-sm font-medium text-stone-900 border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
-                        Case Study →
-                    </span>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="group cursor-pointer" onclick="navigate('case-study-3')">
-                    <div class="aspect-[4/3] bg-stone-200 rounded-lg mb-6 overflow-hidden relative">
-                        <img src="Screenshot 2025-11-08 113155.png"
-                            alt="BC Travel UI"
-                            class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <h4 class="text-xl font-medium text-stone-900 mb-1">Discover BC</h4>
-                    <p class="text-stone-500 font-light text-sm mb-4">Travel App UI</p>
-                    <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">
-                        A calm booking experience designed for clarity, ease, and emotional comfort.
-                    </p>
-                    <span class="text-sm font-medium text-stone-900 border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
-                        Case Study →
-                    </span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- About Preview -->
-        <section class="bg-stone-100 rounded-2xl p-12 md:p-20 text-center mb-20">
-            <h3 class="text-2xl font-medium text-stone-900 mb-6">About Me</h3>
-            <p class="text-xl text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                I design with emotional awareness, clarity, and inclusive thinking.
-                My goal is to build experiences that feel grounding, intuitive, and quietly human.
-            </p>
-            <button onclick="navigate('about')"
-                    class="bg-white border border-stone-200 text-stone-800 px-8 py-3 rounded-full text-sm font-medium hover:bg-stone-50 transition-all shadow-sm">
-                Learn More
-            </button>
-        </section>
-
-    </div> <!-- end home -->
-<!-- WORK PAGE -->
-<div id="work" class="page-section hidden fade-in pt-10">
-
-    <div class="mb-16 max-w-2xl">
-        <h2 class="text-4xl font-medium text-stone-900 mb-6">Selected Work</h2>
-        <p class="text-xl text-stone-500 font-light">
-            A collection of projects exploring emotion, accessibility, and calm technology.
-        </p>
-    </div>
-
-    <div class="space-y-20">
-
-        <!-- Project 1 — Puzzle Piece -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center group cursor-pointer"
-             onclick="navigate('case-study-1')">
-
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden">
-                <img src="Screenshot 2025-11-19 145016.png"
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-
-            <div>
-                <h3 class="text-3xl font-medium text-stone-900 mb-3">Puzzle Piece</h3>
-                <p class="text-lg text-stone-500 font-light mb-6">Emotional Interaction Design</p>
-                <p class="text-stone-600 leading-relaxed mb-8">
-                    A soft, expressive micro-interaction where a puzzle piece appears when you smile,
-                    designed to help users practice emotional recognition.
-                </p>
-                <span class="inline-flex items-center text-stone-900 border-b border-stone-900 pb-1
-                             hover:text-stone-600 hover:border-stone-600 transition-colors">
-                    View Case Study
-                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                </span>
-            </div>
-
-        </div>
-
-        <!-- Project 2 — Emotional Journey TTC -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center group cursor-pointer"
-             onclick="navigate('case-study-2')">
-
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden">
-                <img src="Screenshot 2025-10-08 143959.png"
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-
-            <div>
-                <h3 class="text-3xl font-medium text-stone-900 mb-3">
-                    Emotional Journey: Finch to Union — Line 1 TTC
-                </h3>
-                <p class="text-lg text-stone-500 font-light mb-6">Emotional Wayfinding Through TTC Stations</p>
-                <p class="text-stone-600 leading-relaxed mb-8">
-                    A TTC-inspired emotional journey project visualizing how different subway stations reflect
-                    changing moods, energies, and inner states throughout a commute.
-                </p>
-                <span class="inline-flex items-center text-stone-900 border-b border-stone-900 pb-1
-                             hover:text-stone-600 hover:border-stone-600 transition-colors">
-                    View Case Study
-                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                </span>
-            </div>
-
-        </div>
-
-        <!-- Project 3 — Discover BC -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center group cursor-pointer"
-             onclick="navigate('case-study-3')">
-
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden">
-                <img src="Screenshot 2025-11-08 113155.png"
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-
-            <div>
-                <h3 class="text-3xl font-medium text-stone-900 mb-3">Discover BC</h3>
-                <p class="text-lg text-stone-500 font-light mb-6">Travel App UI</p>
-                <p class="text-stone-600 leading-relaxed mb-8">
-                    A calm travel-booking experience designed for clarity and ease, focusing on reducing
-                    anxiety during the planning phase.
-                </p>
-                <span class="inline-flex items-center text-stone-900 border-b border-stone-900 pb-1
-                             hover:text-stone-600 hover:border-stone-600 transition-colors">
-                    View Case Study
-                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                </span>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-<!-- CASE STUDY 1: Puzzle Piece -->
-<div id="case-study-1" class="page-section hidden fade-in pt-6">
-    <button onclick="navigate('work')" 
-            class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
-        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
-    </button>
-
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Puzzle Piece</h1>
-        <p class="text-2xl text-stone-500 font-light mb-12">Emotional Interaction & Accessibility</p>
-
-        <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
-            <img src="Screenshot 2025-11-19 145016.png" class="w-full h-full object-cover">
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4><p class="text-stone-800">UX/UI Designer</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4><p class="text-stone-800">3 Weeks</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4><p class="text-stone-800">Illustrator, Photoshop</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4><p class="text-stone-800">Academic Project</p></div>
-        </div>
-
-        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
-
-            <!-- ABOUT PRODUCTION -->
-<section class="space-y-10 mb-20">
-
-  <!-- Section Title -->
-  <h2 class="text-2xl font-medium text-stone-900 mb-6">About Production</h2>
-
-  <!-- Brief Description -->
-  <div>
-    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-      Brief Description
-    </h3>
-    <p class="text-lg text-stone-600 leading-relaxed">
-      “Puzzle Piece” is an emotional-design visual that explores connection, alignment, 
-      and the quiet moment when something finally “clicks.” The piece is divided into four parts—each 
-      representing a stage of emotional realization—and ends with <strong>Piece 315: THE CLICK</strong>, 
-      symbolizing clarity and inner understanding.
-    </p>
-  </div>
-
-  <!-- Creative Problem -->
-  <div>
-    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-      Creative Problem
-    </h3>
-    <p class="text-lg text-stone-600 leading-relaxed">
-      The challenge was to visually communicate a deeply internal experience—emotional clarity—without 
-      relying on interaction, animation, or narrative text. I needed to express quiet connection, 
-      emotional alignment, and the feeling of something “fitting” using only visuals and subtle storytelling 
-      elements such as puzzle pieces, soft colour palettes, and QR placements.
-    </p>
-  </div>
-
-  <!-- Solution to the Problem -->
-  <div>
-    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-      Solution to the Problem
-    </h3>
-    <p class="text-lg text-stone-600 leading-relaxed">
-      To solve this, I used puzzle pieces as a visual metaphor for emotional realization. Each part of the 
-      series represents a different stage—discovery, misalignment, clarity, and refinement. The final visual, 
-      <strong>Piece 315: THE CLICK</strong>, expresses the exact moment when everything aligns. Minimal 
-      composition, soft tones, and simple typography were used to reinforce the calm, reflective nature of the project.
-    </p>
-  </div>
-
-</section>
-
-
-            <!-- Process & Development -->
-<section class="mb-16">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
-
-    <div class="space-y-12 text-lg font-light text-stone-600 leading-relaxed">
-
-        <!-- Miro Board -->
-        <div>
-            <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Miro Board</h3>
-            <p>
-                Initial planning and idea exploration were done in Miro, mapping out emotional cues,
-                interaction flow, and early concept structure. This helped define the overall direction.
-            </p>
-            <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                <img src="Screenshot 2025-11-21 104957.png"
-                     alt="Miro Board"
-                     class="rounded-xl shadow">
-            </div>
-        </div>
-
-        <!-- Rough Versions -->
-        <div>
-            <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Rough Versions</h3>
-            <p>
-                Early digital drafts exploring layout, spacing, puzzle-piece placement, and soft pastel
-                tone adjustments. These rough versions helped refine visual clarity and emotional tone.
-            </p>
-            <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                <img src="Screenshot 2025-08-12 160247.png" alt="Rough Version" class="rounded-xl shadow mb-6">
-                <img src="Screenshot 2025-08-12 154941.png" class="rounded-xl shadow">
-            </div>
-        </div>
-
-        <!-- Screen Captures -->
-        <div>
-            <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Screen Captures</h3>
-            <p>
-                Screenshots taken throughout Illustrator / Photoshop showing the process — layer testing,
-                colour adjustments, alignment refinement, and exporting final assets.
-            </p>
-            <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                <img src="Screenshot 2025-11-19 144716.png"
-                     alt="Screen Capture"
-                     class="rounded-xl shadow">
-            </div>
-        </div>
-
-        <!-- Optional: Reference Photos -->
-        <div>
-            <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Reference Photos</h3>
-            <p>
-                A few stock images were used strictly to guide lighting, texture, and colour palette. 
-                No AI-generated visuals were used in this project.
-            </p>
-            <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                <img src="Screenshot 2025-08-12 135625.png"
-                     alt="Reference Photo"
-                     class="rounded-xl shadow">
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-            <!-- Challenge -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The Challenge</h2>
-                <p>
-                    Many design projects focus on usability, but fewer explore quiet emotional moments —
-                    the kind that make people pause and feel connected. The challenge was to create a
-                    small visual moment that communicates alignment, recognition, and “the click.”
-                </p>
-            </section>
-
-            <!-- Concept -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The Concept</h2>
-                <p class="mb-6">
-                    <strong>"Puzzle Piece"</strong> is a visual metaphor exploring connection and emotional clarity.
-                    The two pieces represent alignment — when something finally makes sense. The text,
-                    “Piece 315 — THE CLICK,” symbolizes that grounded moment of emotional resonance.
-                </p>
-
-                <div class="bg-stone-100 p-12 rounded-xl text-center">
-                    <img src="Screenshot 2025-11-19 145016.png"
-                         alt="Puzzle Piece Visual"
-                         class="mx-auto rounded-xl shadow">
-                    <p class="text-sm italic text-stone-400 mt-4">Final artwork</p>
-                </div>
-            </section>
-
-            <!-- QR -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The QR Code</h2>
-                <p class="mb-6">
-                    The QR code originally linked to an accompanying visual. It’s now inactive, but remains
-                    part of the composition as a symbolic element.
-                </p>
-
-                <div class="bg-stone-100 p-12 rounded-xl text-center">
-                    <img src="Screenshot 2025-11-20 102743.png"
-                         alt="Puzzle Piece QR Code"
-                         class="mx-auto rounded-xl shadow">
-                    <p class="text-sm italic text-stone-400 mt-4">Original QR code (inactive)</p>
-                </div>
-            </section>
-
-            <!-- RESULTS SECTION -->
-<section class="mt-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">Results</h2>
-    <p class="text-lg text-stone-600 font-light mb-12">
-        A four-part emotional progression exploring alignment, clarity, and the moment everything “clicked.”
-    </p>
-
-    <!-- PART 1 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 1 — Pieces I Didn’t Know Were Missing</h3>
-        <img src="Screenshot 2025-11-19 144938.png" alt="Part 1 Visual" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Early emotional fragments and first QR-linked reflections.</p>
-    </div>
-
-    <!-- PART 2 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 2 — Pieces That Didn’t Fit Yet Mattered</h3>
-        <img src="Screenshot 2025-11-19 144949.png" alt="Part 2 Visual" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Unexpected pieces that shaped direction through feedback and intuition.</p>
-    </div>
-
-    <!-- PART 3 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 3 — When the Pieces Made Sense</h3>
-        <img src="Screenshot 2025-11-19 145000.png" alt="Part 3 Visual" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Alignment through research, concept refinement, and detailed adjustments.</p>
-    </div>
-
-    <!-- PART 4 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 4 — The Quiet Work</h3>
-        <img src="Screenshot 2025-11-19 145007.png" alt="Part 4 Visual" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Behind-the-scenes refinement, feedback loops, and emotional grounding.</p>
-    </div>
-
-    <!-- THE CLICK -->
-    <div class="bg-stone-100 p-10 rounded-xl text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Piece 315 — The Click</h3>
-        <img src="Screenshot 2025-11-19 145016.png" alt="The Click Visual" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">The final moment of emotional and conceptual alignment.</p>
-    </div>
-</section>
-
-
-           <!-- Credits Section -->
-<section class="mt-20 border-t border-stone-200 pt-12">
-    <h2 class="text-2xl font-medium text-stone-900 mb-8">Credits</h2>
-
-    <!-- Contributing Creatives -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">
-            Contributing Creatives
-        </h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Michelle Miyata — UX/UI Design, Visual Design</li>
-            <li>Additional collaborators: N/A</li>
-        </ul>
-    </div>
-
-    <!-- Image Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">
-            Image Credits
-        </h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>All visuals created by Michelle Miyata unless otherwise noted.</li>
-            <li>Stock photography used where applicable — licensed free-to-use (e.g., Unsplash/Pexels).</li>
-        </ul>
-    </div>
-
-    <!-- Photo Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">
-            Photo Credits
-        </h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Stock photos integrated into visuals as needed.</li>
-        </ul>
-    </div>
-
-    <!-- Mockup Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">
-            Mockup Credits
-        </h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Mockups created using Figma / Adobe tools.</li>
-        </ul>
-    </div>
-
-    <!-- Sound Credits (if any) -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">
-            Sound Credits (If Applicable)
-        </h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>N/A — No audio used.</li>
-        </ul>
-    </div>
-</section>
-<div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
-   <p class="text-stone-700 leading-relaxed">
-  Created under the guidance of <strong>Professor Chris</strong>, whose calm presence and reflective feedback supported the development of this piece. His focus on minimalism, clarity, and emotional intention encouraged me to trust my design instincts and shaped the final outcome.
-</p>
-
-  </div>
-</section>
-
-            
-        </div>
-    </div>
-</div>
-
-
-<!-- CASE STUDY 2: Emotional Journey — TTC Line 1 -->
-<div id="case-study-2" class="page-section hidden fade-in pt-6">
-    <button onclick="navigate('work')" 
-            class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
-        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
-    </button>
-
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Emotional Journey: Finch to Union — Line 1 TTC</h1>
-        <p class="text-2xl text-stone-500 font-light mb-12">Visual Storytelling & Emotional Design</p>
-
-        <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
-            <img src="Screenshot 2025-10-08 143959.png" class="w-full h-full object-cover">
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4><p class="text-stone-800">UX/UI Designer</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4><p class="text-stone-800">2 Weeks</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4><p class="text-stone-800">Illustrator, Photoshop</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4><p class="text-stone-800">Academic Project</p></div>
-        </div>
-
-        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
-
-           <section class="mb-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">About the Production</h2>
-
-    <!-- Brief Description -->
-    <h3 class="text-xl font-medium text-stone-800 mb-3">Brief Description</h3>
-    <p class="text-stone-700 leading-relaxed mb-6">
-        This project visualizes the TTC Line 1 commute as an emotional timeline rather than a physical route. 
-        Each station from Finch to Union is represented through colour-coded moods, illustrating how 
-        a rider’s emotional state can shift throughout a typical Toronto commute.
-    </p>
-
-    <!-- Creative Problem -->
-    <h3 class="text-xl font-medium text-stone-800 mb-3">Creative Problem</h3>
-    <p class="text-stone-700 leading-relaxed mb-6">
-        Traditional transit maps focus on geography and efficiency, but they overlook the emotional weight of commuting — 
-        especially crowded, overstimulating TTC environments. 
-        The challenge was to reinterpret a familiar public system in a way that expresses the human experience behind it.
-    </p>
-
-    <!-- Solution to the Problem -->
-    <h3 class="text-xl font-medium text-stone-800 mb-3">Solution to the Problem</h3>
-    <p class="text-stone-700 leading-relaxed">
-        By assigning colours to emotions and mapping them station-by-station, the project transforms the TTC route into 
-        an emotional landscape. Borrowing inspiration from the clarity of the NYC Vignelli map, the solution uses a 
-        minimal, data-visualization style approach to communicate mood transitions clearly and quietly.
-    </p>
-</section>
-
-
-           <!-- PROCESS & DEVELOPMENT -->
-<section class="mt-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
-
-    <p class="text-lg text-stone-600 font-light mb-12">
-        This project developed through emotional research, colour studies, and a Miro-based exploration
-        of how TTC stations reflect internal states. Instead of traditional sketching or moodboards,
-        the process focused on mapping feelings, transitions, and symbolic colour language inspired by
-        both the TTC and the New York Vignelli subway system.
-    </p>
-
-
-    <!-- EMOTIONAL COLOUR SYSTEM -->
-    <div class="mb-16">
-        <h3 class="text-xl font-semibold text-stone-900 mb-4">Emotional Colour Framework</h3>
-        <p class="text-stone-600 font-light mb-6">
-            My emotional mapping used a colour system inspired by the New York Vignelli subway map. 
-            Each emotion was assigned a line colour, helping express the internal “route” a commuter
-            travels while moving from Finch to Union.
+<!-- HERO SECTION -->
+<section 
+    class="relative w-full h-[85vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('ChatGPT Image Nov 20, 2025, 02_03_58 PM.png');"
+>
+    <!-- Soft overlay -->
+    <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+
+    <!-- Text -->
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+        <h1 class="text-5xl md:text-7xl font-bold text-stone-900 drop-shadow-lg mb-8">
+            Designing quiet, meaningful digital experiences.
+        </h1>
+
+        <p class="text-xl md:text-2xl text-stone-800 drop-shadow-md mb-10">
+            Emotional UX • Interaction Design • Accessibility
         </p>
 
-        <ul class="text-stone-700 font-light space-y-2 mb-6">
-            <li><strong class="text-stone-900">Yellow</strong> — Happiness / relief</li>
-            <li><strong class="text-stone-900">Blue</strong> — Sadness / heaviness</li>
-            <li><strong class="text-stone-900">Red</strong> — Anger / overwhelm</li>
-            <li><strong class="text-stone-900">Black</strong> — Fear / anxiety</li>
-            <li><strong class="text-stone-900">Purple</strong> — Surprise / awakening</li>
-        </ul>
-
-        <div class="bg-stone-100 p-10 rounded-xl text-center">
-            <img src="Screenshot 2025-11-21 113358.png" alt="Emotional Colour Framework" 
-                 class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-            <p class="text-sm italic text-stone-400 mt-4">
-                Emotional colour references inspired by NYC Vignelli subway design.
-            </p>
-        </div>
-    </div>
-
-
-    <!-- MIRO BOARD -->
-    <div class="mb-16">
-        <h3 class="text-xl font-semibold text-stone-900 mb-4">Process Mapping in Miro</h3>
-        <p class="text-stone-600 font-light mb-6">
-            The main development work happened inside a single Miro board. Here, I mapped emotions to TTC stations, 
-            explored narrative pacing, and planned transitions for the Finch → Union journey.
-        </p>
-
-        <div class="bg-stone-100 p-10 rounded-xl text-center">
-            <img src="Screenshot 2025-11-20 104324.png" class="mx-auto rounded-xl shadow-lg w-full max-w-4xl">
-            <p class="text-sm italic text-stone-400 mt-4">
-                Miro board used to plan emotional transitions and TTC station meaning.
-            </p>
-        </div>
-    </div>
-
-
-    <!-- EARLY DIGITAL ROUGHS -->
-    <div class="mb-16">
-        <h3 class="text-xl font-semibold text-stone-900 mb-4">Early Digital Layout Exploration</h3>
-        <p class="text-stone-600 font-light mb-6">
-            Instead of physical sketches, rough versions were created directly in digital format. These early layouts
-            helped define pacing, spacing, and emotional transitions for the final piece.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="bg-stone-100 p-8 rounded-xl">
-                <img src="Screenshot 2025-11-21 113322.png" class="rounded-xl shadow-lg w-full">
-            </div>
-            <div class="bg-stone-100 p-8 rounded-xl">
-                <img src="Screenshot 2025-11-21 113251.png" class="rounded-xl shadow-lg w-full">
-            </div>
-        </div>
-
-        <p class="text-sm italic text-stone-400 mt-4 text-center">
-            Early digital variations showing emotional sequencing and TTC-inspired structure.
-        </p>
-    </div>
-
-
-  <!-- Station-by-Station Emotional Notes -->
-<section class="space-y-6 mt-16">
-    <h3 class="text-2xl font-medium text-stone-900">
-        Station-by-Station Emotional Notes
-    </h3>
-
-    <p class="text-lg text-stone-600 font-light leading-relaxed">
-        Throughout the process, I documented how each station feels emotionally — 
-        not physically. These emotional cues guided the colour transitions and 
-        mood shifts in the final visual.
-    </p>
-
-    <ul class="space-y-4 text-stone-700 text-lg font-light">
-        <li>
-            <strong class="text-stone-900">Finch → Sheppard</strong> — anticipation, quiet nerves
-        </li>
-        <li>
-            <strong class="text-stone-900">Sheppard → Eglinton</strong> — heaviness, routine, grey emotions
-        </li>
-        <li>
-            <strong class="text-stone-900">Eglinton → Bloor</strong> — emotional noise, crowd overwhelm
-        </li>
-        <li>
-            <strong class="text-stone-900">Bloor → Union</strong> — grounding, calm, soft return to self
-        </li>
-    </ul>
-</section>
-
-
-</section>
-
-
-            <section class="mt-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">The Result</h2>
-
-    <p class="text-stone-600 leading-relaxed mb-10">
-        The final emotional map visualizes the Finch–to–Union TTC journey as a soft,
-        colour-coded emotional timeline. Each circle represents a station, and each
-        colour reflects a specific emotional tone experienced along the commute.
-    </p>
-
-    <!-- Final Result Image -->
-    <div class="bg-stone-100 p-10 rounded-xl text-center mb-8">
-        <img 
-            src="Screenshot 2025-10-08 143959.png"
-            alt="Final Emotional Journey Map: Finch to Union"
-            class="mx-auto rounded-xl shadow"
-        >
-        <p class="text-sm italic text-stone-400 mt-4">
-            Final emotional map — Finch to Union (Line 1 TTC)
-        </p>
-    </div>
-                <section class="mb-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">Credits</h2>
-
-    <!-- Contributing Creatives -->
-    <h3 class="text-lg font-semibold text-stone-700 mb-2">Contributing Creatives</h3>
-    <ul class="list-disc pl-6 text-stone-700 mb-6">
-        <li>Michelle Miyata — UX/UI Design, Visual Design, Emotional Mapping</li>
-        <li>No additional collaborators</li>
-    </ul>
-
-    <!-- Image Credits -->
-    <h3 class="text-lg font-semibold text-stone-700 mb-2">Image Credits</h3>
-    <ul class="list-disc pl-6 text-stone-700 mb-6">
-        <li>All TTC emotional map visuals created by Michelle Miyata</li>
-    </ul>
-
-    <!-- Photo Credits -->
-    <h3 class="text-lg font-semibold text-stone-700 mb-2">Photo Credits</h3>
-    <ul class="list-disc pl-6 text-stone-700 mb-6">
-        <li>Original screenshots, mockups, and visual captures created by Michelle Miyata</li>
-        <li>Stock photos used where noted (no copyright-restricted material)</li>
-    </ul>
-
-    <!-- Mockup Credits -->
-    <h3 class="text-lg font-semibold text-stone-700 mb-2">Mockup Credits</h3>
-    <ul class="list-disc pl-6 text-stone-700 mb-6">
-        <li>Mockups created using Adobe tools </li>
-    </ul>
-
-    <!-- Sound Credits (Not Applicable) -->
-    <h3 class="text-lg font-semibold text-stone-700 mb-2">Sound Credits (If Applicable)</h3>
-    <ul class="list-disc pl-6 text-stone-700">
-        <li>N/A — This project does not include audio components</li>
-    </ul>
-</section>
-                <!-- Acknowledgments -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
-    <p class="text-stone-700 leading-relaxed">
-      This project was guided by <strong>Professor Chris,</strong> whose systems-thinking approach and thoughtful critique helped shape the emotional structure of the work. His emphasis on clarity, intention, and design reasoning allowed me to translate a familiar TTC commute into an emotional journey with purpose and depth.
-His feedback pushed me to think beyond visuals and focus on the why behind each station, mood, and transition.
-    </p>
-  </div>
-
-</section>
-
-
-        </div>
-    </div>
-</div>
-
-
-<!-- CASE STUDY 3: Discover BC -->
-<div id="case-study-3" class="page-section hidden fade-in pt-6">
-    <button onclick="navigate('work')" 
-            class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
-        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
-    </button>
-
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Discover BC</h1>
-        <p class="text-2xl text-stone-500 font-light mb-12">Travel App UI</p>
-
-        <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
-            <img src="Screenshot 2025-11-08 113155.png" class="w-full h-full object-cover">
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4><p class="text-stone-800">UX/UI Designer</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4><p class="text-stone-800">2 Weeks</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4><p class="text-stone-800">Illustrator, Photoshop</p></div>
-            <div><h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4><p class="text-stone-800">Academic Project</p></div>
-        </div>
-        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
-
-          <section class="py-16">
-    <h2 class="text-3xl font-semibold text-stone-900 mb-10">About Production</h2>
-
-    <!-- Brief Description -->
-    <div class="mb-10">
-        <h3 class="text-xl font-semibold text-stone-800 mb-2">Brief Description</h3>
-        <p class="text-stone-700 leading-relaxed">
-            Discover BC is a calm, photography-led travel booking experience designed 
-            to make exploring British Columbia feel simple, intuitive, and visually peaceful. 
-            The interface highlights scenic landscapes while guiding users through a 
-            low-stress booking flow.
-        </p>
-    </div>
-
-    <!-- Creative Problem -->
-    <div class="mb-10">
-        <h3 class="text-xl font-semibold text-stone-800 mb-2">Creative Problem</h3>
-        <p class="text-stone-700 leading-relaxed">
-            Most travel booking apps feel crowded, overwhelming, and visually noisy — 
-            especially for users trying to compare tours or browse locations quickly. 
-            Inconsistent layouts and overly complex navigation increase cognitive load 
-            and reduce user confidence.
-        </p>
-    </div>
-
-  <!-- Solution to the Problem -->
-<section class="pt-8 pb-10">
-    <div class="mb-10">
-        <h3 class="text-xl font-semibold text-stone-800 mb-2">
-            Solution to the Problem
-        </h3>
-
-        <p class="text-stone-700 leading-relaxed">
-            The design introduces a clean, spacious layout with minimal distractions,
-            soft accent colors, and strong visual hierarchy. Large photography panels
-            create emotional immersion, while simplified navigation helps users browse,
-            compare, and book tours confidently. Each screen was built to feel calming,
-            intuitive, and lightweight.
-        </p>
-    </div>
-</section>
-
-<!-- Design Process -->
-<section class="pt-8">
-    <h2 class="text-3xl font-semibold text-stone-900 mb-10">
-        Design Process
-    </h2>
-
-    <!-- Moodboard -->
-    <div class="mb-14">
-        <h3 class="text-xl font-semibold text-stone-800 mb-3">
-            Moodboard
-        </h3>
-
-        <p class="text-stone-700 leading-relaxed mb-6">
-            The visual direction began with a photography-led moodboard inspired by
-            British Columbia’s natural landscapes — mountains, lakes, forests, and soft,
-            atmospheric tones. These images established the calm mood and shaped the
-            cool-toned palette used throughout the interface.
-        </p>
-    </div>
-</section>
-
-
-        <!-- Moodboard Image -->
-        <img 
-            src="Screenshot 2025-11-08 160145.png" 
-            alt="Discover BC Moodboard" 
-            class="rounded-xl shadow-md w-full max-w-4xl mx-auto"
-        />
-    </div>
-
-    <!-- Logo Exploration -->
-    <div class="mb-14">
-        <h3 class="text-xl font-semibold text-stone-800 mb-3">Logo Exploration</h3>
-        <p class="text-stone-700 leading-relaxed mb-6">
-            Early logo explorations experimented with mountain silhouettes, crest-style 
-            badges, and outdoor-inspired typography. Each iteration focused on clarity 
-            and trust, refining toward a mark that feels quiet, scenic, and distinctly 
-            British Columbia.
-        </p>
-
-        <!-- Logo Image -->
-        <img 
-            src="Screenshot 2025-11-08 163221.png" 
-            alt="Discover BC Logo Drafts" 
-            class="rounded-xl shadow-md w-full max-w-3xl mx-auto"
-        />
-    </div>
-
-    <!-- Rough Versions -->
-    <div class="mb-14">
-        <h3 class="text-xl font-semibold text-stone-800 mb-3">Rough Versions & Early Layouts</h3>
-        <p class="text-stone-700 leading-relaxed mb-6">
-            Early layouts tested different structures to reduce visual noise and improve 
-            clarity. These rough versions explored navigation styles, photo hierarchy, 
-            and tour-card readability, helping refine the final calm, intuitive booking 
-            experience.
-        </p>
-
-        <!-- Rough Versions Image -->
-        <img 
-            src="Screenshot 2025-11-08 155848.png" 
-            alt="Early Discover BC Layouts" 
-            class="rounded-xl shadow-md w-full max-w-4xl mx-auto"
-        />
-    </div>
-</section>
-
-
-         <section class="pt-16">
-  <h2 class="text-3xl font-semibold text-stone-900 mb-6">Final Production</h2>
-
-  <p class="text-stone-700 leading-relaxed mb-10">
-    The final Discover BC interface transforms travel planning into a calm,
-    intuitive experience. Soft colors, clean typography, and photography-led
-    layouts help reduce cognitive load and guide users through browsing,
-    comparing, and booking tours with confidence. Each screen was designed to
-    feel light, spacious, and emotionally grounding.
-  </p>
-
-  <!-- Images Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-    <!-- Image 1 -->
-    <img
-      src="Screenshot 2025-11-21 141119.png"
-      alt="Discover BC Final Interface"
-      class="w-full rounded-xl shadow-lg object-cover"
-    >
-
-    <!-- Image 2 -->
-    <img
-      src="Screenshot 2025-11-21 140845.png"
-      alt="Discover BC UI Screens"
-      class="w-full rounded-xl shadow-lg object-cover"
-    >
-
-  </div>
-
-             <section class="pt-12">
-  <h2 class="text-3xl font-semibold text-stone-900 mb-8">Credits</h2>
-
-  <!-- Contributing Creatives -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Contributing Creatives</h3>
-    <ul class="text-stone-700 leading-relaxed list-disc pl-6">
-      <li>Michelle Miyata — UX/UI Design, Visual Design</li>
-      <li>Additional collaborators: N/A</li>
-    </ul>
-  </div>
-
-  <!-- Image Credits -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Image Credits</h3>
-    <ul class="text-stone-700 leading-relaxed list-disc pl-6">
-      <li>All UI visuals and layouts created by Michelle Miyata.</li>
-      <li>
-        Photography uses **royalty-free stock images** from Unsplash /
-        stock sources and are used for educational purposes only.
-      </li>
-    </ul>
-  </div>
-
-  <!-- Photo Credits -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Photo Credits</h3>
-    <ul class="text-stone-700 leading-relaxed list-disc pl-6">
-      <li>Stock photography representing British Columbia landscapes.</li>
-      <li>No AI-generated images were used in this project.</li>
-    </ul>
-  </div>
-
-  <!-- Mockup Credits -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Mockup Credits</h3>
-    <ul class="text-stone-700 leading-relaxed list-disc pl-6">
-      <li>Mockups created using Figma and Adobe tools.</li>
-      <li>Device frames sourced from Figma community resources.</li>
-    </ul>
-  </div>
-
-  <!-- Sound Credits -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Sound Credits (If Applicable)</h3>
-    <ul class="text-stone-700 leading-relaxed list-disc pl-6">
-      <li>N/A — No audio was used in this project.</li>
-    </ul>
-  </div>
-
-  <!-- Acknowledgments -->
-  <div class="mb-10">
-    <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
-    <p class="text-stone-700 leading-relaxed">
-      This project was created in <strong>Professor Jennifer’s</strong> class.
-      Her guidance, structured feedback, and high standards for visual clarity
-      and communication played an important role in shaping the final outcome.
-    </p>
-  </div>
-
-</section>
-
-</section>
-
-
-
-
-        </div>
-    </div>
-</div>
-
-
-<!-- CONTACT PAGE -->
-<div id="contact" class="page-section hidden fade-in pt-10 max-w-2xl mx-auto">
-
-    <div class="text-center mb-16">
-        <h2 class="text-4xl font-medium text-stone-900 mb-6">
-            Every Connection Starts With a Small Moment.
-        </h2>
-        <p class="text-xl text-stone-500 font-light">
-            If you’d like to collaborate, share a story, or explore an idea together, I’m here.
-        </p>
-    </div>
-
-    <div class="bg-white p-8 md:p-10 rounded-2xl border border-stone-100 shadow-sm">
-
-        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <div class="space-y-2">
-                    <label class="text-xs font-bold text-stone-400 uppercase tracking-wider">Name</label>
-                    <input type="text" required 
-                           class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-stone-500 focus:ring-0 outline-none"
-                           placeholder="Your Name">
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-xs font-bold text-stone-400 uppercase tracking-wider">Email</label>
-                    <input type="email" required 
-                           class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-stone-500 focus:ring-0 outline-none"
-                           placeholder="email@example.com">
-                </div>
-
-            </div>
-
-            <div class="space-y-2">
-                <label class="text-xs font-bold text-stone-400 uppercase tracking-wider">Message</label>
-                <textarea required rows="5"
-                          class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:border-stone-500 focus:ring-0 outline-none"
-                          placeholder="Tell me about your project..."></textarea>
-            </div>
-
-            <button type="submit"
-                    class="w-full bg-stone-900 text-white font-medium py-4 rounded-lg hover:bg-stone-700 transition-colors">
-                Send Message
-            </button>
-        </form>
-
-        <div id="success-message" class="hidden py-12 text-center">
-            <h3 class="text-2xl font-medium text-stone-900 mb-2">Message Sent</h3>
-            <p class="text-stone-500">Thank you. I will respond shortly.</p>
-        </div>
-
-    </div>
-</div>
-
-
-</main> <!-- END MAIN -->
-
-
-<!-- FOOTER -->
-<footer class="border-t border-stone-200 py-16 px-6 text-center bg-stone-50">
-    <h2 class="text-2xl font-medium text-stone-900 mb-8">Every Connection Starts With a Small Moment.</h2>
-
-    <div class="flex justify-center gap-8 mb-12">
-        <button onclick="navigate('contact')" 
-                class="text-stone-500 hover:text-stone-900 transition-colors border-b border-transparent hover:border-stone-900 pb-1">
-            Contact →
-        </button>
-
-        <a href="https://www.linkedin.com/in/michellemiyata"
-           class="text-stone-500 hover:text-stone-900 transition-colors border-b border-transparent hover:border-stone-900 pb-1">
-            LinkedIn →
+        <a href="work.html"
+           class="px-8 py-3 bg-white border border-stone-300 rounded-full shadow hover:shadow-md transition">
+            View My Work
         </a>
     </div>
 
-    <p class="text-stone-400 text-sm font-light">
-        © <span id="year"></span> Michelle Miyata.
+    <!-- Gradient bottom fade -->
+    <div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-stone-50"></div>
+</section>
+
+<!-- INTRO -->
+<section class="max-w-4xl mx-auto px-6 mt-24 mb-28 text-center">
+    <p class="text-2xl md:text-3xl leading-relaxed font-light text-stone-800">
+        I’m Michelle Miyata — a Digital Experience Designer who creates gentle, emotionally attuned interactions.
     </p>
+
+    <div class="w-10 h-px bg-stone-300 mx-auto my-8"></div>
+
+    <p class="text-lg text-stone-600">
+        My work focuses on clarity, accessibility, and the small moments that help people feel grounded.
+    </p>
+</section>
+
+<!-- APPROACH & SKILLS -->
+<section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 mb-32 border-t border-stone-200 pt-16">
+    <!-- Approach -->
+    <div>
+        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">My Approach</h3>
+        <ul class="space-y-3 text-stone-700 text-lg font-light">
+            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Emotional storytelling</li>
+            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Accessibility-focused UX</li>
+            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Soft visual identity</li>
+            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Clear, human-centered structure</li>
+        </ul>
+    </div>
+
+    <!-- Skills -->
+    <div>
+        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">Skills Snapshot</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">UX/UI Design</span>
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">AR Interaction Design</span>
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">Emotional Experience Design</span>
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">Accessibility</span>
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">User Research</span>
+            <span class="bg-stone-100 text-stone-600 px-4 py-2 rounded-lg text-sm">Wireframing</span>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="max-w-6xl mx-auto px-6 mb-32">
+    <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-12 text-center">
+        Featured Projects
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Puzzle Piece -->
+        <a href="puzzlepiece.html" class="group block cursor-pointer">
+            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                <img src="Screenshot 2025-11-19 145016.png"
+                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
+            </div>
+            <h4 class="text-xl font-medium text-stone-900 mb-1">Puzzle Piece</h4>
+            <p class="text-sm text-stone-500 mb-3">Emotional Interaction</p>
+            <p class="text-sm text-stone-600">
+                A soft emotional micro-interaction where a puzzle piece appears when you smile.
+            </p>
+        </a>
+
+        <!-- TTC Emotional Journey -->
+        <a href="ttc-emotional.html" class="group block cursor-pointer">
+            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                <img src="Screenshot 2025-10-08 143959.png"
+                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
+            </div>
+            <h4 class="text-xl font-medium text-stone-900 mb-1">Emotional Journey: Finch → Union</h4>
+            <p class="text-sm text-stone-500 mb-3">TTC Emotional Mapping</p>
+            <p class="text-sm text-stone-600">
+                A calm emotional interpretation of the TTC Line 1 commute.
+            </p>
+        </a>
+
+        <!-- Discover BC -->
+        <a href="discoverbc.html" class="group block cursor-pointer">
+            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                <img src="Screenshot 2025-11-08 113155.png"
+                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
+            </div>
+            <h4 class="text-xl font-medium text-stone-900 mb-1">Discover BC</h4>
+            <p class="text-sm text-stone-500 mb-3">Travel App UI</p>
+            <p class="text-sm text-stone-600">
+                A photography-led travel experience designed for clarity and calm.
+            </p>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-stone-200 py-16 text-center text-stone-500">
+    <p class="text-lg text-stone-800 mb-6">Every connection starts with a small moment.</p>
+    <div class="flex justify-center gap-8 mb-8">
+        <a href="contact.html" class="hover:text-stone-900">Contact →</a>
+        <a href="https://www.linkedin.com/in/michellemiyata" class="hover:text-stone-900">LinkedIn →</a>
+    </div>
+    <p class="text-sm">&copy; <span id="year"></span> Michelle Miyata.</p>
 </footer>
 
-
-<!-- ⭐ JAVASCRIPT LOGIC ⭐ -->
 <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
     lucide.createIcons();
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-   function navigate(pageId) {
-    // Hide all page sections
-    document.querySelectorAll('.page-section').forEach(section =>
-        section.classList.add('hidden')
-    );
-
-    // Show selected page
-    document.getElementById(pageId).classList.remove('hidden');
-
-    // SHOW hero only on home
-    if (pageId === 'home') {
-        document.getElementById('home-hero').classList.remove('hidden');
-    } else {
-        document.getElementById('home-hero').classList.add('hidden');
-    }
-
-    window.scrollTo(0, 0);
-}
-
-
-    function toggleMenu() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
-    }
-
-    function handleFormSubmit(e) {
-        e.preventDefault();
-
-        document.getElementById('contact-form').classList.add('hidden');
-        document.getElementById('success-message').classList.remove('hidden');
-
-        setTimeout(() => {
-            document.getElementById('contact-form').reset();
-            document.getElementById('contact-form').classList.remove('hidden');
-            document.getElementById('success-message').classList.add('hidden');
-        }, 4000);
-    }
 </script>
 
 </body>
 </html>
+
