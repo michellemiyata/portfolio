@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover BC – Michelle Miyata</title>
 
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-stone-900">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+
+        <nav class="hidden md:flex gap-10">
+            <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
+            <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
+            <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
+            <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="h-24"></div>
+
+<div class="px-6">
+    <button onclick="window.location.href='work.html'" 
+        class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
+        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
+    </button>
+
+    <div class="max-w-4xl mx-auto">
+
+        <!-- TITLE -->
+        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Discover BC</h1>
+        <p class="text-2xl text-stone-500 font-light mb-12">Calm Travel App UI</p>
+
+        <!-- HERO IMAGE -->
+        <div class="aspect-video rounded-xl overflow-hidden bg-stone-200 mb-16">
+            <img src="Screenshot 2025-11-08 113155.png" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- META GRID -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
+            <div>
+                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
+                <p class="text-stone-800">UX/UI Designer</p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
+                <p class="text-stone-800">3 Weeks</p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
+                <p class="text-stone-800">Figma, Illustrator</p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
+                <p class="text-stone-800">Course Project</p>
+            </div>
+        </div>
+
+        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
+
+            <!-- ABOUT -->
+            <section>
+                <h2 class="text-2xl font-medium text-stone-900 mb-6">About the Project</h2>
+
+                <h3 class="text-xl font-semibold text-stone-800 mb-3">Brief Description</h3>
+                <p class="mb-6">
+                    Discover BC is a calm, photography-led travel booking experience designed to reduce 
+                    cognitive load and support users in making stress-free travel decisions. The experience 
+                    centres around minimal UI, clean spacing, and emotional clarity.
+                </p>
+
+                <h3 class="text-xl font-semibold text-stone-800 mb-3">Creative Problem</h3>
+                <p class="mb-6">
+                    Many travel apps create cognitive overload with dense UI, multiple competing actions, 
+                    and overwhelming information. The challenge was to design a travel experience that 
+                    feels calm, emotionally grounding, and intuitive for first-time or anxious travelers.
+                </p>
+
+                <h3 class="text-xl font-semibold text-stone-800 mb-3">Solution</h3>
+                <p>
+                    The interface uses soft visual hierarchy, large photographic anchors, and simplified 
+                    navigation to create a peaceful digital environment. The design helps users make decisions 
+                    at their own pace without feeling overwhelmed.
+                </p>
+            </section>
+
+            <!-- PROCESS -->
+            <section>
+                <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
+
+                <p class="mb-10">A calm, structured process shaped the final UI screens.</p>
+
+                <div class="space-y-12">
+
+                    <!-- Wireframes -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-stone-900 mb-3">Wireframes</h3>
+                        <p class="mb-4">
+                            Early wireframes focused on reducing clutter, spacing content generously, 
+                            and letting imagery guide navigation.
+                        </p>
+                        <div class="bg-stone-100 p-8 rounded-xl">
+                            <img src="Screenshot 2025-11-08 113155.png" class="rounded-xl shadow-lg" />
+                        </div>
+                    </div>
+
+                    <!-- Visual Exploration -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-stone-900 mb-3">Visual Style Exploration</h3>
+                        <p class="mb-4">
+                            The visual identity emphasizes soft gradients, clean typography, and 
+                            tone-on-tone UI components for a quiet, expansive feel.
+                        </p>
+                        <div class="bg-stone-100 p-8 rounded-xl">
+                            <img src="Screenshot 2025-11-08 113155.png" class="rounded-xl shadow-lg" />
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FINAL UI -->
+            <section>
+                <h2 class="text-2xl font-medium text-stone-900 mb-6">Final UI Screens</h2>
+
+                <p class="mb-10">The final UI promotes clarity and emotional ease through gentle composition.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-stone-100 p-8 rounded-xl">
+                        <img src="Screenshot 2025-11-08 113155.png" class="rounded-xl shadow-lg">
+                    </div>
+                    <div class="bg-stone-100 p-8 rounded-xl">
+                        <img src="Screenshot 2025-11-08 113155.png" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- CREDITS -->
+            <section class="mt-20 border-t border-stone-200 pt-12">
+                <h2 class="text-2xl font-medium text-stone-900 mb-8">Credits</h2>
+
+                <div class="mb-10">
+                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Contributing Creatives</h3>
+                    <ul class="space-y-2 text-stone-700">
+                        <li>Michelle Miyata — UX/UI Design, Visual Design</li>
+                    </ul>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Image Credits</h3>
+                    <ul class="space-y-2 text-stone-700">
+                        <li>All photography and UI screens created by Michelle Miyata.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
+                    <p>
+                        Special thanks to <strong>Professor Jennifer</strong> for guidance on structuring 
+                        calm visual experiences and reducing UI cognitive load through thoughtful pacing.
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
