@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About – Michelle Miyata</title>
 
-    <!-- Tailwind -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        .fade-in { animation: fadeIn 0.4s ease; }
+        .fade-in { animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 
-<body class="bg-white text-stone-900">
+<body class="bg-white text-stone-900 fade-in">
 
 <!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
+
         <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
 
         <nav class="hidden md:flex gap-10">
@@ -30,101 +31,122 @@
             <a href="about.html" class="text-stone-900 font-medium">About</a>
             <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
         </nav>
+
     </div>
 </header>
 
 <div class="h-24"></div>
 
-<!-- ABOUT CONTENT -->
-<section class="max-w-6xl mx-auto px-6 fade-in pb-24">
+<!-- MAIN CONTENT -->
+<section class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <!-- IMAGE -->
+    <div class="flex justify-center">
+        <img src="Screenshot 2025-11-21 151320.png"
+             class="w-full max-w-md rounded-xl object-cover grayscale hover:grayscale-0 transition duration-500 shadow-md">
+    </div>
 
-        <!-- PHOTO -->
-        <div class="flex justify-center lg:justify-start">
-            <img 
-                src="IMG_0205 (1).JPG" 
-                alt="Michelle Miyata"
-                class="auto rounded-xl shadow-lg object-cover
-                       grayscale hover:grayscale-0 transition-all duration-500"
-            />
-        </div>
+    <!-- TEXT CONTENT -->
+    <div>
 
-        <!-- TEXT CONTENT -->
-        <div>
-            <h1 class="text-5xl font-semibold mb-6">Hi, I'm Michelle.</h1>
+        <h1 class="text-4xl font-semibold mb-6">Hi, I'm Michelle.</h1>
 
-            <p class="text-lg text-stone-700 leading-relaxed mb-6">
-                I’m a UX/UI and accessibility-focused designer who builds 
-                experiences that feel gentle, thoughtful, and human. My work blends 
-                research, emotional design, and inclusive design principles to 
-                support users in the moments they need clarity the most.
-            </p>
+        <p class="text-lg text-stone-700 leading-relaxed mb-6">
+            I’m a UX/UI and accessibility-focused designer who builds experiences that feel gentle,
+            thoughtful, and human. My work blends research, emotional design, and inclusive design principles
+            to support users in the moments they need clarity the most.
+        </p>
 
-            <p class="text-lg text-stone-700 leading-relaxed mb-10">
-                I design by paying attention to feeling — the small shifts, the 
-                emotional cues, the quiet needs people don’t always say out loud. 
-                My goal is to create technology that meets people where they are, 
-                with calm and care.
-            </p>
+        <p class="text-lg text-stone-700 leading-relaxed mb-10">
+            I design by paying attention to feeling — the small shifts, the emotional cues, the quiet needs
+            people don’t always say out loud. My goal is to create technology that meets people where they are,
+            with calm and care.
+        </p>
 
-            <!-- EXPERIENCE -->
-            <h2 class="text-2xl font-semibold mb-4">Project Experience</h2>
+        <!-- AREAS OF INTEREST -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Areas of Interest</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>Emotional experience design</li>
+                <li>Interaction design & micro-interactions</li>
+                <li>Accessibility (WCAG, inclusive design)</li>
+                <li>Calm technology & stress-reduction UX</li>
+                <li>AR interaction design and emotional wayfinding</li>
+                <li>Research-driven design & behavioural insights</li>
+            </ul>
+        </section>
 
-            <div class="space-y-8 text-stone-700">
+        <!-- PRIMARY SKILLS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Primary Skills</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>UX/UI Design</li>
+                <li>Accessibility & Inclusive Design</li>
+                <li>Wireframing & Prototyping</li>
+                <li>Emotional Design Principles</li>
+                <li>User Research & Journey Mapping</li>
+                <li>Visual Storytelling</li>
+                <li>AR Interaction Concepts</li>
+            </ul>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Work Experience</h2>
+
+            <div class="space-y-6 text-stone-700">
 
                 <div>
-                    <h3 class="font-semibold">
-                        Lead UX/UI Designer — UnionMoods (AR Experience)
-                    </h3>
+                    <p class="font-medium">Lead UX/UI Designer — UnionMoods (AR Experience)</p>
                     <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-                    <ul class="list-disc pl-6 text-sm space-y-1">
-                        <li>Emotional design, UX flows, TTC branding</li>
-                        <li>QR-based AR interactions</li>
-                        <li>Accessibility considerations</li>
-                    </ul>
+                    <p class="text-sm leading-relaxed">Emotional AR wayfinding system based on TTC moods and transit experience.</p>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold">
-                        UX/UI Designer — StudyBuddy App
-                    </h3>
+                    <p class="font-medium">UX/UI Designer — StudyBuddy App</p>
                     <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-                    <ul class="list-disc pl-6 text-sm space-y-1">
-                        <li>Wireframes, accessibility features, transcribe/voice tools</li>
-                    </ul>
+                    <p class="text-sm leading-relaxed">Designed accessible features including read-aloud, transcription, and focus tools.</p>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold">
-                        Designer — Puzzle Piece Emotional Design Project
-                    </h3>
-                    <p class="text-sm text-stone-500">Summer 2025</p>
+                    <p class="font-medium">Designer — Puzzle Piece Emotional Design Project</p>
+                    <p class="text-sm text-stone-500 mb-1">Summer 2025</p>
+                    <p class="text-sm leading-relaxed">Four-part emotional visual exploring alignment, clarity, and emotional resonance.</p>
                 </div>
 
             </div>
+        </section>
 
-            <!-- SKILLS -->
-            <h2 class="text-2xl font-semibold mt-12 mb-4">Skills Snapshot</h2>
+        <!-- EDUCATION -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Education</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-3">
+                <li>
+                    <strong>Honours Bachelor of Digital Experience Design (In Progress)</strong><br>
+                    George Brown College — School of Design
+                </li>
+                <li>
+                    <strong>Advanced Diploma in Interaction Design & Development</strong><br>
+                    George Brown College
+                </li>
+            </ul>
+        </section>
 
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">UX/UI Design</span>
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">AR Interaction Design</span>
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">Emotional Experience Design</span>
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">Accessibility</span>
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">User Research</span>
-                <span class="px-4 py-2 bg-stone-100 rounded-full
-                             hover:bg-stone-200 transition-all">Wireframing</span>
-            </div>
-        </div>
+        <!-- HIGHLIGHTS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Highlights</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>Strong emotional intuition applied to UX decisions</li>
+                <li>Experience designing AR interactions using emotional cues</li>
+                <li>Calm, supportive, clutter-free UI design style</li>
+                <li>Commitment to accessibility and inclusive design</li>
+                <li>Comfortable with full UX process end-to-end</li>
+            </ul>
+        </section>
 
     </div>
 </section>
 
 </body>
 </html>
+
