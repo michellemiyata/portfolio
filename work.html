@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Work – Michelle Miyata</title>
 
     <!-- Tailwind CDN -->
@@ -10,675 +10,110 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        .hidden { display: none; }
-        .fade-in { animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    </style>
 </head>
+
 <body class="bg-white text-stone-900">
 
 <!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-
-        <!-- Logo -->
         <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
 
-        <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-10">
             <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
             <a href="work.html" class="text-stone-900 font-medium">Work</a>
             <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
             <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
         </nav>
-
     </div>
 </header>
 
-<!-- Spacer so content begins below fixed header -->
+<!-- Spacer -->
 <div class="h-24"></div>
 
-<script>
-function showSection(id) {
-    // Hide all sections
-    document.querySelectorAll(".page-section").forEach(s => s.classList.add("hidden"));
+<!-- CONTENT -->
+<section class="max-w-6xl mx-auto px-6 py-16">
 
-    // Show correct section
-    document.getElementById(id).classList.remove("hidden");
-    document.getElementById(id).classList.add("fade-in");
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-</script>
-
-<!-- WORK PAGE (SECTION 1) -->
-<div id="work" class="page-section fade-in">
-
-    <div class="max-w-5xl mx-auto px-6">
-
-        <!-- Page Title -->
-        <div class="mb-16">
-            <h1 class="text-5xl font-medium mb-4">Selected Work</h1>
-            <p class="text-xl text-stone-600 font-light">
-                A collection of projects exploring emotion, accessibility, and calm technology.
-            </p>
-        </div>
-
-        <!-- PROJECT GRID -->
-        <div class="space-y-20">
-
-            <!-- Project 1 — Puzzle Piece -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center group cursor-pointer"
-                 onclick="showSection('case-study-1')">
-
-                <div class="aspect-[4/3] rounded-xl overflow-hidden">
-                    <img src="Screenshot 2025-11-19 145016.png"
-                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 
-                                group-hover:scale-105 transition-all duration-500">
-                </div>
-
-                <div>
-                    <h3 class="text-3xl font-medium mb-2">Puzzle Piece</h3>
-                    <p class="text-lg text-stone-500 mb-4">Emotional Interaction Design</p>
-                    <p class="text-stone-700 leading-relaxed mb-6">
-                        A soft, expressive emotional-design visual exploring alignment and clarity through
-                        puzzle-piece metaphors and subtle composition.
-                    </p>
-                    <span class="inline-flex items-center border-b border-stone-900 pb-1 
-                                  hover:text-stone-600 hover:border-stone-600 transition-colors">
-                        View Case Study
-                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 2 — Emotional Journey TTC -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center group cursor-pointer"
-                 onclick="showSection('case-study-2')">
-
-                <div class="aspect-[4/3] rounded-xl overflow-hidden">
-                    <img src="Screenshot 2025-10-08 143959.png"
-                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 
-                                group-hover:scale-105 transition-all duration-500">
-                </div>
-
-                <div>
-                    <h3 class="text-3xl font-medium mb-2">
-                        Emotional Journey: Finch to Union — Line 1 TTC
-                    </h3>
-                    <p class="text-lg text-stone-500 mb-4">Emotional Wayfinding</p>
-                    <p class="text-stone-700 leading-relaxed mb-6">
-                        A TTC-inspired emotional map charting the shifting moods and inner dialogue across a
-                        commuter’s journey from Finch to Union.
-                    </p>
-                    <span class="inline-flex items-center border-b border-stone-900 pb-1 
-                                  hover:text-stone-600 hover:border-stone-600 transition-colors">
-                        View Case Study
-                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 3 — Discover BC -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center group cursor-pointer"
-                 onclick="showSection('case-study-3')">
-
-                <div class="aspect-[4/3] rounded-xl overflow-hidden">
-                    <img src="Screenshot 2025-11-08 113155.png"
-                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 
-                                group-hover:scale-105 transition-all duration-500">
-                </div>
-
-                <div>
-                    <h3 class="text-3xl font-medium mb-2">Discover BC</h3>
-                    <p class="text-lg text-stone-500 mb-4">Travel App UI</p>
-                    <p class="text-stone-700 leading-relaxed mb-6">
-                        A photography-led, calm travel-booking experience designed to reduce cognitive load
-                        and support stress-free decision-making.
-                    </p>
-                    <span class="inline-flex items-center border-b border-stone-900 pb-1 
-                                  hover:text-stone-600 hover:border-stone-600 transition-colors">
-                        View Case Study
-                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                    </span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- CASE STUDY 1: Puzzle Piece -->
-<div id="case-study-1" class="page-section hidden fade-in px-6">
-
-    <!-- Back Button -->
-    <button onclick="showSection('work')" 
-        class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
-        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
-    </button>
-
-    <div class="max-w-4xl mx-auto">
-
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Puzzle Piece</h1>
-        <p class="text-2xl text-stone-500 font-light mb-12">Emotional Interaction & Accessibility</p>
-
-        <!-- Hero image -->
-        <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
-            <img src="Screenshot 2025-11-19 145016.png"
-                 class="w-full h-full object-cover">
-        </div>
-
-        <!-- Role / Tools Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
-                <p class="text-stone-800">UX/UI Designer</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
-                <p class="text-stone-800">3 Weeks</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
-                <p class="text-stone-800">Illustrator, Photoshop</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
-                <p class="text-stone-800">Academic Project</p>
-            </div>
-        </div>
-
-        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
-
-            <!-- ABOUT PRODUCTION -->
-            <section class="space-y-10 mb-20">
-
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">About Production</h2>
-
-                <!-- Brief Description -->
-                <div>
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-                        Brief Description
-                    </h3>
-                    <p>
-                        “Puzzle Piece” is an emotional-design visual exploring connection, alignment, 
-                        and the quiet moment when something finally “clicks.” The piece is divided into 
-                        four stages that reflect an inner emotional progression, ending with 
-                        <strong>Piece 315: THE CLICK</strong>, representing grounded clarity.
-                    </p>
-                </div>
-
-                <!-- Creative Problem -->
-                <div>
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-                        Creative Problem
-                    </h3>
-                    <p>
-                        The challenge was to visually communicate internal emotional alignment 
-                        without animation or interaction. The project needed to express subtle 
-                        emotional resonance using only visual cues like composition, puzzle pieces, 
-                        palette, and layout.
-                    </p>
-                </div>
-
-                <!-- Solution -->
-                <div>
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">
-                        Solution to the Problem
-                    </h3>
-                    <p>
-                        Puzzle pieces became the metaphor for emotional clarity. Each part of the 
-                        series represents a stage of emotional understanding — from confusion to 
-                        alignment. Soft tones, minimal layouts, and quiet spacing were used to 
-                        reinforce the gentle, introspective nature of the project.
-                    </p>
-                </div>
-
-            </section>
-
-
-            <!-- PROCESS & DEVELOPMENT -->
-            <section class="mb-16">
-
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
-
-                <!-- Miro Board -->
-                <div class="mb-12">
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Miro Board</h3>
-                    <p>
-                        Early ideas, emotional notes, arrangement tests, and structural planning were mapped 
-                        out in Miro. This foundation helped shape the emotional arc.
-                    </p>
-                    <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                        <img src="Screenshot 2025-11-21 104957.png" class="rounded-xl shadow">
-                    </div>
-                </div>
-
-                <!-- Rough Versions -->
-                <div class="mb-12">
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Rough Versions</h3>
-                    <p>
-                        Early visual drafts explored spacing, contrast, puzzle-piece sizing, and softness of tone.
-                    </p>
-                    <div class="bg-stone-100 p-6 rounded-xl mt-4 space-y-6">
-                        <img src="Screenshot 2025-08-12 160247.png" class="rounded-xl shadow">
-                        <img src="Screenshot 2025-08-12 154941.png" class="rounded-xl shadow">
-                    </div>
-                </div>
-
-                <!-- Screen Captures -->
-                <div class="mb-12">
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Screen Captures</h3>
-                    <p>
-                        Screenshots during the Illustrator/Photoshop process showing colour tuning, alignment, 
-                        layer ordering, and detail refinement.
-                    </p>
-                    <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                        <img src="Screenshot 2025-11-19 144716.png" class="rounded-xl shadow">
-                    </div>
-                </div>
-
-                <!-- Reference Photos -->
-                <div class="mb-12">
-                    <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Reference Photos</h3>
-                    <p>
-                        A few stock photos were used for lighting, palette, and texture reference.  
-                        No AI images were used in this project.
-                    </p>
-                    <div class="bg-stone-100 p-6 rounded-xl mt-4">
-                        <img src="Screenshot 2025-08-12 135625.png" class="rounded-xl shadow">
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- THE CHALLENGE -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The Challenge</h2>
-                <p>
-                    The main challenge was expressing a quiet emotional moment — the feeling of alignment —
-                    using only still visuals rather than animation or interaction.
-                </p>
-            </section>
-
-            <!-- THE CONCEPT -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The Concept</h2>
-                <p class="mb-6">
-                    <strong>“Puzzle Piece”</strong> visualizes emotional clarity using two puzzle pieces that 
-                    represent alignment and grounded realization. The title “Piece 315 — THE CLICK” symbolizes 
-                    a moment of internal resonance.
-                </p>
-
-                <div class="bg-stone-100 p-12 rounded-xl text-center">
-                    <img src="Screenshot 2025-11-19 145016.png"
-                         class="mx-auto rounded-xl shadow">
-                    <p class="text-sm italic text-stone-400 mt-4">Final artwork</p>
-                </div>
-            </section>
-
-            <!-- QR SECTION -->
-            <section>
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The QR Code</h2>
-                <p class="mb-6">
-                    The QR code originally linked to an additional visual experience.  
-                    It is no longer active, but remains as part of the composition.
-                </p>
-
-                <div class="bg-stone-100 p-12 rounded-xl text-center">
-                    <img src="Screenshot 2025-11-20 102743.png"
-                         class="mx-auto rounded-xl shadow">
-                    <p class="text-sm italic text-stone-400 mt-4">Original QR code (inactive)</p>
-                </div>
-            </section>
-
-            <!-- RESULTS -->
-            <section class="mt-20">
-    <h2 class="text-2xl font-medium text-stone-900 mb-6">Results</h2>
-    <p class="text-lg text-stone-600 font-light mb-12">
-        A four-part emotional progression exploring alignment, clarity, and the moment everything “clicked.”
+    <!-- Page Title -->
+    <h1 class="text-5xl font-medium mb-4">Selected Work</h1>
+    <p class="text-xl text-stone-600 font-light mb-16">
+        A collection of projects exploring emotion, accessibility, and calm technology.
     </p>
 
-    <!-- PART 1 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 1 — Pieces I Didn’t Know Were Missing</h3>
-        <img src="Screenshot 2025-11-19 144938.png" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Early emotional fragments and first QR-linked reflections.</p>
-    </div>
+    <!-- PROJECT LIST -->
+    <div class="space-y-20">
 
-    <!-- PART 2 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 2 — Pieces That Didn’t Fit Yet Mattered</h3>
-        <img src="Screenshot 2025-11-19 144949.png" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Unexpected pieces that shaped direction through feedback and intuition.</p>
-    </div>
+        <!-- Project 1 — Puzzle Piece -->
+        <a href="case_study_1.html" class="grid grid-cols-1 md:grid-cols-2 gap-10 group">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden">
+                <img src="Screenshot 2025-11-19 145016.png"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+            </div>
 
-    <!-- PART 3 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 3 — When the Pieces Made Sense</h3>
-        <img src="Screenshot 2025-11-19 145000.png" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Alignment through research, concept refinement, and detail adjustments.</p>
-    </div>
+            <div>
+                <h3 class="text-3xl font-medium mb-2">Puzzle Piece</h3>
+                <p class="text-lg text-stone-500 mb-4">Emotional Interaction Design</p>
+                <p class="text-stone-700 leading-relaxed mb-6">
+                    A visual exploration of alignment, clarity, and emotional resonance using puzzle-piece metaphors.
+                </p>
+                <span class="inline-flex items-center border-b border-stone-900 pb-1 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
+                    View Case Study
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </span>
+            </div>
+        </a>
 
-    <!-- PART 4 -->
-    <div class="bg-stone-100 p-10 rounded-xl mb-16 text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Part 4 — The Quiet Work</h3>
-        <img src="Screenshot 2025-11-19 145007.png" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">Behind-the-scenes refinement and emotional grounding.</p>
-    </div>
+        <!-- Project 2 — Emotional Journey TTC -->
+        <a href="case_study_2.html" class="grid grid-cols-1 md:grid-cols-2 gap-10 group">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden">
+                <img src="Screenshot 2025-10-08 143959.png"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+            </div>
 
-        <!-- THE CLICK -->
-    <div class="bg-stone-100 p-10 rounded-xl text-center">
-        <h3 class="text-xl font-semibold text-stone-900 mb-6">Piece 315 — The Click</h3>
-        <img src="Screenshot 2025-11-19 145016.png"
-             class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-        <p class="text-sm italic text-stone-400 mt-4">The final moment of emotional and conceptual alignment.</p>
-    </div>
-</section>
+            <div>
+                <h3 class="text-3xl font-medium mb-2">
+                    Emotional Journey: Finch to Union — Line 1 TTC
+                </h3>
+                <p class="text-lg text-stone-500 mb-4">Emotional Wayfinding</p>
+                <p class="text-stone-700 leading-relaxed mb-6">
+                    A TTC-inspired emotional map that visualizes the shifting moods throughout a commute.
+                </p>
+                <span class="inline-flex items-center border-b border-stone-900 pb-1 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
+                    View Case Study
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </span>
+            </div>
+        </a>
 
+        <!-- Project 3 — Discover BC -->
+        <a href="case_study_3.html" class="grid grid-cols-1 md:grid-cols-2 gap-10 group">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden">
+                <img src="Screenshot 2025-11-08 113155.png"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+            </div>
 
-<!-- CREDITS -->
-<section class="mt-20 border-t border-stone-200 pt-12">
-    <h2 class="text-2xl font-medium text-stone-900 mb-8">Credits</h2>
+            <div>
+                <h3 class="text-3xl font-medium mb-2">Discover BC</h3>
+                <p class="text-lg text-stone-500 mb-4">Travel App UI</p>
+                <p class="text-stone-700 leading-relaxed mb-6">
+                    A calm, photography-led travel experience designed for comfortable, stress-free booking.
+                </p>
+                <span class="inline-flex items-center border-b border-stone-900 pb-1 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
+                    View Case Study
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </span>
+            </div>
+        </a>
 
-    <!-- Contributing Creatives -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Contributing Creatives</h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Michelle Miyata — UX/UI Design, Visual Design</li>
-            <li>No additional collaborators</li>
-        </ul>
-    </div>
-
-    <!-- Image Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Image Credits</h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>All visuals created by Michelle Miyata unless otherwise noted.</li>
-            <li>Stock photography used for reference only (Unsplash, Pexels).</li>
-        </ul>
-    </div>
-
-    <!-- Photo Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Photo Credits</h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Stock photos used for lighting/colour reference.</li>
-        </ul>
-    </div>
-
-    <!-- Mockup Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Mockup Credits</h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>Mockups created using Adobe tools.</li>
-        </ul>
-    </div>
-
-    <!-- Sound Credits -->
-    <div class="mb-10">
-        <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Sound Credits (If Applicable)</h3>
-        <ul class="space-y-2 text-stone-700 font-light">
-            <li>N/A — No sound used.</li>
-        </ul>
-    </div>
-
-    <!-- Acknowledgments -->
-    <div class="mb-10">
-        <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
-        <p class="text-stone-700 leading-relaxed">
-            Created under the guidance of <strong>Professor Chris</strong>, whose calm presence and reflective,
-            structured feedback supported the development of this piece. His emphasis on intention and clarity 
-            helped shape the emotional expression and final result.
-        </p>
     </div>
 
 </section>
 
-</div> <!-- END max-w -->
-</div> <!-- END case-study-1 -->
+<script>
+    lucide.createIcons();
+</script>
 
-    <!-- CASE STUDY 2: Emotional Journey — TTC Line 1 -->
-<div id="case-study-2" class="page-section hidden fade-in px-6">
+</body>
+</html>
 
-    <!-- Back Button -->
-    <button onclick="showSection('work')" 
-        class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
-        <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
-    </button>
-
-    <div class="max-w-4xl mx-auto">
-
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">
-            Emotional Journey: Finch to Union — Line 1 TTC
-        </h1>
-        <p class="text-2xl text-stone-500 font-light mb-12">
-            Visual Storytelling & Emotional Design
-        </p>
-
-        <!-- Hero Image -->
-        <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
-            <img src="Screenshot 2025-10-08 143959.png" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Meta Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
-                <p class="text-stone-800">UX/UI Designer</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
-                <p class="text-stone-800">2 Weeks</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
-                <p class="text-stone-800">Illustrator, Photoshop</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
-                <p class="text-stone-800">Academic Project</p>
-            </div>
-        </div>
-
-        <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
-
-            <!-- ABOUT PRODUCTION -->
-            <section class="mb-20">
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">About the Production</h2>
-
-                <!-- Brief Description -->
-                <h3 class="text-xl font-semibold text-stone-800 mb-3">Brief Description</h3>
-                <p class="mb-6">
-                    This project reimagines the TTC Line 1 commute as an emotional timeline rather 
-                    than a physical map. Each station from Finch to Union is represented by emotional 
-                    colour-coded moods that reflect the shifting internal experience of commuting.
-                </p>
-
-                <!-- Creative Problem -->
-                <h3 class="text-xl font-semibold text-stone-800 mb-3">Creative Problem</h3>
-                <p class="mb-6">
-                    Traditional transit maps communicate routes, but not the emotional reality of 
-                    navigating crowded TTC environments. The challenge was to interpret a familiar 
-                    public system through a more human and emotional lens.
-                </p>
-
-                <!-- Solution -->
-                <h3 class="text-xl font-semibold text-stone-800 mb-3">Solution to the Problem</h3>
-                <p>
-                    Using colour-coded emotions inspired by the clarity of the NYC Vignelli map, 
-                    each TTC station is translated into a mood. The final visual becomes an emotional 
-                    map of the rider’s inner journey.
-                </p>
-            </section>
-
-
-            <!-- PROCESS & DEVELOPMENT -->
-            <section class="mt-20">
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
-
-                <p class="text-lg text-stone-600 font-light mb-12">
-                    Development focused on emotional research, colour studies, and a Miro board that 
-                    mapped how TTC stations relate to emotional shifts throughout the commute.
-                </p>
-
-                <!-- Emotional Colour System -->
-                <div class="mb-16">
-                    <h3 class="text-xl font-semibold text-stone-900 mb-4">Emotional Colour Framework</h3>
-                    <p class="mb-6">
-                        Inspired by the NYC Vignelli subway map, emotions were assigned colours 
-                        to represent transitions throughout the journey:
-                    </p>
-
-                    <ul class="space-y-2 mb-6 text-stone-700">
-                        <li><strong class="text-stone-900">Yellow</strong> — Happiness / relief</li>
-                        <li><strong class="text-stone-900">Blue</strong> — Sadness / heaviness</li>
-                        <li><strong class="text-stone-900">Red</strong> — Anger / overwhelm</li>
-                        <li><strong class="text-stone-900">Black</strong> — Fear / anxiety</li>
-                        <li><strong class="text-stone-900">Purple</strong> — Surprise / awakening</li>
-                    </ul>
-
-                    <div class="bg-stone-100 p-10 rounded-xl text-center">
-                        <img src="Screenshot 2025-11-21 113358.png"
-                             class="mx-auto rounded-xl shadow-lg w-full max-w-3xl">
-                        <p class="text-sm italic text-stone-400 mt-4">
-                            Emotional colour references inspired by NYC Vignelli design.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Miro Board -->
-                <div class="mb-16">
-                    <h3 class="text-xl font-semibold text-stone-900 mb-4">Process Mapping in Miro</h3>
-                    <p class="mb-6">
-                        The Miro board mapped emotional pacing, transitions, and the meaningful 
-                        emotional differences between each TTC station.
-                    </p>
-
-                    <div class="bg-stone-100 p-10 rounded-xl text-center">
-                        <img src="Screenshot 2025-11-20 104324.png"
-                             class="mx-auto rounded-xl shadow-lg w-full max-w-4xl">
-                        <p class="text-sm italic text-stone-400 mt-4">
-                            Miro board used to map emotional transitions.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Rough Versions -->
-                <div class="mb-16">
-                    <h3 class="text-xl font-semibold text-stone-900 mb-4">Early Digital Layout Exploration</h3>
-                    <p class="mb-6">
-                        Early digital drafts helped refine pacing, spacing, colour shifts, and 
-                        TTC-inspired structure.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div class="bg-stone-100 p-8 rounded-xl">
-                            <img src="Screenshot 2025-11-21 113322.png"
-                                 class="rounded-xl shadow-lg w-full">
-                        </div>
-                        <div class="bg-stone-100 p-8 rounded-xl">
-                            <img src="Screenshot 2025-11-21 113251.png"
-                                 class="rounded-xl shadow-lg w-full">
-                        </div>
-                    </div>
-
-                    <p class="text-sm italic text-stone-400 mt-4 text-center">
-                        Early digital variations showing emotional sequencing.
-                    </p>
-                </div>
-
-                <!-- Station Notes -->
-                <section class="space-y-6 mt-16">
-                    <h3 class="text-2xl font-medium text-stone-900">Station-by-Station Emotional Notes</h3>
-
-                    <p class="text-lg text-stone-600 font-light leading-relaxed">
-                        Notes were documented for each TTC station to better understand how the 
-                        commute feels — not just how it looks physically.
-                    </p>
-
-                    <ul class="space-y-4 text-stone-700 text-lg font-light">
-                        <li><strong class="text-stone-900">Finch → Sheppard</strong> — anticipation, quiet nerves</li>
-                        <li><strong class="text-stone-900">Sheppard → Eglinton</strong> — heaviness, routine</li>
-                        <li><strong class="text-stone-900">Eglinton → Bloor</strong> — emotional noise, overwhelm</li>
-                        <li><strong class="text-stone-900">Bloor → Union</strong> — grounding, soft return to self</li>
-                    </ul>
-                </section>
-
-            </section>
-
-
-            <!-- RESULT -->
-            <section class="mt-20">
-                <h2 class="text-2xl font-medium text-stone-900 mb-6">The Result</h2>
-
-                <p class="mb-10">
-                    The final emotional map transforms the Finch → Union TTC journey into a 
-                    soft, colour-coded emotional timeline that visualizes the inner commute.
-                </p>
-
-                <div class="bg-stone-100 p-10 rounded-xl text-center mb-8">
-                    <img src="Screenshot 2025-10-08 143959.png"
-                         class="mx-auto rounded-xl shadow">
-                    <p class="text-sm italic text-stone-400 mt-4">
-                        Final emotional map — Finch to Union (Line 1 TTC)
-                    </p>
-                </div>
-
-                <!-- Credits -->
-                <section class="mb-20">
-                    <h2 class="text-2xl font-medium text-stone-900 mb-6">Credits</h2>
-
-                    <!-- Contributing Creatives -->
-                    <h3 class="text-lg font-semibold mb-2">Contributing Creatives</h3>
-                    <ul class="list-disc pl-6 mb-6">
-                        <li>Michelle Miyata — UX/UI Design, Visual Design, Emotional Mapping</li>
-                        <li>No additional collaborators</li>
-                    </ul>
-
-                    <!-- Image Credits -->
-                    <h3 class="text-lg font-semibold mb-2">Image Credits</h3>
-                    <ul class="list-disc pl-6 mb-6">
-                        <li>All map visuals created by Michelle Miyata</li>
-                    </ul>
-
-                    <!-- Photo Credits -->
-                    <h3 class="text-lg font-semibold mb-2">Photo Credits</h3>
-                    <ul class="list-disc pl-6 mb-6">
-                        <li>Original screenshots and mockups created by Michelle Miyata</li>
-                        <li>Stock photos used only when noted</li>
-                    </ul>
-
-                    <!-- Mockups -->
-                    <h3 class="text-lg font-semibold mb-2">Mockup Credits</h3>
-                    <ul class="list-disc pl-6 mb-6">
-                        <li>Mockups created using Adobe tools</li>
-                    </ul>
-
-                    <!-- Sound -->
-                    <h3 class="text-lg font-semibold mb-2">Sound Credits</h3>
-                    <ul class="list-disc pl-6 mb-6">
-                        <li>N/A — No audio used</li>
-                    </ul>
-                </section>
-
-                <!-- Acknowledgment -->
-                <div class="mb-10">
-                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Acknowledgments</h3>
-                    <p class="text-stone-700 leading-relaxed">
-                        This project was guided by <strong>Professor Chris</strong>, whose systems-thinking 
-                        perspective helped shape the emotional structure and pacing of the work.  
-                        His feedback encouraged deeper meaning-making behind each station transition.
-                    </p>
-                </div>
-
-            </section>
-
-        </div>
-    </div>
-</div>
 
