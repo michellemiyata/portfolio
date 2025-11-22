@@ -3,139 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About • Michelle Miyata</title>
+    <title>About – Michelle Miyata</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-
-        /* Hover grayscale effect */
-        .profile-photo {
-            filter: grayscale(100%);
-            transition: filter 0.5s ease, transform 0.4s ease;
-        }
-        .profile-photo:hover {
-            filter: grayscale(0%);
-            transform: scale(1.02);
-        }
-    </style>
 </head>
-
-<body class="bg-stone-50 text-stone-800 antialiased">
+<body class="bg-white text-stone-900">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-stone-200 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-semibold tracking-tight text-stone-900">
-            MiyataCreative
-        </a>
-        <nav class="hidden md:flex gap-10 text-sm font-medium">
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+
+        <nav class="hidden md:flex gap-10">
             <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
             <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
-            <a href="about.html" class="text-stone-900 font-semibold">About</a>
+            <a href="about.html" class="text-stone-900 font-medium">About</a>
             <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
         </nav>
     </div>
 </header>
 
-<!-- PAGE CONTENT -->
-<main class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+<!-- SPACER -->
+<div class="h-24"></div>
 
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        <!-- LEFT — PHOTO -->
-        <div class="flex justify-center">
-            <img src="IMG_0205 (1).JPG"
-                 alt="Portrait of Michelle Miyata"
-                 class="profile-photo w-full max-w-lg rounded-xl shadow-lg object-cover">
-        </div>
+<!-- ABOUT SECTION -->
+<section class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-        <!-- RIGHT — TEXT -->
-        <div class="space-y-8">
-
-            <h1 class="text-5xl font-semibold text-stone-900">Hi, I'm Michelle.</h1>
-
-            <p class="text-xl text-stone-700 leading-relaxed">
-                I’m a UX/UI and accessibility-focused designer who builds experiences that feel gentle,
-                thoughtful, and human. I design with emotional awareness — paying attention to the small cues,
-                quiet needs, and subtle feelings that shape how people move through digital spaces.
-            </p>
-
-            <p class="text-lg text-stone-700 leading-relaxed">
-                My work blends inclusive design principles, emotional storytelling, and clear structure.
-                I value calmness, clarity, and creating interactions that help people feel grounded rather
-                than overwhelmed.
-            </p>
-
-            <!-- Project Experience -->
-            <div>
-                <h2 class="text-xl font-semibold text-stone-900 mb-4">Project Experience</h2>
-
-                <div class="space-y-6 border-l border-stone-200 pl-6">
-
-                    <div>
-                        <p class="font-medium text-stone-900">Lead UX/UI Designer — UnionMoods (AR Experience)</p>
-                        <p class="text-sm text-stone-600">Fall 2025</p>
-                        <ul class="list-disc ml-5 text-sm text-stone-700">
-                            <li>Emotional design & TTC-inspired branding</li>
-                            <li>AR concept development & QR interactions</li>
-                            <li>Accessibility considerations</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p class="font-medium text-stone-900">UX/UI Designer — StudyBuddy App</p>
-                        <p class="text-sm text-stone-600">Fall 2025</p>
-                        <ul class="list-disc ml-5 text-sm text-stone-700">
-                            <li>Accessibility-led wireframes</li>
-                            <li>Transcribe / read-aloud tools</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p class="font-medium text-stone-900">Designer — Puzzle Piece Emotional Design</p>
-                        <p class="text-sm text-stone-600">Summer 2025</p>
-                        <ul class="list-disc ml-5 text-sm text-stone-700">
-                            <li>Visual storytelling & emotional alignment</li>
-                            <li>Minimalist layout exploration</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-stone-200 py-16 text-center text-stone-500">
-    <p class="text-lg text-stone-800 mb-6">
-        Every connection starts with a small moment.
-    </p>
-
-    <div class="flex justify-center gap-8 mb-8">
-        <a href="contact.html" class="hover:text-stone-900">Contact →</a>
-        <a href="https://www.linkedin.com/in/michellemiyata" class="hover:text-stone-900">LinkedIn →</a>
+    <!-- PHOTO -->
+    <div class="flex justify-center">
+        <img 
+            src="IMG_0205 (1).JPG"
+            alt="Michelle Miyata Portrait"
+            class="w-full max-w-lg rounded-xl shadow-lg object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.02]"
+        >
     </div>
 
-    <p class="text-sm">&copy; <span id="year"></span> Michelle Miyata.</p>
-</footer>
+    <!-- TEXT -->
+    <div class="space-y-10">
 
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    lucide.createIcons();
-</script>
+        <!-- INTRO -->
+        <div>
+            <h1 class="text-5xl font-semibold mb-6">Hi, I'm Michelle.</h1>
+
+            <p class="text-stone-700 leading-relaxed mb-4">
+                I’m a UX/UI and accessibility-focused designer who creates experiences that feel calm, thoughtful,
+                and emotionally intuitive. My work blends digital craftsmanship with emotional experience design,
+                focusing on the quiet signals users often feel before they articulate them.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+                I design with sensitivity to mood, rhythm, and clarity — shaping technology that meets people where they are,
+                with gentleness and intention.
+            </p>
+        </div>
+
+        <!-- AREAS OF INTEREST -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Areas of Interest</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>Emotional experience design</li>
+                <li>Interaction design & micro-interactions</li>
+                <li>Accessibility (WCAG, inclusive design)</li>
+                <li>Calm technology & stress-reduction UX</li>
+                <li>AR interaction design and emotional wayfinding</li>
+                <li>Research-driven design & behavioural insights</li>
+            </ul>
+        </section>
+
+        <!-- PRIMARY SKILLS -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Primary Skills</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>UX/UI Design</li>
+                <li>Accessibility & Inclusive Design</li>
+                <li>Wireframing & Prototyping</li>
+                <li>Emotional Design Principles</li>
+                <li>User Research & Journey Mapping</li>
+                <li>Visual Storytelling</li>
+                <li>AR Interaction Concepts</li>
+            </ul>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Work Experience</h2>
+
+            <div class="space-y-4 text-stone-700">
+                <div>
+                    <p class="font-medium">Lead UX/UI Designer — UnionMoods (AR Experience)</p>
+                    <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
+                    <p class="text-sm leading-relaxed">Emotional AR wayfinding system based on TTC moods and transit experience.</p>
+                </div>
+
+                <div>
+                    <p class="font-medium">UX/UI Designer — StudyBuddy App</p>
+                    <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
+                    <p class="text-sm leading-relaxed">Designed accessible features including read-aloud, transcription, and focus tools.</p>
+                </div>
+
+                <div>
+                    <p class="font-medium">Designer — Puzzle Piece Emotional Design Project</p>
+                    <p class="text-sm text-stone-500 mb-1">Summer 2025</p>
+                    <p class="text-sm leading-relaxed">Four-part emotional visual exploring alignment, clarity, and emotional resonance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Education</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-3">
+                <li>
+                    <strong>Honours Bachelor of Digital Experience Design (In Progress)</strong><br>
+                    George Brown College — School of Design
+                </li>
+                <li>
+                    <strong>Advanced Diploma in Interaction Design & Development</strong><br>
+                    George Brown College
+                </li>
+            </ul>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Highlights</h2>
+            <ul class="list-disc ml-6 text-stone-700 space-y-2">
+                <li>Strong emotional intuition applied to UX decisions</li>
+                <li>Experience designing AR interactions using emotional cues</li>
+                <li>Calm, supportive, clutter-free UI design style</li>
+                <li>Commitment to accessibility and inclusive design</li>
+                <li>Comfortable with full UX process end-to-end</li>
+            </ul>
+        </section>
+
+    </div>
+</section>
+
 
 </body>
 </html>
-
-
