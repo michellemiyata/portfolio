@@ -22,6 +22,48 @@
 
 <body class="bg-stone-50 text-stone-800 antialiased">
 
+    <!-- NAVBAR -->
+<nav class="w-full fixed top-0 left-0 bg-white/70 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+
+            <!-- LOGO -->
+            <a href="index.html" class="text-xl font-semibold">MiyataCreative</a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex space-x-8 text-stone-700 font-medium">
+                <a href="index.html" class="hover:text-black">Home</a>
+                <a href="work.html" class="hover:text-black">Work</a>
+                <a href="about.html" class="hover:text-black">About</a>
+                <a href="contact.html" class="hover:text-black">Contact</a>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button id="menuBtn" class="md:hidden text-3xl text-stone-700">
+                ☰
+            </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobileMenu" class="hidden flex-col md:hidden pb-4 space-y-3 text-stone-700 font-medium">
+            <a href="index.html" class="hover:text-black">Home</a>
+            <a href="work.html" class="hover:text-black">Work</a>
+            <a href="about.html" class="hover:text-black">About</a>
+            <a href="contact.html" class="hover:text-black">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>
+
+
 <!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-stone-200 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
