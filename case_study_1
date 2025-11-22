@@ -1,1 +1,212 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Piece – Case Study</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fade -->
+    <style>
+        .fade-in { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+
+<body class="bg-white text-stone-900">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-10">
+            <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
+            <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
+            <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
+            <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="h-24"></div>
+
+<!-- CONTENT -->
+<main class="fade-in max-w-4xl mx-auto px-6">
+
+    <!-- Back -->
+    <a href="work.html" class="flex items-center text-stone-500 hover:text-stone-900 transition-colors mb-12">
+        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+        Back to Work
+    </a>
+
+    <!-- TITLE -->
+    <h1 class="text-4xl md:text-5xl font-medium mb-4">Puzzle Piece</h1>
+    <p class="text-2xl text-stone-500 font-light mb-12">Emotional Interaction & Accessibility</p>
+
+    <!-- HERO IMAGE -->
+    <div class="aspect-video bg-stone-200 rounded-xl overflow-hidden mb-16">
+        <img src="Screenshot 2025-11-19 145016.png" class="w-full h-full object-cover">
+    </div>
+
+    <!-- META GRID -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
+        <div>
+            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
+            <p>UX/UI Designer</p>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
+            <p>3 Weeks</p>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
+            <p>Illustrator, Photoshop</p>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
+            <p>Academic Project</p>
+        </div>
+    </div>
+
+    <!-- ABOUT PRODUCTION -->
+    <section class="space-y-12 mb-20">
+        <h2 class="text-2xl font-medium">About Production</h2>
+
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Brief Description</h3>
+            <p>
+                “Puzzle Piece” is an emotional-design visual exploring connection, alignment, 
+                and the quiet moment something finally “clicks.” The four-part series builds toward 
+                <strong>Piece 315 — THE CLICK</strong>, symbolizing inner clarity.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Creative Problem</h3>
+            <p>
+                The challenge: communicate emotional clarity without interaction or animation—only still visuals. 
+                The project needed to express subtle emotional resonance using composition, spacing, 
+                tone, and metaphor.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Solution</h3>
+            <p>
+                Puzzle pieces became the metaphor for emotional alignment. Each part represents a stage in 
+                emotional understanding. Soft tones, minimal layout, and quiet spacing support the reflective, 
+                introspective feeling.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="space-y-12 mb-20">
+        <h2 class="text-2xl font-medium mb-6">Process & Development</h2>
+
+        <!-- Miro -->
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Miro Board</h3>
+            <p>Initial exploration of emotional cues, structure, and pacing.</p>
+            <div class="bg-stone-100 p-6 rounded-xl mt-4">
+                <img src="Screenshot 2025-11-21 104957.png" class="rounded-xl shadow">
+            </div>
+        </div>
+
+        <!-- Rough Versions -->
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Rough Versions</h3>
+            <p>Early spacing, palette, and alignment drafts.</p>
+            <div class="bg-stone-100 p-6 rounded-xl mt-4 space-y-6">
+                <img src="Screenshot 2025-08-12 160247.png" class="rounded-xl shadow">
+                <img src="Screenshot 2025-08-12 154941.png" class="rounded-xl shadow">
+            </div>
+        </div>
+
+        <!-- Screenshots -->
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Screen Captures</h3>
+            <div class="bg-stone-100 p-6 rounded-xl mt-4">
+                <img src="Screenshot 2025-11-19 144716.png" class="rounded-xl shadow">
+            </div>
+        </div>
+
+        <!-- References -->
+        <div>
+            <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Reference Photos</h3>
+            <div class="bg-stone-100 p-6 rounded-xl mt-4">
+                <img src="Screenshot 2025-08-12 135625.png" class="rounded-xl shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="space-y-16 mb-20">
+        <h2 class="text-2xl font-medium">Results</h2>
+
+        <!-- PARTS -->
+        <div class="bg-stone-100 p-10 rounded-xl text-center">
+            <h3 class="text-xl font-semibold mb-4">Part 1 — Pieces I Didn’t Know Were Missing</h3>
+            <img src="Screenshot 2025-11-19 144938.png" class="rounded-xl mx-auto shadow">
+        </div>
+
+        <div class="bg-stone-100 p-10 rounded-xl text-center">
+            <h3 class="text-xl font-semibold mb-4">Part 2 — Pieces That Didn’t Fit Yet Mattered</h3>
+            <img src="Screenshot 2025-11-19 144949.png" class="rounded-xl mx-auto shadow">
+        </div>
+
+        <div class="bg-stone-100 p-10 rounded-xl text-center">
+            <h3 class="text-xl font-semibold mb-4">Part 3 — When the Pieces Made Sense</h3>
+            <img src="Screenshot 2025-11-19 145000.png" class="rounded-xl mx-auto shadow">
+        </div>
+
+        <div class="bg-stone-100 p-10 rounded-xl text-center">
+            <h3 class="text-xl font-semibold mb-4">Part 4 — The Quiet Work</h3>
+            <img src="Screenshot 2025-11-19 145007.png" class="rounded-xl mx-auto shadow">
+        </div>
+
+        <div class="bg-stone-100 p-10 rounded-xl text-center">
+            <h3 class="text-xl font-semibold mb-4">Piece 315 — The Click</h3>
+            <img src="Screenshot 2025-11-19 145016.png" class="rounded-xl mx-auto shadow">
+        </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="border-t border-stone-200 pt-12">
+        <h2 class="text-2xl font-medium mb-6">Credits</h2>
+
+        <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Contributing Creatives</h3>
+        <p class="mb-6">Michelle Miyata — UX/UI Design, Visual Design</p>
+
+        <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Image Credits</h3>
+        <p class="mb-6">All visuals created by Michelle Miyata.</p>
+
+        <h3 class="text-sm font-bold text-stone-400 uppercase mb-2">Mockups</h3>
+        <p class="mb-6">Created using Adobe tools.</p>
+
+        <h3 class="text-xl font-semibold mb-2">Acknowledgments</h3>
+        <p class="leading-relaxed mb-20">
+            Created under the guidance of <strong>Professor Chris</strong>, whose reflective feedback 
+            and focus on emotional intention shaped the clarity and tone of this project.
+        </p>
+    </section>
+
+</main>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
