@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Piece AR – Michelle Miyata</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-stone-900">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+
+            <nav class="hidden md:flex gap-10">
+                <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
+                <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
+                <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
+                <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="h-24"></div>
+
+    <div class="px-6">
+        <button onclick="window.location.href='work.html'"
+            class="flex items-center text-stone-500 hover:text-stone-900 mb-12 transition-colors text-sm tracking-wide">
+            <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Back to Work
+        </button>
+
+        <div class="max-w-4xl mx-auto">
+
+            <!-- TITLE -->
+            <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">Puzzle Piece AR</h1>
+            <p class="text-2xl text-stone-500 font-light mb-12">TikTok Filter & Social Interaction</p>
+
+            <!-- HERO IMAGE -->
+            <div class="aspect-video rounded-xl overflow-hidden bg-stone-200 mb-16">
+                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png"
+                    class="w-full h-full object-contain bg-stone-100" />
+            </div>
+
+            <!-- META GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12 mb-12">
+                <div>
+                    <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
+                    <p class="text-stone-800">AR Creator</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
+                    <p class="text-stone-800">2 Weeks</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
+                    <p class="text-stone-800">Effect House, Illustrator</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
+                    <p class="text-stone-800">Social Media Asset</p>
+                </div>
+            </div>
+
+            <div class="space-y-20 text-lg font-light text-stone-600 leading-relaxed">
+
+                <!-- ABOUT -->
+                <section>
+                    <h2 class="text-2xl font-medium text-stone-900 mb-6">About the Filter</h2>
+
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Concept</h3>
+                    <p class="mb-6">
+                        Extending the emotional narrative of the "Puzzle Piece" project into a shared social experience.
+                        This TikTok AR filter uses facial tracking to detect when a user smiles, triggering the
+                        appearance of the "missing piece" to complete the visual.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-stone-800 mb-3">Interactive Logic</h3>
+                    <p class="mb-6">
+                        The effect relies on a custom interaction patch that monitors the mouth curvature.
+                        When the "smile" value crosses a threshold (0.7), the opacity of the puzzle graphic
+                        interpolates from 0% to 100%, creating a gentle, rewarding feedback loop.
+                    </p>
+                </section>
+
+                <!-- PROCESS -->
+                <section>
+                    <h2 class="text-2xl font-medium text-stone-900 mb-6">Process & Development</h2>
+
+                    <!-- PROCESS VIDEO / SLIDESHOW ANIMATION -->
+                    <div
+                        class="bg-stone-900 p-1 md:p-2 rounded-xl border border-stone-800 shadow-2xl overflow-hidden relative mb-12">
+
+                        <!-- Window Title Bar -->
+                        <div class="h-8 bg-stone-800 flex items-center px-4 space-x-2 rounded-t-lg">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <div class="flex-1 text-center text-xs text-stone-400 font-mono">ar_logic_demo.mov</div>
+                        </div>
+
+                        <!-- Slideshow Container -->
+                        <div class="relative aspect-[4/3] bg-black w-full overflow-hidden group">
+
+                            <!-- Images -->
+                            <img src="puzzlepieceAR/Screenshot 2025-12-06 155428.png"
+                                class="process-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-100"
+                                data-caption="Step 1: Asset Preparation in Illustrator" data-step="1">
+
+                            <img src="puzzlepieceAR/Screenshot 2025-12-06 155434.png"
+                                class="process-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-0"
+                                data-caption="Step 2: Face Tracker Setup in Effect House" data-step="2">
+
+                            <img src="puzzlepieceAR/Screenshot 2025-12-06 155456.png"
+                                class="process-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-0"
+                                data-caption="Step 3: Visual Scripting (Patch Editor)" data-step="3">
+
+                            <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png"
+                                class="process-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-0"
+                                data-caption="Final Result: The 'Click' on Smile" data-step="4">
+
+
+
+
+                            <!-- Overlay Controls / Caption -->
+                            <div
+                                class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12 flex flex-col items-center justify-end">
+                                <p id="process-caption"
+                                    class="text-white text-lg md:text-xl font-medium mb-4 drop-shadow-md transition-all duration-300 text-center">
+                                    Step 1: Asset Preparation in Illustrator
+                                </p>
+
+                                <!-- Progress Bar -->
+                                <div class="w-full max-w-sm h-1 bg-stone-700 rounded-full overflow-hidden">
+                                    <div id="process-progress"
+                                        class="h-full bg-white w-0 transition-all duration-300 ease-linear">
+                                    </div>
+                                </div>
+
+                                <button id="restart-btn"
+                                    class="mt-4 text-xs text-stone-400 hover:text-white uppercase tracking-widest opacity-0 transition-opacity duration-500">
+                                    Replay Journey
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        (function () {
+                            const slides = document.querySelectorAll('.process-slide');
+                            const captionEl = document.getElementById('process-caption');
+                            const progressEl = document.getElementById('process-progress');
+                            const restartBtn = document.getElementById('restart-btn');
+
+                            let currentIndex = 0;
+                            let interval;
+                            const slideDuration = 4000; // 4 seconds per slide
+
+                            function showSlide(index) {
+                                // Update opacity and handle video playback
+                                slides.forEach((slide, i) => {
+                                    const isActive = i === index;
+                                    slide.classList.toggle('opacity-100', isActive);
+                                    slide.classList.toggle('opacity-0', !isActive);
+
+                                    if (slide.tagName === 'VIDEO') {
+                                        if (isActive) {
+                                            slide.play().catch(e => console.log('Autoplay prevented:', e));
+                                        } else {
+                                            slide.pause();
+                                            slide.currentTime = 0;
+                                        }
+                                    }
+                                });
+
+                                // Update text
+                                const currentSlide = slides[index];
+                                captionEl.textContent = currentSlide.getAttribute('data-caption');
+
+                                // Update progress bar
+                                const progress = ((index + 1) / slides.length) * 100;
+                                progressEl.style.width = `${progress}%`;
+                            }
+
+                            function nextSlide() {
+                                if (currentIndex < slides.length - 1) {
+                                    currentIndex++;
+                                    showSlide(currentIndex);
+                                } else {
+                                    // End of slideshow
+                                    clearInterval(interval);
+                                    restartBtn.classList.remove('opacity-0');
+                                    restartBtn.style.cursor = "pointer";
+                                }
+                            }
+
+                            function startSlideshow() {
+                                currentIndex = 0;
+                                showSlide(0);
+                                restartBtn.classList.add('opacity-0');
+
+                                if (interval) clearInterval(interval);
+                                interval = setInterval(nextSlide, slideDuration);
+                            }
+
+                            restartBtn.addEventListener('click', startSlideshow);
+
+                            // Initial Start
+                            startSlideshow();
+                        })();
+                    </script>
+                </section>
+
+                <!-- FINAL DEMO -->
+                <section class="mt-20">
+                    <h2 class="text-2xl font-medium text-stone-900 mb-6">Final Demo Video</h2>
+                    <div
+                        class="aspect-[9/16] max-w-sm mx-auto rounded-2xl overflow-hidden bg-stone-900 shadow-2xl border-4 border-stone-200">
+                        <video src="puzzlepieceAR/puzzle_piece_AR.MP4" controls loop playsinline
+                            class="w-full h-full object-cover"></video>
+                    </div>
+                </section>
+
+                <!-- CREDITS -->
+                <section class="mt-20 border-t border-stone-200 pt-12">
+                    <h2 class="text-2xl font-medium text-stone-900 mb-8">Credits</h2>
+
+                    <div class="mb-10">
+                        <ul class="space-y-4 text-stone-700">
+                            <li><strong>Design & Scripting:</strong> Michelle Miyata</li>
+                            <li><strong>Images:</strong> All created by me unless noted</li>
+                            <li><strong>Audio:</strong> Young and Beautiful — Lana Del Rey</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-10">
+                        <h3 class="text-xl font-semibold mb-3">Acknowledgments</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            Created under the guidance of <strong>Professor Steven</strong>, who taught the fundamentals
+                            of
+                            TikTok Effect House. His mentorship on how to navigate the platform's technical
+                            documentation
+                            was instrumental in understanding the logic required to bring this effect to life.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
