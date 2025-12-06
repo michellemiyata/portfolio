@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,231 +16,323 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
-    <script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
 </script>
 
 <body class="bg-stone-50 text-stone-800 antialiased">
 
-<header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <!-- Logo -->
-    <a href="index.html" class="text-stone-900 text-xl font-semibold">MiyataCreative</a>
+            <!-- Logo -->
+            <a href="index.html" class="text-stone-900 text-xl font-semibold">MiyataCreative</a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-10 text-stone-900">
-      <a href="index.html" class="hover:opacity-70">Home</a>
-      <a href="work.html" class="hover:opacity-70">Work</a>
-      <a href="about.html" class="hover:opacity-70">About</a>
-      <a href="contact.html" class="hover:opacity-70">Contact</a>
-    </nav>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-10 text-stone-900">
+                <a href="index.html" class="hover:opacity-70">Home</a>
+                <a href="work.html" class="hover:opacity-70">Work</a>
+                <a href="about.html" class="hover:opacity-70">About</a>
+                <a href="contact.html" class="hover:opacity-70">Contact</a>
+            </nav>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-stone-900 text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-stone-900 text-3xl focus:outline-none">
+                ☰
+            </button>
+        </div>
 
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu"
-       class="hidden flex-col bg-white text-stone-900 px-6 py-4 space-y-4 md:hidden">
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden flex-col bg-white text-stone-900 px-6 py-4 space-y-4 md:hidden">
 
-    <a href="index.html" class="block hover:opacity-70">Home</a>
-    <a href="work.html" class="block hover:opacity-70">Work</a>
-    <a href="about.html" class="block hover:opacity-70">About</a>
-    <a href="contact.html" class="block hover:opacity-70">Contact</a>
+            <a href="index.html" class="block hover:opacity-70">Home</a>
+            <a href="work.html" class="block hover:opacity-70">Work</a>
+            <a href="about.html" class="block hover:opacity-70">About</a>
+            <a href="contact.html" class="block hover:opacity-70">Contact</a>
 
-  </div>
-</header>
-    
-<!-- JS TOGGLE MENU -->
-<script>
-document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-});
-</script>
+        </div>
+    </header>
+
+    <!-- JS TOGGLE MENU -->
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function () {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
 
 
-<!-- HERO SECTION -->
-<section class="relative h-[90vh] flex flex-col justify-center items-center text-center text-white">
-    <div class="absolute inset-0">
-        <img src="ChatGPT Image Nov 20, 2025, 02_03_58 PM.png"
-             class="w-full h-full object-cover">
-    </div>
+    <!-- HERO SECTION -->
+    <section class="relative h-[90vh] flex flex-col justify-center items-center text-center text-white">
+        <div class="absolute inset-0">
+            <img src="ChatGPT Image Nov 20, 2025, 02_03_58 PM.png" class="w-full h-full object-cover">
+            <!-- Overlay for better contrast -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
 
-    <div class="relative z-10 px-4">
-        <h1 class="text-6xl md:text-7xl font-bold mb-6 drop-shadow-xl text-white">
-            Designing quiet,<br> meaningful digital experiences.
-        </h1>
+        <div class="relative z-10 px-4">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 drop-shadow-xl text-white">
+                Designing quiet,<br> meaningful digital experiences.
+            </h1>
 
-        <p class="text-xl md:text-2xl mb-10 drop-shadow-lg text-white">
-            Emotional UX • Interaction Design • Accessibility
-        </p>
+            <p class="text-xl md:text-2xl mb-10 drop-shadow-lg text-white">
+                Emotional UX • Interaction Design • Accessibility
+            </p>
 
-        <a href="work.html"
-           class="bg-white text-black px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:bg-gray-200 transition">
-            View My Work
-        </a>
-    </div>
-</section>
+            <a href="work.html"
+                class="bg-white text-black px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:bg-gray-200 transition">
+                View My Work
+            </a>
+        </div>
+    </section>
 
 
     <!-- Gradient bottom fade -->
     <div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-stone-50"></div>
-</section>
+    </section>
 
-<!-- INTRO -->
-<section class="max-w-4xl mx-auto px-6 mt-24 mb-28 text-center">
-    <p class="text-2xl md:text-3xl leading-relaxed font-light text-stone-800">
-        I’m Michelle Miyata — a Digital Experience Designer who creates gentle, emotionally attuned interactions.
-    </p>
+    <!-- INTRO -->
+    <section class="max-w-4xl mx-auto px-6 mt-24 mb-28 text-center">
+        <p class="text-2xl md:text-3xl leading-relaxed font-light text-stone-800">
+            I’m Michelle Miyata — a Digital Experience Designer who creates gentle, emotionally attuned interactions.
+        </p>
 
-    <div class="w-10 h-px bg-stone-300 mx-auto my-8"></div>
+        <div class="w-10 h-px bg-stone-300 mx-auto my-8"></div>
 
-    <p class="text-lg text-stone-600">
-        My work focuses on clarity, accessibility, and the small moments that help people feel grounded.
-    </p>
-</section>
+        <p class="text-lg text-stone-600">
+            My work focuses on clarity, accessibility, and the small moments that help people feel grounded.
+        </p>
+    </section>
 
-<!-- APPROACH & SKILLS -->
-<section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 mb-32 border-t border-stone-200 pt-16">
-    <!-- Approach -->
-    <div>
-        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">My Approach</h3>
-        <ul class="space-y-3 text-stone-700 text-lg font-light">
-            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Emotional storytelling</li>
-            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Accessibility-focused UX</li>
-            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Soft visual identity</li>
-            <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Clear, human-centered structure</li>
-        </ul>
-    </div>
-
-    <!-- Skills -->
-   <!-- SKILLS SNAPSHOT -->
-<section class="mt-16">
-    <h2 class="text-sm tracking-widest text-stone-400 font-semibold mb-6">
-        SKILLS SNAPSHOT
-    </h2>
-
-    <div class="flex flex-wrap gap-4">
-
-        <!-- Skill Tags With Hover Animation -->
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
-                    transition transform duration-300 
-                    hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            UX/UI Design
+    <!-- APPROACH & SKILLS -->
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 mb-32 border-t border-stone-200 pt-16">
+        <!-- Approach -->
+        <div>
+            <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-6">My Approach</h3>
+            <ul class="space-y-3 text-stone-700 text-lg font-light">
+                <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Emotional
+                    storytelling</li>
+                <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Accessibility-focused
+                    UX</li>
+                <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Soft visual identity
+                </li>
+                <li class="flex gap-3"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full"></span> Clear, human-centered
+                    structure</li>
+            </ul>
         </div>
 
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+        <!-- Skills -->
+        <!-- SKILLS SNAPSHOT -->
+        <section class="mt-16">
+            <h2 class="text-sm tracking-widest text-stone-400 font-semibold mb-6">
+                SKILLS SNAPSHOT
+            </h2>
+
+            <div class="flex flex-wrap gap-4">
+
+                <!-- Skill Tags With Hover Animation -->
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
                     transition transform duration-300 
                     hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            AR Interaction Design
-        </div>
+                    UX/UI Design
+                </div>
 
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
                     transition transform duration-300 
                     hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            Emotional Experience Design
-        </div>
+                    AR Interaction Design
+                </div>
 
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
                     transition transform duration-300 
                     hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            Accessibility
-        </div>
+                    Emotional Experience Design
+                </div>
 
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
                     transition transform duration-300 
                     hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            User Research
-        </div>
+                    Accessibility
+                </div>
 
-        <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
                     transition transform duration-300 
                     hover:scale-105 hover:-translate-y-1 hover:shadow-md">
-            Wireframing
-        </div>
+                    User Research
+                </div>
 
-    </div>
-</section>
+                <div class="px-4 py-2 bg-stone-100 rounded-xl shadow-sm 
+                    transition transform duration-300 
+                    hover:scale-105 hover:-translate-y-1 hover:shadow-md">
+                    Wireframing
+                </div>
 
-</section>
-
-<!-- FEATURED PROJECTS -->
-<section class="max-w-6xl mx-auto px-6 mb-32">
-    <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-12 text-center">
-        Featured Projects
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-12">
-
-        <!-- Puzzle Piece -->
-       <a href="case_study_1.html" class="inline-block">
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
-                <img src="Screenshot 2025-11-19 145016.png"
-                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
             </div>
-            <h4 class="text-xl font-medium text-stone-900 mb-1">Puzzle Piece</h4>
-            <p class="text-sm text-stone-500 mb-3">Emotional Interaction</p>
-            <p class="text-sm text-stone-600">
-                A soft emotional micro-interaction where a puzzle piece appears when you smile.
-            </p>
-        </a>
+        </section>
 
-        <!-- TTC Emotional Journey -->
-        <a href="case_study_2.html" class="inline-block">
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
-                <img src="Screenshot 2025-10-08 143959.png"
-                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="max-w-6xl mx-auto px-6 mb-32 relative group">
+        <h3 class="text-sm font-semibold text-stone-400 uppercase tracking-widest mb-12 text-center">
+            Featured Projects
+        </h3>
+
+        <!-- Slider Container -->
+        <div class="relative group">
+
+            <!-- Track -->
+            <div id="slider-track"
+                class="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-8 px-1">
+
+                <!-- Project 1 — Puzzle Piece -->
+                <a href="case_study_1.html" class="min-w-[100%] md:min-w-[calc(33.333%-1.33rem)] snap-start block">
+                    <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                        <img src="Screenshot 2025-11-19 145016.png"
+                            class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-xl font-medium text-stone-900 mb-1">Puzzle Piece</h4>
+                    <p class="text-sm text-stone-500 mb-3">Emotional Interaction</p>
+                    <p class="text-sm text-stone-600">
+                        A soft emotional micro-interaction where a puzzle piece appears when you smile.
+                    </p>
+                </a>
+
+                <!-- Project 2 — Emotional Journey TTC -->
+                <a href="case_study_2.html" class="min-w-[100%] md:min-w-[calc(33.333%-1.33rem)] snap-start block">
+                    <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                        <img src="Screenshot 2025-10-08 143959.png"
+                            class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-xl font-medium text-stone-900 mb-1">Emotional Journey: Finch → Union</h4>
+                    <p class="text-sm text-stone-500 mb-3">TTC Emotional Mapping</p>
+                    <p class="text-sm text-stone-600">
+                        A calm emotional interpretation of the TTC Line 1 commute.
+                    </p>
+                </a>
+
+                <!-- Project 3 — Discover BC -->
+                <a href="case_study_3.html" class="min-w-[100%] md:min-w-[calc(33.333%-1.33rem)] snap-start block">
+                    <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                        <img src="Screenshot 2025-11-08 113155.png"
+                            class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-xl font-medium text-stone-900 mb-1">Discover BC</h4>
+                    <p class="text-sm text-stone-500 mb-3">Travel App UI</p>
+                    <p class="text-sm text-stone-600">
+                        A photography-led travel experience designed for clarity and calm.
+                    </p>
+                </a>
+
+                <!-- Project 4 — Puzzle Piece AR -->
+                <a href="case_study_ar_puzzle.html"
+                    class="min-w-[100%] md:min-w-[calc(33.333%-1.33rem)] snap-start block">
+                    <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
+                        <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png"
+                            class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="text-xl font-medium text-stone-900 mb-1">Puzzle Piece AR</h4>
+                    <p class="text-sm text-stone-500 mb-3">TikTok Filter</p>
+                    <p class="text-stone-600 text-sm">
+                        An interactive social AR effect that triggers a visual "click" when the user smiles.
+                    </p>
+                </a>
+
             </div>
-            <h4 class="text-xl font-medium text-stone-900 mb-1">Emotional Journey: Finch → Union</h4>
-            <p class="text-sm text-stone-500 mb-3">TTC Emotional Mapping</p>
-            <p class="text-sm text-stone-600">
-                A calm emotional interpretation of the TTC Line 1 commute.
-            </p>
-        </a>
 
-        <!-- Discover BC -->
-       <a href="case_study_3.html" class="inline-block">
-            <div class="aspect-[4/3] bg-stone-200 rounded-xl overflow-hidden mb-6">
-                <img src="Screenshot 2025-11-08 113155.png"
-                     class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700">
-            </div>
-            <h4 class="text-xl font-medium text-stone-900 mb-1">Discover BC</h4>
-            <p class="text-sm text-stone-500 mb-3">Travel App UI</p>
-            <p class="text-sm text-stone-600">
-                A photography-led travel experience designed for clarity and calm.
-            </p>
-        </a>
-    </div>
-</section>
+            <!-- Controls -->
+            <button id="prev-btn"
+                class="absolute left-0 top-1/2 -translate-y-12 -translate-x-4 md:-translate-x-6 bg-white shadow-xl border border-stone-100 p-3 rounded-full hover:scale-110 transition disabled:opacity-0 disabled:pointer-events-none text-stone-600 z-10"
+                disabled>
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button id="next-btn"
+                class="absolute right-0 top-1/2 -translate-y-12 translate-x-4 md:translate-x-6 bg-white shadow-xl border border-stone-100 p-3 rounded-full hover:scale-110 transition disabled:opacity-0 disabled:pointer-events-none text-stone-600 z-10">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
 
-<!-- FOOTER -->
-<footer class="border-t border-stone-200 py-16 text-center text-stone-500">
-    <p class="text-lg text-stone-800 mb-6">Every connection starts with a small moment.</p>
-    <div class="flex justify-center gap-8 mb-8">
-        <a href="contact.html" class="hover:text-stone-900">Contact →</a>
-        <a href="https://www.linkedin.com/in/michellemiyata" class="hover:text-stone-900">LinkedIn →</a>
-    </div>
-    <p class="text-sm">&copy; <span id="year"></span> Michelle Miyata.</p>
-</footer>
+        </div>
 
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    lucide.createIcons();
-</script>
+    </section>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Slider Logic -->
+    <script>
+        const track = document.getElementById('slider-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function updateButtons() {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            prevBtn.disabled = track.scrollLeft <= 5; // buffer
+            nextBtn.disabled = track.scrollLeft >= maxScroll - 5;
+        }
+
+        function scrollTrack(direction) {
+            const itemWidth = track.firstElementChild.getBoundingClientRect().width;
+            const gap = 32; // gap-8
+            const scrollAmount = itemWidth + gap;
+
+            track.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        nextBtn.addEventListener('click', () => scrollTrack(1));
+        prevBtn.addEventListener('click', () => scrollTrack(-1));
+
+        // Update buttons on scroll
+        track.addEventListener('scroll', () => {
+            // Debounce slightly or just run
+            window.requestAnimationFrame(updateButtons);
+        });
+
+        // Init
+        updateButtons();
+        window.addEventListener('resize', updateButtons);
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-stone-200 py-16 text-center text-stone-500">
+        <p class="text-lg text-stone-800 mb-6">Every connection starts with a small moment.</p>
+        <div class="flex justify-center gap-8 mb-8">
+            <a href="contact.html" class="hover:text-stone-900">Contact →</a>
+            <a href="https://www.linkedin.com/in/michellemiyata" class="hover:text-stone-900">LinkedIn →</a>
+        </div>
+        <p class="text-sm">&copy; <span id="year"></span> Michelle Miyata.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        lucide.createIcons();
+    </script>
 
 </body>
+
 </html>
