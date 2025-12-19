@@ -1,176 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About – Michelle Miyata</title>
-
-    <!-- Tailwind CDN -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
+    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <style>
-        .fade-in { animation: fadeIn 0.5s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
-<body class="bg-white text-stone-900 fade-in">
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
 
-   <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- HEADER -->
+    <header
+        class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-white/20 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-5">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-stone-900">MiyataCreative</a>
 
-    <!-- Logo -->
-    <a href="index.html" class="text-stone-900 text-xl font-semibold">MiyataCreative</a>
+            <nav class="hidden md:flex gap-10 text-sm font-medium text-stone-600">
+                <a href="index.html" class="hover:text-stone-900 transition-colors">Home</a>
+                <a href="work.html" class="hover:text-stone-900 transition-colors">Work</a>
+                <a href="about.html" class="text-stone-900">About</a>
+                <a href="contact.html" class="hover:text-stone-900 transition-colors">Contact</a>
+            </nav>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-10 text-stone-900">
-      <a href="index.html" class="hover:opacity-70">Home</a>
-      <a href="work.html" class="hover:opacity-70">Work</a>
-      <a href="about.html" class="hover:opacity-70">About</a>
-      <a href="contact.html" class="hover:opacity-70">Contact</a>
-    </nav>
+            <button id="menu-btn" class="md:hidden text-stone-900 p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-stone-900 text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 right-0 bg-white border-b border-stone-100 p-6 flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="text-stone-600">Home</a>
+            <a href="work.html" class="text-stone-600">Work</a>
+            <a href="about.html" class="text-stone-900 font-medium">About</a>
+            <a href="contact.html" class="text-stone-600">Contact</a>
+        </div>
+    </header>
 
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu"
-       class="hidden flex-col bg-white text-stone-900 px-6 py-4 space-y-4 md:hidden">
+    <main class="pt-32 pb-20">
 
-    <a href="index.html" class="block hover:opacity-70">Home</a>
-    <a href="work.html" class="block hover:opacity-70">Work</a>
-    <a href="about.html" class="block hover:opacity-70">About</a>
-    <a href="contact.html" class="block hover:opacity-70">Contact</a>
+        <!-- INTRO SECTION -->
+        <section class="max-w-6xl mx-auto px-6 mb-24 fade-in-up">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
 
-  </div>
-</header>
+                <!-- Text Column -->
+                <div class="lg:col-span-7 space-y-8 mt-10">
+                    <h1 class="text-5xl md:text-6xl font-semibold text-stone-900 tracking-tight">
+                        Hi, I'm <span class="serif italic text-indigo-600">Michelle.</span>
+                    </h1>
 
-<!-- JS TOGGLE MENU -->
-<script>
-document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-});
-</script>
+                    <div class="space-y-6 text-xl text-stone-500 font-light leading-relaxed">
+                        <p>
+                            I’m a focused Digital Experience Designer who builds interactions that feel gentle,
+                            thoughtful, and human.
+                        </p>
+                        <p>
+                            My work blends rigorous research, emotional design, and inclusive principles to support
+                            users in the moments they need clarity the most. I design by paying attention to feeling —
+                            the small shifts, the emotional cues, the quiet needs people don’t always say out loud.
+                        </p>
+                        <p class="font-normal text-stone-800">
+                            My goal is to create technology that meets people where they are, with calm and care.
+                        </p>
+                    </div>
 
-<div class="h-24"></div>
-
-<!-- MAIN CONTENT -->
-<section class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-<div class="flex justify-center">
-    <img src="IMG_0205 (1).JPG"
-         class="max-h-[700px] w-[80%] object-cover object-center rounded-lg grayscale hover:grayscale-0 transition duration-500 shadow-md">
-</div>
-
-
-    <!-- TEXT CONTENT -->
-    <div>
-
-        <h1 class="text-4xl font-semibold mb-6">Hi, I'm Michelle.</h1>
-
-        <p class="text-lg text-stone-700 leading-relaxed mb-6">
-            I’m a UX/UI and accessibility-focused designer who builds experiences that feel gentle,
-            thoughtful, and human. My work blends research, emotional design, and inclusive design principles
-            to support users in the moments they need clarity the most.
-        </p>
-
-        <p class="text-lg text-stone-700 leading-relaxed mb-10">
-            I design by paying attention to feeling — the small shifts, the emotional cues, the quiet needs
-            people don’t always say out loud. My goal is to create technology that meets people where they are,
-            with calm and care.
-        </p>
-
-        <!-- AREAS OF INTEREST -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Areas of Interest</h2>
-            <ul class="list-disc ml-6 text-stone-700 space-y-2">
-                <li>Emotional experience design</li>
-                <li>Interaction design & micro-interactions</li>
-                <li>Accessibility (WCAG, inclusive design)</li>
-                <li>Calm technology & stress-reduction UX</li>
-                <li>AR interaction design and emotional wayfinding</li>
-                <li>Research-driven design & behavioural insights</li>
-            </ul>
-        </section>
-
-        <!-- PRIMARY SKILLS -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Primary Skills</h2>
-            <ul class="list-disc ml-6 text-stone-700 space-y-2">
-                <li>UX/UI Design</li>
-                <li>Accessibility & Inclusive Design</li>
-                <li>Wireframing & Prototyping</li>
-                <li>Emotional Design Principles</li>
-                <li>User Research & Journey Mapping</li>
-                <li>Visual Storytelling</li>
-                <li>AR Interaction Concepts</li>
-            </ul>
-        </section>
-
-        <!-- WORK EXPERIENCE -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Work Experience</h2>
-
-            <div class="space-y-6 text-stone-700">
-
-                <div>
-                    <p class="font-medium">Lead UX/UI Designer — UnionMoods (AR Experience)</p>
-                    <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-                    <p class="text-sm leading-relaxed">Emotional AR wayfinding system based on TTC moods and transit experience.</p>
+                    <div class="pt-6">
+                        <a href="contact.html"
+                            class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 transition group">
+                            Let's start a conversation <i data-lucide="arrow-right"
+                                class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div>
-                    <p class="font-medium">UX/UI Designer — StudyBuddy App</p>
-                    <p class="text-sm text-stone-500 mb-1">Fall 2025</p>
-                    <p class="text-sm leading-relaxed">Designed accessible features including read-aloud, transcription, and focus tools.</p>
-                </div>
-
-                <div>
-                    <p class="font-medium">Designer — Puzzle Piece Emotional Design Project</p>
-                    <p class="text-sm text-stone-500 mb-1">Summer 2025</p>
-                    <p class="text-sm leading-relaxed">Four-part emotional visual exploring alignment, clarity, and emotional resonance.</p>
+                <!-- Image Column -->
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-2xl rotate-2 hover:rotate-0 transition duration-700 bg-stone-200">
+                        <img src="IMG_0205 (1).JPG"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 font-sans"
+                            alt="Michelle Miyata" />
+                    </div>
+                    <!-- Decorative Element -->
+                    <div
+                        class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70 -z-10">
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- EDUCATION -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Education</h2>
-            <ul class="list-disc ml-6 text-stone-700 space-y-3">
-                <li>
-                    <strong>Honours Bachelor of Digital Experience Design (In Progress)</strong><br>
-                    George Brown College — School of Design
-                </li>
-                <li>
-                    <strong>Advanced Diploma in Interaction Design & Development</strong><br>
-                    George Brown College
-                </li>
-            </ul>
+
+        <!-- EXPERIENCE & EDUCATION SPLIT -->
+        <section class="bg-white border-y border-stone-100 py-24">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+
+                <!-- Experience -->
+                <div class="space-y-12">
+                    <h2 class="text-2xl font-medium text-stone-900 flex items-center gap-3">
+                        <i data-lucide="briefcase" class="w-5 h-5 text-indigo-500"></i> Experience
+                    </h2>
+
+                    <div class="space-y-10 border-l border-stone-200 pl-8 relative">
+                        <!-- Item 1 -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-indigo-500"></span>
+                            <h3 class="text-lg font-semibold text-stone-900">Lead UX/UI Designer</h3>
+                            <p class="text-stone-500 text-sm mb-2">UnionMoods (AR Experience) • Fall 2025</p>
+                            <p class="text-stone-600 leading-relaxed">
+                                Led the design of an emotional AR wayfinding system for Union Station. Focused on
+                                connecting commuter moods with physical space.
+                            </p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-stone-300"></span>
+                            <h3 class="text-lg font-semibold text-stone-900">UX/UI Designer</h3>
+                            <p class="text-stone-500 text-sm mb-2">StudyBuddy App • Fall 2025</p>
+                            <p class="text-stone-600 leading-relaxed">
+                                Designed accessible productivity features including read-aloud, live transcription, and
+                                sensory-friendly focus tools.
+                            </p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative">
+                            <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-stone-300"></span>
+                            <h3 class="text-lg font-semibold text-stone-900">Designer</h3>
+                            <p class="text-stone-500 text-sm mb-2">Puzzle Piece Emotional Design • Summer 2025</p>
+                            <p class="text-stone-600 leading-relaxed">
+                                Created a conceptual framework and visual series exploring alignment, clarity, and
+                                emotional resonance in digital interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Skills -->
+                <div class="space-y-16">
+
+                    <!-- Education -->
+                    <div>
+                        <h2 class="text-2xl font-medium text-stone-900 flex items-center gap-3 mb-8">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-500"></i> Education
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="p-6 bg-stone-50 rounded-xl border border-stone-100">
+                                <h3 class="font-medium text-stone-900">Honours Bachelor of Digital Experience Design
+                                </h3>
+                                <p class="text-sm text-stone-500 mt-1">George Brown College — School of Design</p>
+                                <span
+                                    class="inline-block mt-3 px-2 py-1 bg-white border border-stone-200 rounded text-xs text-stone-500">In
+                                    Progress</span>
+                            </div>
+                            <div class="p-6 bg-stone-50 rounded-xl border border-stone-100">
+                                <h3 class="font-medium text-stone-900">Advanced Diploma in Interaction Design</h3>
+                                <p class="text-sm text-stone-500 mt-1">George Brown College</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Philosophy/Highlights -->
+                    <div>
+                        <h2 class="text-2xl font-medium text-stone-900 flex items-center gap-3 mb-6">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-indigo-500"></i> Design Philosophy
+                        </h2>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-stone-600">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 mt-0.5 shrink-0"></i>
+                                Strong emotional intuition applied to UX decisions
+                            </li>
+                            <li class="flex items-start gap-3 text-stone-600">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 mt-0.5 shrink-0"></i>
+                                Calm, supportive, clutter-free UI design
+                            </li>
+                            <li class="flex items-start gap-3 text-stone-600">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 mt-0.5 shrink-0"></i>
+                                Commitment to accessibility and inclusive metrics
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
 
-        <!-- HIGHLIGHTS -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4">Highlights</h2>
-            <ul class="list-disc ml-6 text-stone-700 space-y-2">
-                <li>Strong emotional intuition applied to UX decisions</li>
-                <li>Experience designing AR interactions using emotional cues</li>
-                <li>Calm, supportive, clutter-free UI design style</li>
-                <li>Commitment to accessibility and inclusive design</li>
-                <li>Comfortable with full UX process end-to-end</li>
-            </ul>
+
+        <!-- SKILLS GRID -->
+        <section class="max-w-6xl mx-auto px-6 py-24">
+            <h2 class="text-3xl font-medium text-stone-900 mb-12 text-center">Core Capabilities</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Skill Card 1 -->
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100 hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center mb-4 text-indigo-600">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Emotional Design</h3>
+                    <ul class="text-sm text-stone-500 space-y-1">
+                        <li>Micro-interactions</li>
+                        <li>Mood & Tone</li>
+                        <li>Calm Technology</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center mb-4 text-teal-600">
+                        <i data-lucide="accessibility" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Accessibility</h3>
+                    <ul class="text-sm text-stone-500 space-y-1">
+                        <li>WCAG Compliance</li>
+                        <li>Inclusive Design</li>
+                        <li>Screen Reader Opt.</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-rose-50 rounded-full flex items-center justify-center mb-4 text-rose-600">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Interaction</h3>
+                    <ul class="text-sm text-stone-500 space-y-1">
+                        <li>Figma Prototyping</li>
+                        <li>AR Concepts</li>
+                        <li>Wireframing</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100 hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mb-4 text-amber-600">
+                        <i data-lucide="search" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Research</h3>
+                    <ul class="text-sm text-stone-500 space-y-1">
+                        <li>User Journeys</li>
+                        <li>Behavioral Insights</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                </div>
+
+            </div>
         </section>
 
-    </div>
-</section>
+        <!-- FOOTER CTA -->
+        <section class="bg-stone-900 py-24 px-6 text-center text-white rounded-t-3xl mx-4 lg:mx-10">
+            <h2 class="text-4xl font-medium mb-6">Let's build something together.</h2>
+            <p class="text-stone-400 text-lg mb-10 max-w-lg mx-auto">
+                I'm always open to discussing new projects, design opportunities, or just chatting about the future of
+                calm tech.
+            </p>
+            <a href="mailto:hello@example.com"
+                class="inline-flex items-center px-8 py-4 bg-white text-stone-900 rounded-full text-lg font-medium hover:bg-stone-200 transition">
+                Get in Touch <i data-lucide="mail" class="ml-3 w-5 h-5"></i>
+            </a>
+        </section>
 
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
 </body>
-</html>
 
+</html>
