@@ -1,114 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – MiyataCreative</title>
 
-    <!-- Tailwind CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Michelle Miyata</title>
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <style>
-        body { background: #fafafa; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
-<body class="text-stone-900">
+<body
+    class="bg-stone-50 text-stone-900 antialiased selection:bg-indigo-100 selection:text-indigo-900 flex flex-col min-h-screen">
 
-  <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- HEADER -->
+    <header
+        class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-white/20 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-5">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-stone-900">MiyataCreative</a>
 
-    <!-- Logo -->
-    <a href="index.html" class="text-stone-900 text-xl font-semibold">MiyataCreative</a>
+            <nav class="hidden md:flex gap-10 text-sm font-medium text-stone-600">
+                <a href="index.html" class="hover:text-stone-900 transition-colors">Home</a>
+                <a href="work.html" class="hover:text-stone-900 transition-colors">Work</a>
+                <a href="about.html" class="hover:text-stone-900 transition-colors">About</a>
+                <a href="contact.html" class="text-stone-900">Contact</a>
+            </nav>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-10 text-stone-900">
-      <a href="index.html" class="hover:opacity-70">Home</a>
-      <a href="work.html" class="hover:opacity-70">Work</a>
-      <a href="about.html" class="hover:opacity-70">About</a>
-      <a href="contact.html" class="hover:opacity-70">Contact</a>
-    </nav>
+            <button id="menu-btn" class="md:hidden text-stone-900 p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-stone-900 text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 right-0 bg-white border-b border-stone-100 p-6 flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="text-stone-600">Home</a>
+            <a href="work.html" class="text-stone-600">Work</a>
+            <a href="about.html" class="text-stone-600">About</a>
+            <a href="contact.html" class="text-stone-900 font-medium">Contact</a>
+        </div>
+    </header>
 
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu"
-       class="hidden flex-col bg-white text-stone-900 px-6 py-4 space-y-4 md:hidden">
+    <main class="flex-grow flex items-center justify-center pt-32 pb-20 px-6">
 
-    <a href="index.html" class="block hover:opacity-70">Home</a>
-    <a href="work.html" class="block hover:opacity-70">Work</a>
-    <a href="about.html" class="block hover:opacity-70">About</a>
-    <a href="contact.html" class="block hover:opacity-70">Contact</a>
+        <div class="max-w-4xl w-full mx-auto fade-in-up">
 
-  </div>
-</header>
-<!-- JS TOGGLE MENU -->
-<script>
-document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-});
-</script>
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-semibold text-stone-900 mb-6 tracking-tight">
+                    Let's start a <span class="serif italic text-indigo-600">conversation.</span>
+                </h1>
+                <p class="text-xl text-stone-500 font-light max-w-2xl mx-auto leading-relaxed">
+                    I’m currently open to interaction design roles, freelance collaborations, or just connecting with
+                    fellow creatives.
+                </p>
+            </div>
 
-<!-- CONTACT SECTION -->
-<section class="max-w-4xl mx-auto px-6 pt-40 pb-24">
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
 
-    <h1 class="text-4xl font-semibold mb-6">Contact</h1>
-    <p class="text-lg text-stone-600 mb-12">
-        Feel free to reach out for collaborations, questions, or project inquiries.
-    </p>
+                <!-- Email Card -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition group md:col-span-2 text-center">
+                    <div
+                        class="w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6 text-indigo-600 group-hover:scale-110 transition-transform">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium text-stone-900 mb-2">Email Me</h3>
+                    <p class="text-stone-500 mb-8">miyatacreative@gmail.com</p>
+                    <a href="mailto:miyatacreative@gmail.com"
+                        class="inline-flex items-center px-8 py-3 bg-stone-900 text-white rounded-full font-medium hover:bg-indigo-600 transition shadow-lg hover:shadow-indigo-200">
+                        Send Message
+                    </a>
+                </div>
 
-    <!-- CONTACT BOX -->
-    <div class="bg-white border border-stone-200 rounded-2xl shadow p-10 space-y-10">
-
-        <!-- Email -->
-        <div>
-            <h2 class="text-xl font-semibold mb-2">Email</h2>
-            <p class="text-stone-700">
-                <a href="mailto:michellemiyata@gmail.com" class="text-blue-600 hover:underline">
-                    miyatacreative@gmail.com
+                <!-- Social Links -->
+                <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank"
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition flex items-center gap-4 group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-stone-900 group-hover:text-blue-600 transition">LinkedIn</h3>
+                        <p class="text-sm text-stone-500">Connect with me</p>
+                    </div>
+                    <i data-lucide="arrow-up-right"
+                        class="w-4 h-4 text-stone-300 ml-auto group-hover:text-blue-600 transition"></i>
                 </a>
-            </p>
+
+                <a href="https://github.com/michellemiyata" target="_blank"
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition flex items-center gap-4 group">
+                    <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center text-stone-700">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-stone-900 group-hover:text-stone-600 transition">GitHub</h3>
+                        <p class="text-sm text-stone-500">View code</p>
+                    </div>
+                    <i data-lucide="arrow-up-right"
+                        class="w-4 h-4 text-stone-300 ml-auto group-hover:text-stone-600 transition"></i>
+                </a>
+
+                <a href="https://behance.net/michellemiyataa" target="_blank"
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition flex items-center gap-4 group md:col-span-2">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+                        <!-- Basic Palette Icon for Behance -->
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-stone-900 group-hover:text-indigo-600 transition">Behance</h3>
+                        <p class="text-sm text-stone-500">View visual work</p>
+                    </div>
+                    <i data-lucide="arrow-up-right"
+                        class="w-4 h-4 text-stone-300 ml-auto group-hover:text-indigo-600 transition"></i>
+                </a>
+
+            </div>
+
+            <div class="text-center text-stone-400 text-sm">
+                <p>© 2025 Michelle Miyata. All rights reserved.</p>
+            </div>
+
         </div>
+    </main>
 
-        <!-- LinkedIn -->
-        <div>
-            <h2 class="text-xl font-semibold mb-2">LinkedIn</h2>
-            <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank"
-               class="text-blue-600 hover:underline">
-                linkedin.com/in/michelle-miyata
-            </a>
-        </div>
+    <script>
+        lucide.createIcons();
 
-        <!-- GitHub -->
-        <div>
-            <h2 class="text-xl font-semibold mb-2">GitHub</h2>
-            <a href="https://github.com/michellemiyata"
-               target="_blank"
-               class="text-blue-600 hover:underline">
-                github.com/michellemiyata
-            </a>
-        </div>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-         <!-- Behance -->
-        <div>
-            <h2 class="text-xl font-semibold mb-2">Behance</h2>
-            <a href="https://github.com/michellemiyata"
-               target="_blank"
-               class="text-blue-600 hover:underline">
-                behance.com/michellemiyataa
-            </a>
-        </div>
-
-        
-    </div>
-</section>
-
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
 </body>
+
 </html>
-
-
