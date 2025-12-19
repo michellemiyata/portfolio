@@ -13,173 +13,315 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-white text-stone-900">
+<body class="bg-stone-50 text-stone-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
 
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-stone-200 z-50 px-6 py-5">
+    <header
+        class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-white/20 z-50 px-6 py-5 transition-all duration-300"
+        id="main-header">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-semibold text-xl tracking-tight">MiyataCreative</a>
+            <a href="index.html" class="font-medium text-xl tracking-tight text-stone-800">MiyataCreative</a>
 
             <nav class="hidden md:flex gap-10">
-                <a href="index.html" class="text-stone-600 hover:text-stone-900">Home</a>
-                <a href="work.html" class="text-stone-600 hover:text-stone-900">Work</a>
-                <a href="about.html" class="text-stone-600 hover:text-stone-900">About</a>
-                <a href="contact.html" class="text-stone-600 hover:text-stone-900">Contact</a>
+                <a href="index.html" class="text-stone-500 hover:text-stone-900 transition-colors">Home</a>
+                <a href="work.html" class="text-stone-900 font-medium">Work</a> <!-- Active state -->
+                <a href="about.html" class="text-stone-500 hover:text-stone-900 transition-colors">About</a>
+                <a href="contact.html" class="text-stone-500 hover:text-stone-900 transition-colors">Contact</a>
             </nav>
         </div>
     </header>
 
     <div class="h-24"></div>
 
-    <!-- BACK BUTTON -->
-    <div class="max-w-4xl mx-auto px-6 mb-10">
-        <a href="work.html" class="inline-flex items-center text-stone-500 hover:text-stone-900 transition">
-            <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-            Back to Work
-        </a>
-    </div>
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-6xl mx-auto px-6 overflow-hidden">
 
-    <!-- CASE STUDY CONTENT -->
-    <section class="max-w-4xl mx-auto px-6 space-y-20">
-
-        <!-- Title -->
-        <div>
-            <h1 class="text-4xl md:text-5xl font-medium text-stone-900 mb-4">StudyBuddy</h1>
-            <p class="text-2xl text-stone-500 font-light">Productivity & Learning Enhancement</p>
+        <!-- NAV BACK -->
+        <div class="max-w-4xl mx-auto mb-12 fade-in">
+            <a href="work.html" class="inline-flex items-center text-stone-400 hover:text-stone-800 transition group">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                Back to Work
+            </a>
         </div>
 
-        <!-- Hero Image -->
-        <div class="aspect-video rounded-xl overflow-hidden shadow bg-gray-50">
-            <img src="studybuddy_app/Homepage.svg" class="w-full h-full object-cover" />
-        </div>
+        <!-- HERO SECTION -->
+        <section class="max-w-5xl mx-auto mb-24 fade-in">
+            <div class="text-center mb-16">
+                <!-- Badge -->
+                <span
+                    class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-semibold tracking-wider uppercase mb-6">
+                    Case Study
+                </span>
 
-        <!-- Meta Info -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-200 pb-12">
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Role</h4>
-                <p class="text-stone-800">Full Stack Developer & Designer</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Timeline</h4>
-                <p class="text-stone-800">4 Weeks</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Tools</h4>
-                <p class="text-stone-800">PHP, JS, HTML/CSS</p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Context</h4>
-                <p class="text-stone-800">Personal Project</p>
-            </div>
-        </div>
-
-        <!-- ABOUT PRODUCTION -->
-        <section class="space-y-10">
-            <h2 class="text-2xl font-medium text-stone-900">About Production</h2>
-
-            <!-- Brief Description -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">Brief Description</h3>
-                <p>
-                    StudyBuddy is an inclusive productivity web application designed to support neurodivergent students
-                    and those with diverse learning needs.
-                    It prioritizes accessibility through sensory-friendly tools, managing executive dysfunction, and
-                    supporting multi-modal learning styles.
+                <h1 class="text-5xl md:text-7xl font-semibold text-stone-900 mb-6 tracking-tight">StudyBuddy</h1>
+                <p class="text-xl md:text-2xl text-stone-500 font-light max-w-2xl mx-auto">
+                    Inclusive productivity tools designed for neurodiversity and calm focus.
                 </p>
             </div>
 
-            <!-- Creative Problem -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">Creative Problem</h3>
-                <p>
-                    Standard productivity tools often ignore the cognitive barriers faced by students with ADHD,
-                    dyslexia, or sensory processing differences.
-                    Cluttered interfaces and lack of sensory control can increase cognitive load. The challenge was to
-                    create a "calm technology" solution
-                    that reduces overwhelm and promotes equitable access to study resources.
-                </p>
-            </div>
-
-            <!-- Solution -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-3">Solution</h3>
-                <p>
-                    I developed a unified platform using a "glassmorphism" aesthetic with high-contrast elements for
-                    visibility.
-                    Key features target specific accessibility needs: <strong>Text-to-Speech (TTS)</strong> for reading
-                    support,
-                    <strong>Ambient Soundscapes</strong> for sensory regulation, and a <strong>Simplified UI</strong> to
-                    minimize distractions and aid executive function.
-                </p>
+            <!-- Hero Image with "Browser" Look -->
+            <div
+                class="relative rounded-2xl overflow-hidden shadow-2xl border border-stone-200 bg-white aspect-video group">
+                <!-- Simple Browser Bar -->
+                <div
+                    class="absolute top-0 inset-x-0 h-8 bg-stone-100 border-b border-stone-200 flex items-center px-4 space-x-2 z-10">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <!-- Image -->
+                <div class="pt-8 h-full bg-stone-50">
+                    <img src="studybuddy_app/Homepage.svg" class="w-full h-full object-cover object-top" />
+                </div>
             </div>
         </section>
 
-        <!-- PROCESS & FEATURES -->
-        <section class="space-y-16">
-            <h2 class="text-2xl font-medium text-stone-900">Key Features & Design</h2>
 
-            <!-- Dashboard -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Dashboard & Overview</h3>
-                <p>The central hub for tracking study sessions and vocabulary stats.</p>
-                <img src="studybuddy_app/Homepage.svg" class="rounded-xl shadow mt-4" />
+        <!-- META GRID -->
+        <section class="max-w-4xl mx-auto mb-32 fade-in">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-3">Role</h4>
+                    <p class="text-stone-800 font-medium">Full Stack & Design</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-3">Timeline</h4>
+                    <p class="text-stone-800 font-medium">4 Weeks</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-3">Tools</h4>
+                    <p class="text-stone-800 font-medium">PHP, JS, Tailwind</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-stone-100">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-3">Context</h4>
+                    <p class="text-stone-800 font-medium">Personal Project</p>
+                </div>
             </div>
+        </section>
 
-            <!-- Focus Mode -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Focus Mode</h3>
-                <p>
-                    A distraction-free environment designed for <strong>ADD/ADHD</strong> brains.
-                    Integrated "Brown Noise" and ambient soundscapes (Rain, Cafe) provide controlled sensory input
-                    (masking) to help regulate focus and block out distracting stimuli.
-                </p>
-                <div class="mt-4 bg-stone-100 p-6 rounded-xl">
-                    <img src="studybuddy_app/Focus Mode.svg" class="rounded-xl shadow" />
+
+        <!-- CONTEXT & PROBLEM -->
+        <section class="max-w-4xl mx-auto mb-32 space-y-20">
+
+            <div class="fade-in">
+                <h2 class="text-3xl font-medium text-stone-900 mb-8 flex items-center">
+                    <span class="w-8 h-px bg-indigo-500 mr-4"></span>
+                    The Challenge
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-lg font-semibold text-stone-800 mb-4">Cognitive Overload</h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            Standard productivity tools often ignore the cognitive barriers faced by students with ADHD,
+                            dyslexia, or sensory processing differences. Cluttered interfaces can increase anxiety
+                            rather than reducing it.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-stone-800 mb-4">The "Calm" Goal</h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            The challenge was to create a "calm technology" solution that reduces overwhelm, masks
+                            distracting stimuli, and promotes equitable access to study resources—without looking
+                            "medical" or sterile.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Smart Dictionary -->
-            <div>
-                <h3 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">Smart Dictionary</h3>
-                <p>
-                    Supports <strong>Dyslexia and Auditory Learners</strong> through integrated Text-to-Speech (TTS).
-                    Definitions are presented with clear hierarchy and spacing to reduce visual stress, making
-                    vocabulary acquisition more accessible.
-                </p>
-                <img src="studybuddy_app/Smart Dictionary.svg" class="rounded-xl shadow mt-4" />
+            <!-- Quote Breaker -->
+            <div class="my-20 py-16 border-y border-stone-200 text-center fade-in">
+                <blockquote
+                    class="text-2xl md:text-3xl font-serif italic text-stone-700 max-w-3xl mx-auto leading-relaxed">
+                    "How might we design a study tool that works <span
+                        class="text-indigo-600 bg-indigo-50 px-2">with</span> a neurodivergent brain, rather than
+                    forcing it to adapt?"
+                </blockquote>
             </div>
+
+            <div class="fade-in">
+                <h2 class="text-3xl font-medium text-stone-900 mb-8 flex items-center">
+                    <span class="w-8 h-px bg-indigo-500 mr-4"></span>
+                    The Solution
+                </h2>
+                <p class="text-stone-600 text-lg leading-relaxed max-w-3xl">
+                    I developed a unified platform using a <strong>Glassmorphism</strong> aesthetic—mimicking the depth
+                    of frosted glass to create hierarchy without visual noise. Key features target specific
+                    accessibility needs:
+                </p>
+                <ul class="mt-8 grid md:grid-cols-3 gap-6">
+                    <li
+                        class="flex flex-col items-center text-center p-6 bg-white rounded-xl border border-stone-100 shadow-sm">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg mb-4">
+                            <i data-lucide="mic" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-medium text-stone-800">Text-to-Speech</span>
+                        <span class="text-sm text-stone-500 mt-2">For reading support</span>
+                    </li>
+                    <li
+                        class="flex flex-col items-center text-center p-6 bg-white rounded-xl border border-stone-100 shadow-sm">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg mb-4">
+                            <i data-lucide="volume-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-medium text-stone-800">Ambient Sound</span>
+                        <span class="text-sm text-stone-500 mt-2">Sensory regulation</span>
+                    </li>
+                    <li
+                        class="flex flex-col items-center text-center p-6 bg-white rounded-xl border border-stone-100 shadow-sm">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg mb-4">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-medium text-stone-800">Simplified UI</span>
+                        <span class="text-sm text-stone-500 mt-2">Executive function aid</span>
+                    </li>
+                </ul>
+            </div>
+
         </section>
 
-        <!-- RESULTS / REFLECTION -->
-        <section class="space-y-16">
-            <h2 class="text-2xl font-medium text-stone-900">Reflection</h2>
 
-            <div class="bg-stone-100 p-10 rounded-xl">
-                <h3 class="text-xl font-semibold mb-6">Outcome</h3>
-                <p class="leading-relaxed">
-                    StudyBuddy demonstrates how digital tools can be designed for inclusivity from the ground up.
-                    By prioritizing accessibility features—like sensory controls and multi-modal learning aids—the app
-                    empowers students with disabilities
-                    to manage their learning independently and with confidence.
-                </p>
+        <!-- VISUALS / FEATURES (ZIG ZAG) -->
+        <section class="max-w-6xl mx-auto mb-32 space-y-32">
+
+            <!-- Feature 1 -->
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div
+                    class="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-stone-50 aspect-[4/3] group">
+                    <img src="studybuddy_app/Homepage.svg"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" />
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-indigo-500 font-semibold tracking-widest text-xs uppercase mb-2 block">01
+                        Overview</span>
+                    <h3 class="text-3xl font-medium text-stone-900 mb-4">Unified Dashboard</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        The central hub tracks study sessions and vocabulary stats at a glance. The interface uses soft
+                        shadows and translucency (Glassmorphism) to keep the most important task—studying—in clear focus
+                        while maintaining a premium feel.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div class="order-1">
+                    <span class="text-indigo-500 font-semibold tracking-widest text-xs uppercase mb-2 block">02
+                        Focus</span>
+                    <h3 class="text-3xl font-medium text-stone-900 mb-4">Sensory-Friendly Focus Mode</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        A distraction-free environment designed for ADHD brains. Users can toggle "Brown Noise" or
+                        ambient soundscapes (Rain, Cafe) to mask background noise. The timer is large and distinct,
+                        reducing time blindness.
+                    </p>
+                </div>
+                <div
+                    class="order-2 relative rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-stone-50 aspect-[4/3] group">
+                    <img src="studybuddy_app/Focus%20Mode.svg"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" />
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div
+                    class="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-stone-50 aspect-[4/3] group">
+                    <img src="studybuddy_app/Smart%20Dictionary.svg"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" />
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-indigo-500 font-semibold tracking-widest text-xs uppercase mb-2 block">03
+                        Learning</span>
+                    <h3 class="text-3xl font-medium text-stone-900 mb-4">Smart Dictionary</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        Supporting auditory learners and those with dyslexia, definitions are presented with generous
+                        line-height and integrated Text-to-Speech (TTS). This multi-modal approach reinforces vocabulary
+                        acquisition without visual stress.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- REFLECTION -->
+        <section class="max-w-4xl mx-auto mb-32 fade-in">
+            <div
+                class="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-3xl p-10 md:p-16 text-white shadow-xl relative overflow-hidden">
+                <!-- Decorative Circle -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+
+                <h2 class="text-3xl font-medium mb-6 relative z-10">Reflection & Impact</h2>
+                <div class="prose prose-lg prose-invert text-indigo-100 relative z-10">
+                    <p>
+                        StudyBuddy demonstrates that accessibility isn't just about compliance—it's about design
+                        excellence. By prioritizing sensory controls and multi-modal support from the beginning, we
+                        created a tool that empowers students to manage their learning independently and with
+                        confidence.
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- CREDITS -->
-        <section class="border-t border-stone-200 pt-12">
-            <h2 class="text-2xl font-medium text-stone-900 mb-6">Credits</h2>
-
-            <ul class="space-y-2 text-stone-700">
-                <li><strong>Design & Development:</strong> Michelle Miyata</li>
-                <li><strong>Assets:</strong> Generated Icons & SVG Illustrations</li>
-            </ul>
+        <section class="max-w-4xl mx-auto mb-20 pt-10 border-t border-stone-200 text-center fade-in">
+            <h4 class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4">Project Credits</h4>
+            <div class="flex flex-col md:flex-row justify-center gap-8 text-stone-600">
+                <span><strong>Design:</strong> Michelle Miyata</span>
+                <span><strong>Development:</strong> Michelle Miyata</span>
+                <span><strong>Assets:</strong> Custom SVGs & Icons</span>
+            </div>
         </section>
 
-    </section>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="bg-stone-100 py-12 border-t border-stone-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-stone-500 mb-6">Explore More Work</h3>
+            <div class="flex justify-center gap-4">
+                <a href="work.html"
+                    class="px-6 py-3 bg-white border border-stone-200 rounded-full hover:shadow-md transition text-stone-800">All
+                    Projects</a>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         lucide.createIcons();
+
+        // Simple Intersection Observer for Fade In
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
     </script>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 
 </body>
 
