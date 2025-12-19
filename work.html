@@ -71,9 +71,29 @@
 
             <!-- Project StudyBuddy -->
             <a href="case_study_studybuddy.html" class="grid grid-cols-1 md:grid-cols-2 gap-10 group">
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
-                    <img src="studybuddy_app/Homepage.svg"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 p-4">
+                    <div class="grid grid-cols-2 gap-4 h-full w-full">
+                        <!-- Main Screen -->
+                        <div
+                            class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:-translate-y-1 transition-transform duration-500">
+                            <img src="studybuddy_app/Homepage.svg" class="w-full h-full object-cover object-top"
+                                alt="StudyBuddy Homepage" />
+                        </div>
+
+                        <!-- Secondary Screens -->
+                        <div class="grid grid-rows-2 gap-4">
+                            <div
+                                class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:translate-x-1 transition-transform duration-500 delay-75">
+                                <img src="studybuddy_app/Focus%20Mode.svg" class="w-full h-full object-cover object-top"
+                                    alt="StudyBuddy Focus Mode" />
+                            </div>
+                            <div
+                                class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:translate-x-1 transition-transform duration-500 delay-150">
+                                <img src="studybuddy_app/Smart%20Dictionary.svg"
+                                    class="w-full h-full object-cover object-top" alt="StudyBuddy Dictionary" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
