@@ -11,6 +11,37 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @keyframes fadeCycle {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            5%,
+            33% {
+                opacity: 1;
+            }
+
+            38% {
+                opacity: 0;
+            }
+        }
+
+        .animate-fade-1 {
+            animation: fadeCycle 9s infinite 0s;
+        }
+
+        .animate-fade-2 {
+            animation: fadeCycle 9s infinite 3s;
+        }
+
+        .animate-fade-3 {
+            animation: fadeCycle 9s infinite 6s;
+        }
+    </style>
 </head>
 
 <body class="bg-white text-stone-900">
@@ -71,28 +102,21 @@
 
             <!-- Project StudyBuddy -->
             <a href="case_study_studybuddy.html" class="grid grid-cols-1 md:grid-cols-2 gap-10 group">
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 p-4">
-                    <div class="grid grid-cols-2 gap-4 h-full w-full">
-                        <!-- Main Screen -->
-                        <div
-                            class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:-translate-y-1 transition-transform duration-500">
-                            <img src="studybuddy_app/Homepage.svg" class="w-full h-full object-cover object-top"
-                                alt="StudyBuddy Homepage" />
-                        </div>
-
-                        <!-- Secondary Screens -->
-                        <div class="grid grid-rows-2 gap-4">
-                            <div
-                                class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:translate-x-1 transition-transform duration-500 delay-75">
-                                <img src="studybuddy_app/Focus%20Mode.svg" class="w-full h-full object-cover object-top"
-                                    alt="StudyBuddy Focus Mode" />
-                            </div>
-                            <div
-                                class="relative rounded-lg overflow-hidden shadow-sm border border-black/5 group-hover:translate-x-1 transition-transform duration-500 delay-150">
-                                <img src="studybuddy_app/Smart%20Dictionary.svg"
-                                    class="w-full h-full object-cover object-top" alt="StudyBuddy Dictionary" />
-                            </div>
-                        </div>
+                <div
+                    class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 relative group-hover:shadow-md transition-all">
+                    <!-- Slideshow Container -->
+                    <div class="absolute inset-x-12 inset-y-8"> <!-- Added padding for device look or just frame -->
+                        <!-- Actually, full bleed or contained? User liked the 'collage' but wanted slideshow. 
+                             Let's make them fill the container nicely. -->
+                        <img src="studybuddy_app/Homepage.svg"
+                            class="absolute inset-0 w-full h-full object-contain animate-fade-1"
+                            alt="StudyBuddy Homepage" />
+                        <img src="studybuddy_app/Focus%20Mode.svg"
+                            class="absolute inset-0 w-full h-full object-contain animate-fade-2"
+                            alt="StudyBuddy Focus Mode" />
+                        <img src="studybuddy_app/Smart%20Dictionary.svg"
+                            class="absolute inset-0 w-full h-full object-contain animate-fade-3"
+                            alt="StudyBuddy Dictionary" />
                     </div>
                 </div>
 
