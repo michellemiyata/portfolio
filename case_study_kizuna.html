@@ -165,10 +165,9 @@
                 </div>
             </div>
 
-            <!-- Phase 2: Menu Design (Old 01) - Image Right -->
-            <!-- Phase 2: Menu Browsing (Old 01) - Full Width -->
-            <div class="flex flex-col gap-12 fade-in">
-                <div class="order-1 text-center max-w-3xl mx-auto">
+            <!-- Phase 2: Menu Browsing (Old 01) - Image Right -->
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div class="order-1">
                     <span class="text-indigo-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Phase
                         02</span>
                     <h3 class="text-3xl font-medium text-stone-900 mb-4">Menu Browsing</h3>
@@ -178,8 +177,9 @@
                     </p>
                 </div>
                 <div
-                    class="order-2 relative rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-stone-50 w-full group">
-                    <img src="restaurant_kizuna_app/images/Menu 3.png" class="w-full h-auto object-cover" />
+                    class="order-2 relative rounded-2xl overflow-hidden shadow-2xl border border-stone-100 bg-stone-50 aspect-[4/3] group flex items-center justify-center p-6">
+                    <img src="restaurant_kizuna_app/images/Menu 3.png"
+                        class="h-full w-auto object-contain shadow-sm rounded-lg group-hover:scale-105 transition duration-700" />
                 </div>
             </div>
 
