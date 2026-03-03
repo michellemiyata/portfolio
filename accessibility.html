@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Michelle Miyata</title>
+    <title>Philosophy | Michelle Miyata</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Icons -->
@@ -104,7 +104,7 @@
 
         .fade-up.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
         .link-underline {
@@ -179,57 +179,91 @@
             <a href="index.html" class="link-underline">Home</a>
             <a href="work.html" class="link-underline">Work</a>
             <a href="about.html" class="link-underline">About</a>
-            <a href="accessibility.html" class="link-underline">Philosophy</a>
-            <a href="contact.html" class="link-underline active" aria-current="page">Contact</a>
+            <a href="accessibility.html" class="link-underline active" aria-current="page">Philosophy</a>
+            <a href="contact.html" class="link-underline">Contact</a>
         </div>
     </nav>
 
-    <main class="w-full max-w-4xl flex-grow mb-32 flex flex-col justify-center" id="main-content">
+    <main class="w-full max-w-4xl flex-grow" id="main-content">
 
-        <header class="mb-24 fade-up text-center md:text-left" style="transition-delay: 0.1s">
-            <h1 class="text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
+        <!-- INTRO SECTION -->
+        <section class="mb-24 md:mb-32 fade-up" style="transition-delay: 0.1s">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
                 style="line-height: 1.15;">
-                Let's start a <br class="hidden md:block">
-                <span class="serif italic text-[var(--text-secondary)]">conversation.</span>
+                A <span class="serif italic text-[var(--text-secondary)]">quiet</span> approach to digital spaces.
             </h1>
-            <p class="text-xl md:text-2xl max-w-2xl font-light text-[var(--text-secondary)] md:mx-0">
-                I’m currently open to interaction design roles, freelance collaborations, or just connecting with fellow
-                creatives.
+            <p class="text-xl md:text-2xl max-w-2xl font-light text-[var(--text-secondary)] leading-relaxed">
+                Design isn't just about what people see—it's about how they feel. I believe in eliminating friction,
+                reducing cognitive load, and building products that respect a user's time and mental energy.
             </p>
-        </header>
+        </section>
 
-        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+        <!-- CORE PRINCIPLES -->
+        <section class="mb-32">
+            <div class="space-y-24">
 
-            <!-- Email -->
-            <a href="mailto:miyatacreative@gmail.com"
-                class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none">
-                <i data-lucide="mail" class="w-8 h-8 text-[var(--text-primary)]"></i>
-                <div>
-                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">Email</h3>
-                    <p class="text-[var(--text-secondary)] text-base">miyatacreative@gmail.com</p>
-                </div>
-            </a>
+                <!-- Principle 1 -->
+                <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
+                    <div class="md:col-span-4">
+                        <span
+                            class="text-xs font-medium tracking-widest text-[var(--text-secondary)] uppercase">Principle
+                            01</span>
+                        <h2 class="text-3xl font-medium text-[var(--text-primary)] mt-4 mb-2">Accessibility First</h2>
+                    </div>
+                    <div class="md:col-span-8">
+                        <p class="text-xl font-light leading-relaxed text-[var(--text-secondary)]">
+                            Accessibility shouldn't be an afterthought or a compliance checklist. It is the foundation
+                            of good design.
+                            From high-contrast themes to sensory-friendly toggles, building inclusive experiences means
+                            recognizing that
+                            users navigate the digital world with different needs, abilities, and environmental
+                            constraints.
+                        </p>
+                    </div>
+                </article>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank" rel="noopener noreferrer"
-                class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none">
-                <i data-lucide="linkedin" class="w-8 h-8 text-[var(--text-primary)]"></i>
-                <div>
-                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">LinkedIn</h3>
-                    <p class="text-[var(--text-secondary)] text-base">Connect on professional network</p>
-                </div>
-            </a>
+                <!-- Principle 2 -->
+                <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
+                    <div class="md:col-span-4">
+                        <span
+                            class="text-xs font-medium tracking-widest text-[var(--text-secondary)] uppercase">Principle
+                            02</span>
+                        <h2 class="text-3xl font-medium text-[var(--text-primary)] mt-4 mb-2">Emotional Resonance</h2>
+                    </div>
+                    <div class="md:col-span-8">
+                        <p class="text-xl font-light leading-relaxed text-[var(--text-secondary)]">
+                            The space between a user and an interface is deeply emotional. Whether an app causes anxiety
+                            or brings relief
+                            often comes down to tone, typography, and pacing. I focus on creating calm, grounded
+                            experiences that
+                            don't demand attention, but gracefully earn it.
+                        </p>
+                    </div>
+                </article>
 
-            <!-- GitHub -->
-            <a href="https://github.com/michellemiyata" target="_blank" rel="noopener noreferrer"
-                class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none">
-                <i data-lucide="github" class="w-8 h-8 text-[var(--text-primary)]"></i>
-                <div>
-                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">GitHub</h3>
-                    <p class="text-[var(--text-secondary)] text-base">View code and projects</p>
-                </div>
-            </a>
+                <!-- Principle 3 -->
+                <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
+                    <div class="md:col-span-4">
+                        <span
+                            class="text-xs font-medium tracking-widest text-[var(--text-secondary)] uppercase">Principle
+                            03</span>
+                        <h2 class="text-3xl font-medium text-[var(--text-primary)] mt-4 mb-2">Micro-Interactions</h2>
+                    </div>
+                    <div class="md:col-span-8">
+                        <p class="text-xl font-light leading-relaxed text-[var(--text-secondary)] mb-6">
+                            Technology feels human through the smallest details. The subtle way a button yields when
+                            clicked,
+                            how a transition gently fades in, or how an error state offers reassurance instead of blame.
+                            These invisible details show the invisible hand of a designer who cares.
+                        </p>
+                        <a href="case_study_1.html"
+                            class="inline-flex items-center text-[var(--text-primary)] font-medium hover:opacity-70 transition border-b border-[var(--text-primary)] pb-1">
+                            Read about 'The Click' project <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </article>
 
+            </div>
         </section>
 
     </main>

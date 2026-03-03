@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work – Michelle Miyata</title>
+    <title>Work | Michelle Miyata</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
     <style>
+        :root {
+            /* Light Mode Variables */
+            --bg-primary: #FAF9F6;
+            --bg-secondary: #F3F1ED;
+            --text-primary: #292524;
+            --text-secondary: #57534E;
+            --accent: #78716C;
+            --focus-ring: rgba(120, 113, 108, 0.4);
+            --border-subtle: #E7E5E4;
+        }
+
+        .dark-theme {
+            /* High Contrast Dark Mode */
+            --bg-primary: #1C1917;
+            --bg-secondary: #292524;
+            --text-primary: #F5F5F4;
+            --text-secondary: #D6D3D1;
+            --accent: #E7E5E4;
+            --focus-ring: rgba(231, 229, 228, 0.6);
+            --border-subtle: #44403C;
+        }
+
+        .logo-blend {
+            mix-blend-mode: multiply;
+        }
+
+        .dark-theme .logo-blend {
+            filter: invert(1) hue-rotate(180deg) brightness(1.2);
+            mix-blend-mode: screen;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1,
@@ -24,305 +61,421 @@
         h3,
         h4 {
             font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
         }
 
         .serif {
             font-family: 'Playfair Display', serif;
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            ::before,
+            ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .no-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            box-shadow: 0 0 0 6px var(--focus-ring);
+        }
+
+        .fade-up {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(12px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fade-up.visible {
+            opacity: 1;
+            transform: none;
         }
 
-        .delay-100 {
-            animation-delay: 0.1s;
+        .link-underline {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.3s ease;
         }
 
-        .delay-200 {
-            animation-delay: 0.2s;
+        .link-underline:hover,
+        .link-underline.active {
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
-        .delay-300 {
-            animation-delay: 0.3s;
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
         }
 
-        /* Slideshow Animation for Cards */
-        @keyframes fadeCycle {
-
-            0%,
-            100% {
-                opacity: 0;
-            }
-
-            5%,
-            33% {
-                opacity: 1;
-            }
-
-            38% {
-                opacity: 0;
-            }
+        .link-underline:hover::after,
+        .link-underline.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
-        .animate-fade-1 {
-            animation: fadeCycle 9s infinite 0s;
+        .dynamic-bg {
+            background-color: var(--bg-secondary);
         }
 
-        .animate-fade-2 {
-            animation: fadeCycle 9s infinite 3s;
+        .dynamic-border {
+            border-color: var(--border-subtle);
         }
 
-        .animate-fade-3 {
-            animation: fadeCycle 9s infinite 6s;
+        .project-card:hover .project-image {
+            transform: scale(1.02);
         }
     </style>
 </head>
 
-<body class="bg-stone-50 text-stone-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+<body
+    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:text-stone-900">
 
-    <!-- HEADER -->
-    <header
-        class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-white/20 transition-all duration-300">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-5">
-            <a href="index.html" class="text-xl font-medium tracking-tight text-stone-900">MiyataCreative</a>
+    <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
+        aria-label="Accessibility Controls">
+        <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+            aria-label="Toggle Animations" aria-pressed="false" title="Reduce motion">
+            <i data-lucide="play" class="w-5 h-5 opacity-70"></i>
+        </button>
+        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+            aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
+            <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
+        </button>
+    </div>
 
-            <nav class="hidden md:flex gap-10 text-sm font-medium text-stone-600">
-                <a href="index.html" class="hover:text-stone-900 transition-colors">Home</a>
-                <a href="work.html" class="text-stone-900 font-medium">Work</a>
-                <a href="about.html" class="hover:text-stone-900 transition-colors">About</a>
-                <a href="contact.html" class="hover:text-stone-900 transition-colors">Contact</a>
-            </nav>
-
-            <button id="menu-btn" class="md:hidden text-stone-900 p-2">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+    <nav
+        class="w-full max-w-4xl mb-24 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
+            <img src="miyata_logo.png" alt="MiyataCreative Logo"
+                class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
+            <span
+                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">UX
+                / Product Designer</span>
+        </a>
+        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-sm md:text-base mt-2 md:mt-0">
+            <a href="index.html" class="link-underline">Home</a>
+            <a href="work.html" class="link-underline active" aria-current="page">Work</a>
+            <a href="about.html" class="link-underline">About</a>
+            <a href="accessibility.html" class="link-underline">Philosophy</a>
+            <a href="contact.html" class="link-underline">Contact</a>
         </div>
+    </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden absolute top-full left-0 right-0 bg-white border-b border-stone-100 p-6 flex-col gap-4 md:hidden shadow-xl">
-            <a href="index.html" class="text-stone-600">Home</a>
-            <a href="work.html" class="text-stone-900 font-medium">Work</a>
-            <a href="about.html" class="text-stone-600">About</a>
-            <a href="contact.html" class="text-stone-600">Contact</a>
-        </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto px-6 pt-40 pb-32">
-
-        <!-- INTRO -->
-        <div class="mb-24 text-center md:text-left fade-in-up">
-            <h1 class="text-5xl md:text-6xl font-semibold text-stone-900 mb-6 tracking-tight">
-                Selected Work
+    <main class="w-full max-w-4xl flex-grow" id="main-content">
+        <header class="mb-32 fade-up" style="transition-delay: 0.1s">
+            <h1 class="text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
+                style="line-height: 1.15;">
+                Selected <span class="serif italic text-[var(--text-secondary)]">Work</span>
             </h1>
-            <p class="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
+            <p class="text-xl md:text-2xl max-w-2xl font-light text-[var(--text-secondary)]">
                 A collection of projects exploring emotion, accessibility, and calm technology.
             </p>
-        </div>
+        </header>
 
-        <!-- WORK GRID -->
-        <div class="grid md:grid-cols-2 gap-x-10 gap-y-16">
+        <section class="space-y-32 mb-32" aria-label="Project List">
 
-            <!-- Project 1: StudyBuddy (Featured) -->
-            <a href="case_study_studybuddy.html" class="group block fade-in-up delay-100">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500">
-                    <div class="absolute inset-x-8 inset-y-6">
-                        <img src="studybuddy_app/Homepage.svg"
-                            class="absolute inset-0 w-full h-full object-contain animate-fade-1" />
-                        <img src="studybuddy_app/Focus%20Mode.svg"
-                            class="absolute inset-0 w-full h-full object-contain animate-fade-2" />
-                        <img src="studybuddy_app/Smart%20Dictionary.svg"
-                            class="absolute inset-0 w-full h-full object-contain animate-fade-3" />
+            <!-- StudyBuddy -->
+            <article class="group project-card fade-up">
+                <a href="case_study_studybuddy.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
                     </div>
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        StudyBuddy</h3>
-                    <p class="text-stone-500 line-clamp-2">Inclusive productivity tool designed for neurodiversity and
-                        sensory-friendly focus.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">UX/UI</span>
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Accessibility</span>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-3xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                StudyBuddy</h3>
+                            <div class="flex gap-4">
+                                <span
+                                    class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-4 py-1.5 rounded-full">UX/UI</span>
+                                <span
+                                    class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-4 py-1.5 rounded-full">Accessibility</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-xl font-light leading-relaxed">
+                            Inclusive productivity tool designed for neurodiversity and sensory-friendly focus.
+                        </p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </article>
 
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
 
-            <!-- Project 2: Restaurant Kizuna App -->
-            <a href="case_study_kizuna.html" class="group block fade-in-up delay-200">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="restaurant_kizuna_app/images/Welcome%20Back.png"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        Kizuna Dining</h3>
-                    <p class="text-stone-500 line-clamp-2">A seamless dining companion app enhancing the customer
-                        experience through digital ordering.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">UX/UI</span>
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">App
-                            Design</span>
+            <!-- Kizuna Dining -->
+            <article class="group project-card fade-up">
+                <a href="case_study_kizuna.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining Interface"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
                     </div>
-                </div>
-            </a>
-
-            <!-- Project 3: UnionMoods -->
-            <a href="case_study_unionmoods.html" class="group block fade-in-up delay-200">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        UnionMoods AR</h3>
-                    <p class="text-stone-500 line-clamp-2">Augmented reality experience mapping emotional connection in
-                        public transit.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">AR
-                            Design</span>
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">UX
-                            Research</span>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-3xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                Kizuna Dining</h3>
+                            <div class="flex gap-4">
+                                <span
+                                    class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-4 py-1.5 rounded-full">UX/UI</span>
+                                <span
+                                    class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-4 py-1.5 rounded-full">App
+                                    Design</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-xl font-light leading-relaxed">
+                            A seamless dining companion app enhancing the customer experience through digital ordering.
+                        </p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </article>
 
-            <!-- Project 3: Puzzle Piece -->
-            <a href="case_study_1.html" class="group block fade-in-up delay-100">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="Screenshot 2025-11-19 145016.png"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        Puzzle Piece</h3>
-                    <p class="text-stone-500 line-clamp-2">Emotional interaction design exploring alignment and clarity.
-                    </p>
-                    <div class="mt-4 flex gap-2">
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Visual
-                            Design</span>
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Concept</span>
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
+
+            <!-- UnionMoods AR -->
+            <article class="group project-card fade-up">
+                <a href="case_study_unionmoods.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
                     </div>
-                </div>
-            </a>
-
-            <!-- Project 4: Discover BC -->
-            <a href="case_study_3.html" class="group block fade-in-up delay-200">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="Screenshot 2025-11-08 113155.png"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        Discover BC</h3>
-                    <p class="text-stone-500 line-clamp-2">Calm, photography-led travel booking experience.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">UI
-                            Design</span>
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Mobile</span>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                UnionMoods AR</h3>
+                            <div class="flex gap-3">
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">AR
+                                    Design</span>
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">UX
+                                    Research</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            Augmented reality experience mapping emotional connection in public transit.
+                        </p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </article>
 
-            <!-- Project 5: Emotional Journey TTC -->
-            <a href="case_study_2.html" class="group block fade-in-up delay-100">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="Screenshot 2025-10-08 143959.png"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        Emotional Journey: TTC</h3>
-                    <p class="text-stone-500 line-clamp-2">A calm emotional interpretation of the TTC Line 1 commute
-                        visualizing shifting moods.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Wayfinding</span>
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Data
-                            Viz</span>
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
+
+            <!-- Puzzle Piece -->
+            <article class="group project-card fade-up">
+                <a href="case_study_1.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="puzzle_piece.png" alt="Puzzle Piece"
+                            class="w-full h-full object-cover project-image transition-transform duration-700" />
                     </div>
-                </div>
-            </a>
-
-            <!-- Project 6: Puzzle Piece AR -->
-            <a href="case_study_ar_puzzle.html" class="group block fade-in-up delay-200">
-                <div
-                    class="aspect-[4/3] rounded-2xl bg-stone-100 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500 border border-stone-100">
-                    <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png"
-                        class="w-full h-full object-contain p-8 group-hover:scale-105 transition duration-700" />
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-medium text-stone-900 mb-2 group-hover:text-indigo-600 transition-colors">
-                        Puzzle Piece AR</h3>
-                    <p class="text-stone-500 line-clamp-2">Interactive social AR effect that triggers a visual "click"
-                        when the user smiles.</p>
-                    <div class="mt-4 flex gap-2">
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">AR
-                            Filter</span>
-                        <span
-                            class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-medium">Social</span>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                Puzzle Piece</h3>
+                            <div class="flex gap-3">
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Visual
+                                    Design</span>
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Concept</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            Emotional interaction design exploring alignment and clarity.
+                        </p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </article>
 
-        </div>
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
+
+            <!-- Discover BC -->
+            <article class="group project-card fade-up">
+                <a href="case_study_3.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
+                    </div>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                Discover BC</h3>
+                            <div class="flex gap-3">
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">UI
+                                    Design</span>
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Mobile</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            Calm, photography-led travel booking experience.
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
+
+            <!-- Emotional Journey TTC -->
+            <article class="group project-card fade-up">
+                <a href="case_study_2.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey TTC"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
+                    </div>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                Emotional Journey: TTC</h3>
+                            <div class="flex gap-3">
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Wayfinding</span>
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Data
+                                    Viz</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            A calm emotional interpretation of the TTC Line 1 commute visualizing shifting moods.
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <hr class="border-t dynamic-border opacity-50 fade-up" aria-hidden="true" />
+
+            <!-- Puzzle Piece AR -->
+            <article class="group project-card fade-up">
+                <a href="case_study_ar_puzzle.html" class="block focus:outline-none">
+                    <div
+                        class="aspect-[16/9] md:aspect-[21/9] rounded-2xl dynamic-bg overflow-hidden relative mb-8 border dynamic-border">
+                        <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR"
+                            class="w-full h-full object-contain project-image transition-transform duration-700 p-8" />
+                    </div>
+                    <div class="max-w-3xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3
+                                class="text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
+                                Puzzle Piece AR</h3>
+                            <div class="flex gap-3">
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">AR
+                                    Filter</span>
+                                <span
+                                    class="text-xs font-medium tracking-wide uppercase text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full">Social</span>
+                            </div>
+                        </div>
+                        <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            Interactive social AR effect that triggers a visual "click" when the user smiles.
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+        </section>
 
     </main>
 
-    <!-- FOOTER CTA -->
-    <section class="bg-stone-900 py-24 px-6 text-center text-white mx-4 lg:mx-10 rounded-3xl mb-10">
-        <h2 class="text-3xl font-medium mb-6">Let's build something together.</h2>
-        <a href="contact.html"
-            class="inline-flex items-center px-8 py-4 bg-white text-stone-900 rounded-full text-lg font-medium hover:bg-stone-200 transition">
-            Get in Touch <i data-lucide="mail" class="ml-3 w-5 h-5"></i>
-        </a>
-    </section>
-
-    <footer class="bg-stone-50 border-t border-stone-200 py-12 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <span class="text-stone-400 text-sm">© 2025 Michelle Miyata. All rights reserved.</span>
-            <div class="flex gap-6">
-                <a href="#" class="text-stone-400 hover:text-stone-900 transition"><i data-lucide="linkedin"
-                        class="w-5 h-5"></i></a>
-                <a href="#" class="text-stone-400 hover:text-stone-900 transition"><i data-lucide="instagram"
-                        class="w-5 h-5"></i></a>
-                <a href="#" class="text-stone-400 hover:text-stone-900 transition"><i data-lucide="github"
-                        class="w-5 h-5"></i></a>
-            </div>
+    <footer
+        class="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center text-sm py-8 border-t dynamic-border fade-up text-[var(--text-secondary)] transition-colors duration-400 mt-auto">
+        <p>© 2025 Michelle Miyata. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="LinkedIn Profile"><i
+                    data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="Instagram Profile"><i
+                    data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="GitHub Profile"><i
+                    data-lucide="github" class="w-5 h-5"></i></a>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            setTimeout(() => {
+                document.querySelectorAll('.fade-up:nth-child(-n+4)').forEach(el => el.classList.add('visible'));
+            }, 100);
         });
+
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const animationToggleBtn = document.getElementById('animationToggle');
+        let isDarkTheme = false;
+        let animationsDisabled = false;
+
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            document.body.classList.toggle('dark-theme');
+            themeToggleBtn.setAttribute('aria-pressed', isDarkTheme);
+            themeToggleBtn.innerHTML = `<i data-lucide="${isDarkTheme ? 'sun' : 'moon'}" class="w-5 h-5 opacity-70"></i>`;
+            lucide.createIcons();
+            themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
+        });
+
+        animationToggleBtn.addEventListener('click', () => {
+            animationsDisabled = !animationsDisabled;
+            document.body.classList.toggle('no-animations');
+            animationToggleBtn.setAttribute('aria-pressed', animationsDisabled);
+            animationToggleBtn.innerHTML = `<i data-lucide="${animationsDisabled ? 'pause' : 'play'}" class="w-5 h-5 opacity-70"></i>`;
+            lucide.createIcons();
+            animationToggleBtn.setAttribute('title', animationsDisabled ? 'Enable motion' : 'Reduce motion');
+        });
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            animationsDisabled = true;
+            document.body.classList.add('no-animations');
+            animationToggleBtn.setAttribute('aria-pressed', 'true');
+            animationToggleBtn.innerHTML = `<i data-lucide="pause" class="w-5 h-5 opacity-70"></i>`;
+            lucide.createIcons();
+        }
     </script>
 </body>
 
