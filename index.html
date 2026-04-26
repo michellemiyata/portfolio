@@ -16,38 +16,37 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
-    <style>
+        <style>
         :root {
-            /* Light Mode Variables */
-            --bg-primary: #FAF9F6;
-            /* Soft Off-White */
-            --bg-secondary: #F3F1ED;
-            --text-primary: #292524;
-            /* Stone 800 */
-            --text-secondary: #57534E;
-            /* Stone 600 */
-            --accent: #78716C;
-            /* Stone 500 */
-            --focus-ring: rgba(120, 113, 108, 0.4);
-            --border-subtle: #E7E5E4;
-            /* Stone 200 */
+            /* Warm, Nostalgic Light Mode */
+            --bg-primary: #FDFBF7;
+            --bg-secondary: rgba(255, 255, 255, 0.6);
+            --text-primary: #1A1514; /* Darker for a11y */
+            --text-secondary: #4A3E3C; /* Darker for a11y */
+            --accent: #B28F81;
+            --focus-ring: rgba(178, 143, 129, 0.4);
+            --border-subtle: rgba(231, 225, 221, 0.7);
+            
+            /* Gradient Backgrounds */
+            --gradient-1: #FFE9E3;
+            --gradient-2: #F0F0EE;
+            --gradient-3: #FDFBF7;
         }
 
         .dark-theme {
-            /* High Contrast Dark Mode */
-            --bg-primary: #1C1917;
-            /* Stone 900 */
-            --bg-secondary: #292524;
-            /* Stone 800 */
-            --text-primary: #F5F5F4;
-            /* Stone 100 */
-            --text-secondary: #D6D3D1;
-            /* Stone 300 */
-            --accent: #E7E5E4;
-            /* Stone 200 */
-            --focus-ring: rgba(231, 229, 228, 0.6);
-            --border-subtle: #44403C;
-            /* Stone 700 */
+            /* Deep, Immersive Dark Mode */
+            --bg-primary: #111016;
+            --bg-secondary: rgba(26, 24, 33, 0.6);
+            --text-primary: #FFFFFF; /* Brighter for a11y */
+            --text-secondary: #E0DEE8; /* Brighter for a11y */
+            --accent: #9A86A8;
+            --focus-ring: rgba(154, 134, 168, 0.6);
+            --border-subtle: rgba(54, 50, 68, 0.7);
+
+            /* Gradient Backgrounds */
+            --gradient-1: #1C152B;
+            --gradient-2: #111016;
+            --gradient-3: #221D32;
         }
 
         .logo-blend {
@@ -59,19 +58,26 @@
             mix-blend-mode: screen;
         }
 
+        @keyframes gradient-breath {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
+            font-size: 1.125rem; /* Increased for better readability */
+            background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3)) !important;
+            background-size: 400% 400%;
+            animation: gradient-breath 20s ease infinite;
             color: var(--text-primary);
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: color 0.4s ease;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-family: 'Inter', sans-serif;
+            font-size: 1.125rem; /* Increased for better readability */
             color: var(--text-primary);
         }
 
@@ -84,12 +90,8 @@
             line-height: 1.8;
         }
 
-        /* Reduced Motion Media Query */
         @media (prefers-reduced-motion: reduce) {
-
-            *,
-            ::before,
-            ::after {
+            *, ::before, ::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
@@ -97,19 +99,31 @@
             }
         }
 
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
         .no-animations * {
             animation: none !important;
             transition: none !important;
         }
+        
+        .no-animations body {
+            background: var(--bg-primary) !important;
+        }
 
-        /* Accessible Focus states */
         *:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 4px;
             box-shadow: 0 0 0 6px var(--focus-ring);
         }
 
-        /* Fade Up Animation */
         .fade-up {
             opacity: 0;
             transform: translateY(12px);
@@ -120,8 +134,18 @@
             opacity: 1;
             transform: none;
         }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-        /* Subtle underline hover effect */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .link-underline {
             position: relative;
             text-decoration: none;
@@ -157,30 +181,94 @@
 
         .dynamic-bg {
             background-color: var(--bg-secondary);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .dynamic-border {
             border-color: var(--border-subtle);
         }
+        
+        .glass-card {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1.5rem;
+        }
+        
+        .glass-card:hover {
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-6px) scale(1.01);
+        }
 
-        /* Image hover states scaled down to be more calm */
+        .dark-theme .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+        }
+
         .project-card:hover .project-image {
             transform: scale(1.02);
+        }
+
+        @keyframes subtle-breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-breathe {
+            animation: subtle-breathe 6s ease-in-out infinite;
+        }
+
+        @keyframes pop-spin {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(15deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .animate-pop-spin {
+            animation: pop-spin 0.4s ease-out;
+        }
+
+        @keyframes page-zoom {
+            0% { transform: scale(1); filter: blur(0px); }
+            50% { transform: scale(0.98); filter: blur(3px); }
+            100% { transform: scale(1); filter: blur(0px); }
+        }
+
+        body.animate-page-zoom {
+            animation: page-zoom 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+        }
+    
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
         }
     </style>
 </head>
 
 <body
-    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:text-stone-900">
+    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
 
     <!-- Accessibility Controls -->
     <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
         aria-label="Accessibility Controls">
-        <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+        <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
             aria-label="Toggle Animations" aria-pressed="false" title="Reduce motion">
-            <i data-lucide="play" class="w-5 h-5 opacity-70"></i>
+            <i data-lucide="pause" class="w-5 h-5 opacity-70"></i>
         </button>
-        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
             aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
             <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
         </button>
@@ -193,10 +281,9 @@
             <img src="miyata_logo.png" alt="MiyataCreative Logo"
                 class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
             <span
-                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">UX
-                / Product Designer</span>
+                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility-Focused UX/UI Designer</span>
         </a>
-        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-sm md:text-base mt-2 md:mt-0">
+        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
             <a href="index.html" class="link-underline active" aria-current="page">Home</a>
             <a href="work.html" class="link-underline">Work</a>
             <a href="about.html" class="link-underline">About</a>
@@ -217,12 +304,10 @@
                 <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
                     style="line-height: 1.15;">
                     Designing quiet, <br>
-                    <span class="serif italic text-[var(--text-secondary)]">meaningful</span> digital experiences.
+                    <span class="serif italic text-[var(--accent)]">meaningful</span> digital spaces.
                 </h1>
                 <p class="text-xl md:text-2xl max-w-2xl font-light text-[var(--text-secondary)] mb-10">
-                    I’m Michelle Miyata — a designer focused on emotional UX, accessibility, and the small interactions
-                    that
-                    make technology feel human.
+                    I’m Michelle Miyata — a designer focused on emotional UX, accessibility, and the subtle interactions that make technology feel human.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="work.html"
@@ -242,228 +327,95 @@
             </div>
         </header>
 
-        <!-- Selected Work List -->
-        <section class="mb-32 fade-up" aria-labelledby="work-heading">
-            <div
-                class="flex flex-col md:flex-row md:justify-between items-start md:items-end mb-12 border-b dynamic-border pb-6">
-                <h2 id="work-heading" class="text-3xl font-medium text-[var(--text-primary)]">Selected Work</h2>
-                <a href="work.html"
-                    class="hidden md:flex items-center text-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition group">
-                    View All Projects <i data-lucide="arrow-right"
-                        class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+        <section class="mb-32 w-full" aria-label="Project List">
+            <div class="flex items-center justify-between mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-medium tracking-tight">Selected Work</h2>
+                <a href="work.html" class="text-sm font-medium tracking-widest uppercase hover:text-[var(--accent)] transition-colors flex items-center gap-2 group">
+                    View All <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
 
-            <!-- Single Main Slider -->
-            <div class="relative group/slider w-full">
-                <div class="flex overflow-x-auto snap-x snap-mandatory flex-nowrap slider-container gap-6 pb-8 mx-[-1rem] px-[1rem] md:mx-0 md:px-0"
-                    style="scrollbar-width: none; -ms-overflow-style: none;">
-
-                    <!-- Puzzle Piece -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_1.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-full h-full object-cover" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">Puzzle Piece</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Visual
-                                            Design</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Concept</span>
-                                    </div>
+            <!-- Interactive Slideshow Carousel -->
+            <div class="relative w-full max-w-4xl mx-auto overflow-hidden group/carousel py-4">
+                <!-- Slider Track -->
+                <div class="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full" id="home-carousel-track">
+                    
+                    <!-- Project 1: TSITP Map -->
+                    <article class="w-full flex-shrink-0 px-2 sm:px-4">
+                        <a href="case_study_tsitp_map.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
+                                <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                                    <img src="tsitp_map_full.png" alt="TSITP Map Interface" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
                                 </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    Emotional interaction design exploring alignment and clarity.
-                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Interactive Transmedia Map</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Systems Thinking • Data Viz</p>
                             </div>
                         </a>
                     </article>
 
-                    <!-- StudyBuddy -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_studybuddy.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">StudyBuddy</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">UX/UI</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Accessibility</span>
-                                    </div>
+                    <!-- Project 2: Puzzle Piece -->
+                    <article class="w-full flex-shrink-0 px-2 sm:px-4">
+                        <a href="case_study_1.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                                <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                    <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-full h-full object-contain drop-shadow-xl scale-110 group-hover:scale-[1.15] transition-transform duration-700" />
                                 </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    Inclusive productivity tool designed for neurodiversity and sensory-friendly focus.
-                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Visual Design • Concept</p>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Kizuna Dining -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_kizuna.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining Interface"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">Kizuna Dining</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">UX/UI</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">App
-                                            Design</span>
-                                    </div>
+                    <!-- Project 3: UnionMoods AR -->
+                    <article class="w-full flex-shrink-0 px-2 sm:px-4">
+                        <a href="case_study_unionmoods.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                                <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                    <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App" class="w-[90%] h-[90%] object-contain drop-shadow-2xl scale-105 group-hover:scale-[1.1] transition-transform duration-700" />
                                 </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    A seamless dining companion app enhancing the customer experience through digital
-                                    ordering.
-                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">UnionMoods AR</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">AR Design • UX Research</p>
                             </div>
                         </a>
                     </article>
 
-                    <!-- UnionMoods -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_unionmoods.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">UnionMoods AR</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">AR
-                                            Design</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">UX
-                                            Research</span>
-                                    </div>
+                    <!-- Project 4: StudyBuddy -->
+                    <article class="w-full flex-shrink-0 px-2 sm:px-4">
+                        <a href="case_study_studybuddy.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                            <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                                <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                    <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
                                 </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    Augmented reality experience mapping emotional connection in public transit.
-                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">StudyBuddy</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Inclusive UI • Productivity</p>
                             </div>
                         </a>
                     </article>
-
-
-                    <!-- Discover BC -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_3.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="Screenshot%202025-11-08%20113155.png" alt="Discover BC"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">Discover BC</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">UI
-                                            Design</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Mobile</span>
-                                    </div>
-                                </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    Calm, photography-led travel booking experience.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Emotional Journey TTC -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_2.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="Screenshot%202025-10-08%20143959.png" alt="Emotional Journey TTC"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">Emotional Journey: TTC
-                                    </h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Wayfinding</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Data
-                                            Viz</span>
-                                    </div>
-                                </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    A calm emotional interpretation of the TTC Line 1 commute visualizing shifting
-                                    moods.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Puzzle Piece AR -->
-                    <article class="w-full min-w-full snap-center shrink-0 block project-card">
-                        <a href="case_study_ar_puzzle.html"
-                            class="block focus:outline-none h-full bg-[var(--bg-secondary)] rounded-3xl overflow-hidden dynamic-border border hover:-translate-y-2 transition-transform duration-300 shadow-sm">
-                            <div
-                                class="aspect-[16/9] md:aspect-[21/9] relative bg-[var(--bg-primary)] border-b dynamic-border">
-                                <img src="puzzlepieceAR/Screenshot%202025-12-06%20154825.png" alt="Puzzle Piece AR"
-                                    class="w-full h-full object-contain p-8" />
-                            </div>
-                            <div class="p-8">
-                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                    <h3 class="text-3xl font-medium text-[var(--text-primary)]">Puzzle Piece AR</h3>
-                                    <div class="flex gap-4">
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">AR
-                                            Filter</span>
-                                        <span
-                                            class="text-xs font-medium tracking-wide text-[var(--text-secondary)] border dynamic-border px-3 py-1 rounded-full uppercase">Social</span>
-                                    </div>
-                                </div>
-                                <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
-                                    Interactive social AR effect that triggers a visual "click" when the user smiles.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-
                 </div>
 
-                <!-- Navigation Controls -->
-                <button
-                    class="hidden md:flex absolute left-[-2rem] top-[40%] -translate-y-1/2 p-3 rounded-full bg-[var(--bg-primary)] border dynamic-border text-[var(--text-primary)] opacity-0 group-hover/slider:opacity-100 focus:opacity-100 transition-all slider-prev z-10 hover:scale-105 shadow-sm items-center justify-center cursor-pointer"
-                    aria-label="Previous project">
+                <!-- Arrows -->
+                <button id="home-prev" class="absolute top-1/2 -translate-y-1/2 left-2 md:left-6 p-3 dynamic-bg border dynamic-border rounded-full shadow-lg hover:opacity-70 transition-all opacity-0 group-hover/carousel:opacity-100 z-10 cursor-pointer text-[var(--text-primary)]" aria-label="Previous Project">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
                 </button>
-                <button
-                    class="hidden md:flex absolute right-[-2rem] top-[40%] -translate-y-1/2 p-3 rounded-full bg-[var(--bg-primary)] border dynamic-border text-[var(--text-primary)] opacity-0 group-hover/slider:opacity-100 focus:opacity-100 transition-all slider-next z-10 hover:scale-105 shadow-sm items-center justify-center cursor-pointer"
-                    aria-label="Next project">
+                <button id="home-next" class="absolute top-1/2 -translate-y-1/2 right-2 md:right-6 p-3 dynamic-bg border dynamic-border rounded-full shadow-lg hover:opacity-70 transition-all opacity-0 group-hover/carousel:opacity-100 z-10 cursor-pointer text-[var(--text-primary)]" aria-label="Next Project">
                     <i data-lucide="chevron-right" class="w-6 h-6"></i>
                 </button>
+
+                <!-- Dots -->
+                <div class="flex justify-center gap-3 mt-8" id="home-carousel-dots">
+                    <button class="home-dot w-3 h-3 rounded-full bg-[var(--text-primary)] transition-all cursor-pointer" aria-label="Slide 1"></button>
+                    <button class="home-dot w-3 h-3 rounded-full bg-[var(--text-secondary)] opacity-30 hover:opacity-70 transition-all cursor-pointer" aria-label="Slide 2"></button>
+                    <button class="home-dot w-3 h-3 rounded-full bg-[var(--text-secondary)] opacity-30 hover:opacity-70 transition-all cursor-pointer" aria-label="Slide 3"></button>
+                    <button class="home-dot w-3 h-3 rounded-full bg-[var(--text-secondary)] opacity-30 hover:opacity-70 transition-all cursor-pointer" aria-label="Slide 4"></button>
+                </div>
             </div>
 
             <!-- More button for mobile -->
@@ -556,7 +508,10 @@
             lucide.createIcons();
 
             themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
-        });
+        themeToggleBtn.classList.remove('animate-pop-spin');
+            void themeToggleBtn.offsetWidth;
+            themeToggleBtn.classList.add('animate-pop-spin');
+});
 
         animationToggleBtn.addEventListener('click', () => {
             animationsDisabled = !animationsDisabled;
@@ -569,7 +524,10 @@
             lucide.createIcons();
 
             animationToggleBtn.setAttribute('title', animationsDisabled ? 'Enable motion' : 'Reduce motion');
-        });
+        animationToggleBtn.classList.remove('animate-pop-spin');
+            void animationToggleBtn.offsetWidth;
+            animationToggleBtn.classList.add('animate-pop-spin');
+});
 
         // Respect OS preference for reduced motion initially
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -581,22 +539,125 @@
             lucide.createIcons();
         }
 
-        // Setup sliders
-        document.querySelectorAll('.group\\/slider').forEach(sliderGroup => {
-            const container = sliderGroup.querySelector('.slider-container');
-            const prevBtn = sliderGroup.querySelector('.slider-prev');
-            const nextBtn = sliderGroup.querySelector('.slider-next');
-            if (!container || !prevBtn || !nextBtn) return;
+        // Homepage Infinite Carousel Logic
+        const track = document.getElementById('home-carousel-track');
+        const prevBtn = document.getElementById('home-prev');
+        const nextBtn = document.getElementById('home-next');
+        const dots = document.querySelectorAll('.home-dot');
+        const carouselContainer = document.querySelector('.group\\/carousel');
+        
+        if (track) {
+            const originalSlides = Array.from(track.children);
+            const totalOriginalSlides = originalSlides.length;
+            
+            // Clone first and last slide for seamless loop
+            const firstClone = originalSlides[0].cloneNode(true);
+            const lastClone = originalSlides[totalOriginalSlides - 1].cloneNode(true);
+            
+            // Ensure clones are hidden from screen readers to prevent duplicate reading
+            firstClone.setAttribute('aria-hidden', 'true');
+            lastClone.setAttribute('aria-hidden', 'true');
+            
+            track.appendChild(firstClone);
+            track.insertBefore(lastClone, originalSlides[0]);
+            
+            let currentSlide = 1; // Start at the first original slide
+            let isTransitioning = false;
+            let autoPlayInterval;
 
-            prevBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+            function updateCarousel(instant = false) {
+                if (instant) {
+                    track.style.transition = 'none';
+                } else {
+                    track.style.transition = 'transform 700ms cubic-bezier(0.25, 1, 0.5, 1)';
+                }
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Calculate dot index (0 to totalOriginalSlides - 1)
+                let dotIndex = currentSlide - 1;
+                if (currentSlide === totalOriginalSlides + 1) dotIndex = 0; // On first clone
+                if (currentSlide === 0) dotIndex = totalOriginalSlides - 1; // On last clone
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if(index === dotIndex) {
+                        dot.classList.remove('bg-[var(--text-secondary)]', 'opacity-30', 'hover:opacity-70');
+                        dot.classList.add('bg-[var(--text-primary)]');
+                    } else {
+                        dot.classList.add('bg-[var(--text-secondary)]', 'opacity-30', 'hover:opacity-70');
+                        dot.classList.remove('bg-[var(--text-primary)]');
+                    }
+                });
+            }
+            
+            // Initial setup without animation
+            updateCarousel(true);
+
+            function nextSlide() {
+                if (isTransitioning) return;
+                currentSlide++;
+                updateCarousel();
+                resetAutoPlay();
+            }
+
+            function prevSlide() {
+                if (isTransitioning) return;
+                currentSlide--;
+                updateCarousel();
+                resetAutoPlay();
+            }
+
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                // Seamless jump
+                if (currentSlide === totalOriginalSlides + 1) {
+                    currentSlide = 1;
+                    updateCarousel(true);
+                }
+                if (currentSlide === 0) {
+                    currentSlide = totalOriginalSlides;
+                    updateCarousel(true);
+                }
             });
-            nextBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+
+            track.addEventListener('transitionstart', () => {
+                isTransitioning = true;
             });
-        });
+
+            if(prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+                nextBtn.addEventListener('click', nextSlide);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    if (isTransitioning) return;
+                    currentSlide = index + 1; // Map 0-index dot to 1-index slide
+                    updateCarousel();
+                    resetAutoPlay();
+                });
+            });
+
+            // Auto Play
+            function startAutoPlay() {
+                if (!animationsDisabled) {
+                    autoPlayInterval = setInterval(nextSlide, 4500);
+                }
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+
+            startAutoPlay();
+            
+            // Pause autoplay when user hovers over the carousel
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            }
+        }
     </script>
 </body>
 

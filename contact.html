@@ -16,27 +16,37 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
-    <style>
+        <style>
         :root {
-            /* Light Mode Variables */
-            --bg-primary: #FAF9F6;
-            --bg-secondary: #F3F1ED;
-            --text-primary: #292524;
-            --text-secondary: #57534E;
-            --accent: #78716C;
-            --focus-ring: rgba(120, 113, 108, 0.4);
-            --border-subtle: #E7E5E4;
+            /* Warm, Nostalgic Light Mode */
+            --bg-primary: #FDFBF7;
+            --bg-secondary: rgba(255, 255, 255, 0.6);
+            --text-primary: #1A1514; /* Darker for a11y */
+            --text-secondary: #4A3E3C; /* Darker for a11y */
+            --accent: #B28F81;
+            --focus-ring: rgba(178, 143, 129, 0.4);
+            --border-subtle: rgba(231, 225, 221, 0.7);
+            
+            /* Gradient Backgrounds */
+            --gradient-1: #FFE9E3;
+            --gradient-2: #F0F0EE;
+            --gradient-3: #FDFBF7;
         }
 
         .dark-theme {
-            /* High Contrast Dark Mode */
-            --bg-primary: #1C1917;
-            --bg-secondary: #292524;
-            --text-primary: #F5F5F4;
-            --text-secondary: #D6D3D1;
-            --accent: #E7E5E4;
-            --focus-ring: rgba(231, 229, 228, 0.6);
-            --border-subtle: #44403C;
+            /* Deep, Immersive Dark Mode */
+            --bg-primary: #111016;
+            --bg-secondary: rgba(26, 24, 33, 0.6);
+            --text-primary: #FFFFFF; /* Brighter for a11y */
+            --text-secondary: #E0DEE8; /* Brighter for a11y */
+            --accent: #9A86A8;
+            --focus-ring: rgba(154, 134, 168, 0.6);
+            --border-subtle: rgba(54, 50, 68, 0.7);
+
+            /* Gradient Backgrounds */
+            --gradient-1: #1C152B;
+            --gradient-2: #111016;
+            --gradient-3: #221D32;
         }
 
         .logo-blend {
@@ -48,19 +58,26 @@
             mix-blend-mode: screen;
         }
 
+        @keyframes gradient-breath {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
+            font-size: 1.125rem; /* Increased for better readability */
+            background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3)) !important;
+            background-size: 400% 400%;
+            animation: gradient-breath 20s ease infinite;
             color: var(--text-primary);
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: color 0.4s ease;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-family: 'Inter', sans-serif;
+            font-size: 1.125rem; /* Increased for better readability */
             color: var(--text-primary);
         }
 
@@ -74,10 +91,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-
-            *,
-            ::before,
-            ::after {
+            *, ::before, ::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
@@ -88,6 +102,10 @@
         .no-animations * {
             animation: none !important;
             transition: none !important;
+        }
+        
+        .no-animations body {
+            background: var(--bg-primary) !important;
         }
 
         *:focus-visible {
@@ -103,6 +121,17 @@
         }
 
         .fade-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -142,24 +171,72 @@
 
         .dynamic-bg {
             background-color: var(--bg-secondary);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .dynamic-border {
             border-color: var(--border-subtle);
         }
+
+        .project-card:hover .project-image {
+            transform: scale(1.02);
+        }
+
+        @keyframes subtle-breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-breathe {
+            animation: subtle-breathe 6s ease-in-out infinite;
+        }
+
+        @keyframes pop-spin {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(15deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .animate-pop-spin {
+            animation: pop-spin 0.4s ease-out;
+        }
+
+        @keyframes page-zoom {
+            0% { transform: scale(1); filter: blur(0px); }
+            50% { transform: scale(0.98); filter: blur(3px); }
+            100% { transform: scale(1); filter: blur(0px); }
+        }
+
+        body.animate-page-zoom {
+            animation: page-zoom 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+        }
+    
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
     </style>
 </head>
 
 <body
-    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:text-stone-900">
+    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
 
     <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
         aria-label="Accessibility Controls">
-        <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+        <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
             aria-label="Toggle Animations" aria-pressed="false" title="Reduce motion">
-            <i data-lucide="play" class="w-5 h-5 opacity-70"></i>
+            <i data-lucide="pause" class="w-5 h-5 opacity-70"></i>
         </button>
-        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 transition"
+        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
             aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
             <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
         </button>
@@ -172,10 +249,9 @@
             <img src="miyata_logo.png" alt="MiyataCreative Logo"
                 class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
             <span
-                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">UX
-                / Product Designer</span>
+                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility-Focused UX/UI Designer</span>
         </a>
-        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-sm md:text-base mt-2 md:mt-0">
+        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
             <a href="index.html" class="link-underline">Home</a>
             <a href="work.html" class="link-underline">Work</a>
             <a href="about.html" class="link-underline">About</a>
@@ -280,7 +356,10 @@
             themeToggleBtn.innerHTML = `<i data-lucide="${isDarkTheme ? 'sun' : 'moon'}" class="w-5 h-5 opacity-70"></i>`;
             lucide.createIcons();
             themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
-        });
+        themeToggleBtn.classList.remove('animate-pop-spin');
+            void themeToggleBtn.offsetWidth;
+            themeToggleBtn.classList.add('animate-pop-spin');
+});
 
         animationToggleBtn.addEventListener('click', () => {
             animationsDisabled = !animationsDisabled;
@@ -289,7 +368,10 @@
             animationToggleBtn.innerHTML = `<i data-lucide="${animationsDisabled ? 'pause' : 'play'}" class="w-5 h-5 opacity-70"></i>`;
             lucide.createIcons();
             animationToggleBtn.setAttribute('title', animationsDisabled ? 'Enable motion' : 'Reduce motion');
-        });
+        animationToggleBtn.classList.remove('animate-pop-spin');
+            void animationToggleBtn.offsetWidth;
+            animationToggleBtn.classList.add('animate-pop-spin');
+});
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             animationsDisabled = true;
