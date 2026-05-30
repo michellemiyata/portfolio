@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Summer I Turned Pretty Map – Case Study</title>
-
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
         <style>
         :root {
             /* Warm, Nostalgic Light Mode */
@@ -28,7 +24,6 @@
             --gradient-2: #F0F0EE;
             --gradient-3: #FDFBF7;
         }
-
         .dark-theme {
             /* Deep, Immersive Dark Mode */
             --bg-primary: #111016;
@@ -38,28 +33,23 @@
             --accent: #9A86A8;
             --focus-ring: rgba(154, 134, 168, 0.6);
             --border-subtle: rgba(54, 50, 68, 0.7);
-
             /* Gradient Backgrounds */
             --gradient-1: #1C152B;
             --gradient-2: #111016;
             --gradient-3: #221D32;
         }
-
         .logo-blend {
             mix-blend-mode: multiply;
         }
-
         .dark-theme .logo-blend {
             filter: invert(1) hue-rotate(180deg) brightness(1.2);
             mix-blend-mode: screen;
         }
-
         @keyframes gradient-breath {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         body {
             font-family: 'Inter', sans-serif;
             font-size: 1.125rem; /* Increased for better readability */
@@ -70,22 +60,18 @@
             transition: color 0.4s ease;
             -webkit-font-smoothing: antialiased;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Inter', sans-serif;
             font-size: 1.125rem; /* Increased for better readability */
             color: var(--text-primary);
         }
-
         .serif {
             font-family: 'Playfair Display', serif;
         }
-
         p {
             color: var(--text-secondary);
             line-height: 1.8;
         }
-
         @media (prefers-reduced-motion: reduce) {
             *, ::before, ::after {
                 animation-duration: 0.01ms !important;
@@ -94,7 +80,6 @@
                 scroll-behavior: auto !important;
             }
         }
-
         .no-animations * {
             animation: none !important;
             transition: none !important;
@@ -103,19 +88,16 @@
         .no-animations body {
             background: var(--bg-primary) !important;
         }
-
         *:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 4px;
             box-shadow: 0 0 0 6px var(--focus-ring);
         }
-
         .fade-up {
             opacity: 0;
             transform: translateY(12px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
         .fade-up.visible {
             opacity: 1;
             transform: none;
@@ -126,12 +108,10 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .link-underline {
             position: relative;
             text-decoration: none;
@@ -139,13 +119,11 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-
         .link-underline:hover,
         .link-underline.active {
             color: var(--text-primary);
             font-weight: 500;
         }
-
         .link-underline::after {
             content: '';
             position: absolute;
@@ -158,52 +136,42 @@
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
         }
-
         .link-underline:hover::after,
         .link-underline.active::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
-
         .dynamic-bg {
             background-color: var(--bg-secondary);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
-
         .dynamic-border {
             border-color: var(--border-subtle);
         }
-
         .project-card:hover .project-image {
             transform: scale(1.02);
         }
-
         @keyframes subtle-breathe {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-
         .animate-breathe {
             animation: subtle-breathe 6s ease-in-out infinite;
         }
-
         @keyframes pop-spin {
             0% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.2) rotate(15deg); }
             100% { transform: scale(1) rotate(0deg); }
         }
-
         .animate-pop-spin {
             animation: pop-spin 0.4s ease-out;
         }
-
         @keyframes page-zoom {
             0% { transform: scale(1); filter: blur(0px); }
             50% { transform: scale(0.98); filter: blur(3px); }
             100% { transform: scale(1); filter: blur(0px); }
         }
-
         body.animate-page-zoom {
             animation: page-zoom 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
         }
@@ -222,9 +190,7 @@
         }
     </style>
 </head>
-
 <body class="  font-sans selection:bg-indigo-100 selection:text-indigo-900" class="overflow-x-hidden">
-
     <!-- HEADER -->
     <div class="flex justify-center w-full pt-12 md:pt-20 px-6">
         <nav class="w-full max-w-4xl mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -232,7 +198,7 @@
                 <img src="miyata_logo.png" alt="MiyataCreative Logo"
                     class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
                 <span
-                    class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility-Focused UX/UI Designer</span>
+                    class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
             </a>
             <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
                 <a href="index.html" class=" hover: transition-colors">Home</a>
@@ -244,10 +210,8 @@
             </div>
         </nav>
     </div>
-
     <!-- MAIN CONTENT WRAPPER -->
     <main class="max-w-6xl mx-auto px-6 overflow-hidden">
-
         <!-- NAV BACK -->
         <div class="max-w-4xl mx-auto mb-12 fade-in">
             <a href="work.html" class="inline-flex items-center text-stone-400 hover: transition group">
@@ -255,7 +219,6 @@
                 Back to Work
             </a>
         </div>
-
         <!-- HERO SECTION -->
         <section class="mb-32 fade-in relative">
             <div class="text-center mb-16 max-w-5xl mx-auto px-6">
@@ -264,7 +227,6 @@
                     class="inline-block px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-xs font-semibold tracking-wider uppercase mb-6">
                     Case Study
                 </span>
-
                 <h1 class="text-5xl md:text-7xl font-semibold  mb-6 tracking-tight">Interactive Transmedia Map</h1>
                 <p class="text-xl md:text-2xl  font-light max-w-2xl mx-auto">
                     A digital interactive map that turns the fragmented, multi-platform narrative of "The Summer I Turned Pretty" into a cohesive visual journey.
@@ -273,7 +235,6 @@
                    <a href="https://michellemiyata.github.io/Digital-Interactive-Board/" target="_blank" class="px-6 py-3 bg-stone-900 text-white rounded-full hover:bg-stone-800 transition shadow-sm font-medium">View Live Project</a>
                 </div>
             </div>
-
             <!-- Hero Image with "Browser" Look -->
             <div
                 class="w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] rounded-none overflow-hidden shadow-2xl border-y dynamic-border dynamic-bg aspect-video group">
@@ -292,8 +253,6 @@
                 </div>
             </div>
         </section>
-
-
         <!-- META GRID -->
         <section class="max-w-4xl mx-auto mb-32 fade-in">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -315,11 +274,8 @@
                 </div>
             </div>
         </section>
-
-
         <!-- CONTEXT & PROBLEM -->
         <section class="max-w-4xl mx-auto mb-32 space-y-20">
-
             <div class="fade-in">
                 <h2 class="text-3xl font-medium  mb-8 flex items-center">
                     <span class="w-8 h-px bg-amber-500 mr-4"></span>
@@ -340,7 +296,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Quote Breaker -->
             <div class="my-20 py-16 border-y dynamic-border text-center fade-in">
                 <blockquote
@@ -348,7 +303,6 @@
                     "How do we map a story that refuses to stay in one place? The goal was to visualize the digital footprints audiences leave behind as they follow a transmedia narrative."
                 </blockquote>
             </div>
-
             <div class="fade-in">
                 <h2 class="text-3xl font-medium  mb-8 flex items-center">
                     <span class="w-8 h-px bg-amber-500 mr-4"></span>
@@ -384,10 +338,7 @@
                     </li>
                 </ul>
             </div>
-
         </section>
-
-
         <!-- VISUALS / FEATURES (CAROUSEL) -->
         <section class="max-w-6xl mx-auto mb-32 fade-in">
             <!-- Tab Navigation -->
@@ -395,7 +346,6 @@
                 <button onclick="showSlide('tsitp', 0, 'bg-amber-50', 'hover:bg-amber-50/50')" class="tab-btn-tsitp px-6 py-2 rounded-full border dynamic-border text-amber-600 font-semibold tracking-widest text-xs uppercase transition-all bg-amber-50 cursor-pointer">01 Framework</button>
                 <button onclick="showSlide('tsitp', 1, 'bg-amber-50', 'hover:bg-amber-50/50')" class="tab-btn-tsitp px-6 py-2 rounded-full border dynamic-border text-amber-600 font-semibold tracking-widest text-xs uppercase transition-all hover:bg-amber-50/50 cursor-pointer">02 Personas</button>
             </div>
-
             <!-- Slides Container -->
             <div class="relative w-full">
                 <!-- Feature 1 -->
@@ -415,7 +365,6 @@
                         </p>
                     </div>
                 </div>
-
                 <!-- Feature 2 -->
                 <div id="slide-tsitp-1" class="slide-tsitp hidden opacity-0 transition-opacity duration-500 grid md:grid-cols-2 gap-12 items-center">
                     <div class="order-1">
@@ -440,15 +389,12 @@
                 </div>
             </div>
         </section>
-
-
         <!-- REFLECTION -->
         <section class="max-w-4xl mx-auto mb-32 fade-in">
             <div
                 class="dynamic-bg border dynamic-border rounded-3xl p-10 md:p-16 shadow-xl relative overflow-hidden">
                 <!-- Decorative Circle -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-
                 <h2 class="text-3xl font-medium mb-6 relative z-10">Reflection</h2>
                 <div class="text-lg leading-relaxed text-[var(--text-secondary)] relative z-10 space-y-4">
                     <p>
@@ -457,9 +403,7 @@
                 </div>
             </div>
         </section>
-
     </main>
-
     <!-- FOOTER NAV -->
     <div class="dynamic-bg py-12 border-t dynamic-border">
         <div class="max-w-4xl mx-auto px-6 text-center">
@@ -471,18 +415,14 @@
             </div>
         </div>
     </div>
-
-
     <script>
         lucide.createIcons();
-
         // Simple Intersection Observer for Fade In
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
-
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -491,16 +431,13 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
         // Carousel Logic
         window.showSlide = function(carouselId, index, activeClass = 'bg-amber-50', hoverClass = 'hover:bg-amber-50/50') {
             const slides = document.querySelectorAll('.slide-' + carouselId);
             const btns = document.querySelectorAll('.tab-btn-' + carouselId);
-
             slides.forEach((slide, i) => {
                 if (i === index) {
                     slide.classList.remove('hidden');
@@ -514,7 +451,6 @@
                     slide.classList.add('opacity-0');
                 }
             });
-
             btns.forEach((btn, i) => {
                 if (i === index) {
                     btn.classList.add(...activeClass.split(' '));
@@ -526,28 +462,23 @@
             });
         };
     </script>
-
     
-
     <!-- LIGHTBOX MODAL -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-stone-900/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-10 cursor-zoom-out">
         <div class="relative max-w-5xl w-full max-h-full flex items-center justify-center">
             <button id="lightbox-prev" class="absolute left-2 md:-left-12 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
                 <i data-lucide="chevron-left" class="w-6 h-6 md:w-8 md:h-8"></i>
             </button>
-
             <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" />
             
             <button id="lightbox-next" class="absolute right-2 md:-right-12 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
                 <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8"></i>
             </button>
-
             <button id="lightbox-close" class="absolute -top-4 -right-4 md:-top-6 md:-right-6 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
                 <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6"></i>
             </button>
         </div>
     </div>
-
     <script>
         // Lightbox Logic
         const lightbox = document.getElementById('lightbox');
@@ -558,7 +489,6 @@
         const images = document.querySelectorAll('main img');
         const imagesArray = Array.from(images);
         let currentImageIndex = 0;
-
         images.forEach((img, index) => {
             // Add pointer cursor to images
             img.style.cursor = 'zoom-in';
@@ -576,7 +506,6 @@
                 }, 50);
             });
         });
-
         const closeLightbox = () => {
             lightbox.classList.remove('opacity-100');
             lightbox.classList.add('opacity-0', 'pointer-events-none');
@@ -586,7 +515,6 @@
                 lightboxImg.src = '';
             }, 300);
         };
-
         const showNextImage = (e) => {
             if (e) e.stopPropagation();
             if (imagesArray.length > 0) {
@@ -594,7 +522,6 @@
                 lightboxImg.src = imagesArray[currentImageIndex].src;
             }
         };
-
         const showPrevImage = (e) => {
             if (e) e.stopPropagation();
             if (imagesArray.length > 0) {
@@ -602,17 +529,14 @@
                 lightboxImg.src = imagesArray[currentImageIndex].src;
             }
         };
-
         lightbox.addEventListener('click', closeLightbox);
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxNext.addEventListener('click', showNextImage);
         lightboxPrev.addEventListener('click', showPrevImage);
-
         // Prevent clicks on the image from closing the lightbox
         lightboxImg.addEventListener('click', (e) => {
             e.stopPropagation();
         });
-
         document.addEventListener('keydown', (e) => {
             if (lightbox.classList.contains('opacity-100')) {
                 if (e.key === 'Escape') closeLightbox();
@@ -622,5 +546,4 @@
         });
     </script>
 </body>
-
 </html>
