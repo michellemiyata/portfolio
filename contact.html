@@ -274,7 +274,17 @@
             </p>
         </header>
 
-        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-up">
+
+            <!-- Send Message (Modal Trigger) -->
+            <button id="openModalBtn"
+                class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none text-left w-full cursor-pointer">
+                <i data-lucide="message-square" class="w-8 h-8 text-[var(--text-primary)]"></i>
+                <div>
+                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">Message</h3>
+                    <p class="text-[var(--text-secondary)] text-base">Send a message directly</p>
+                </div>
+            </button>
 
             <!-- Email -->
             <a href="mailto:miyatacreative@gmail.com"
@@ -291,8 +301,11 @@
                 class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none">
                 <i data-lucide="linkedin" class="w-8 h-8 text-[var(--text-primary)]"></i>
                 <div>
-                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">LinkedIn</h3>
-                    <p class="text-[var(--text-secondary)] text-base">Connect on professional network</p>
+                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1 flex items-center gap-2">
+                        LinkedIn
+                        <i data-lucide="external-link" class="w-4 h-4 opacity-60"></i>
+                    </h3>
+                    <p class="text-[var(--text-secondary)] text-base">linkedin.com/in/michelle-miyata</p>
                 </div>
             </a>
 
@@ -301,8 +314,11 @@
                 class="p-8 border dynamic-border rounded-2xl dynamic-bg flex flex-col items-start gap-6 hover:opacity-70 transition-opacity focus:outline-none">
                 <i data-lucide="github" class="w-8 h-8 text-[var(--text-primary)]"></i>
                 <div>
-                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1">GitHub</h3>
-                    <p class="text-[var(--text-secondary)] text-base">View code and projects</p>
+                    <h3 class="text-2xl font-medium text-[var(--text-primary)] mb-1 flex items-center gap-2">
+                        GitHub
+                        <i data-lucide="external-link" class="w-4 h-4 opacity-60"></i>
+                    </h3>
+                    <p class="text-[var(--text-secondary)] text-base">github.com/michellemiyata</p>
                 </div>
             </a>
 
@@ -380,7 +396,121 @@
             animationToggleBtn.innerHTML = `<i data-lucide="pause" class="w-5 h-5 opacity-70"></i>`;
             lucide.createIcons();
         }
+
+        // Modal Elements
+        const contactModal = document.getElementById('contactModal');
+        const modalCard = document.getElementById('modalCard');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const successCloseBtn = document.getElementById('successCloseBtn');
+        const messageForm = document.getElementById('messageForm');
+        const formContent = document.getElementById('formContent');
+        const successContent = document.getElementById('successContent');
+
+        function openModal() {
+            contactModal.classList.remove('opacity-0', 'pointer-events-none');
+            contactModal.classList.add('opacity-100');
+            modalCard.classList.remove('scale-95', 'opacity-0');
+            modalCard.classList.add('scale-100', 'opacity-100');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.getElementById('formName').focus(), 100);
+        }
+
+        function closeModal() {
+            contactModal.classList.remove('opacity-100');
+            contactModal.classList.add('opacity-0', 'pointer-events-none');
+            modalCard.classList.remove('scale-100', 'opacity-100');
+            modalCard.classList.add('scale-95', 'opacity-0');
+            document.body.style.overflow = '';
+            
+            setTimeout(() => {
+                formContent.classList.remove('hidden');
+                successContent.classList.add('hidden');
+                messageForm.reset();
+            }, 300);
+        }
+
+        if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (successCloseBtn) successCloseBtn.addEventListener('click', closeModal);
+
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !contactModal.classList.contains('opacity-0')) {
+                closeModal();
+            }
+        });
+
+        if (messageForm) {
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formContent.classList.add('hidden');
+                successContent.classList.remove('hidden');
+                lucide.createIcons();
+            });
+        }
     </script>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <!-- Modal Card -->
+        <div class="relative w-full max-w-lg p-8 md:p-10 rounded-3xl bg-[var(--bg-primary)] border dynamic-border shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="modalCard">
+            
+            <!-- Close Button -->
+            <button id="closeModalBtn" class="absolute top-6 right-6 p-2 rounded-full hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] transition w-10 h-10 flex items-center justify-center cursor-pointer" aria-label="Close form">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Form Content -->
+            <div id="formContent">
+                <h2 id="modalTitle" class="text-3xl font-light mb-6 text-[var(--text-primary)]">Send a Message</h2>
+                <form id="messageForm" class="space-y-5">
+                    <div>
+                        <label for="formName" class="block text-sm font-medium text-[var(--text-secondary)] mb-2">Name</label>
+                        <input type="text" id="formName" name="name" required
+                            class="w-full px-4 py-3 rounded-xl border dynamic-border bg-[var(--bg-secondary)] text-[var(--text-primary)] placeholder-stone-400 focus:outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--focus-ring)] transition"
+                            placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="formEmail" class="block text-sm font-medium text-[var(--text-secondary)] mb-2">Email Address</label>
+                        <input type="email" id="formEmail" name="email" required
+                            class="w-full px-4 py-3 rounded-xl border dynamic-border bg-[var(--bg-secondary)] text-[var(--text-primary)] placeholder-stone-400 focus:outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--focus-ring)] transition"
+                            placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="formMessage" class="block text-sm font-medium text-[var(--text-secondary)] mb-2">Message</label>
+                        <textarea id="formMessage" name="message" rows="4" required
+                            class="w-full px-4 py-3 rounded-xl border dynamic-border bg-[var(--bg-secondary)] text-[var(--text-primary)] placeholder-stone-400 focus:outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--focus-ring)] transition resize-none"
+                            placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 bg-[var(--text-primary)] text-[var(--bg-primary)] rounded-full font-medium hover:opacity-90 transition focus:outline-none cursor-pointer flex items-center justify-center gap-2 mt-4">
+                        Send Message
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success State -->
+            <div id="successContent" class="hidden flex flex-col items-center text-center py-8">
+                <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
+                    <i data-lucide="check" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-light mb-4 text-[var(--text-primary)]">Message Sent!</h2>
+                <p class="text-[var(--text-secondary)] max-w-sm mb-8 leading-relaxed">
+                    Thank you for reaching out. Your message has been received and you will receive a response shortly.
+                </p>
+                <button id="successCloseBtn" class="px-8 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] rounded-full font-medium hover:opacity-90 transition cursor-pointer">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
