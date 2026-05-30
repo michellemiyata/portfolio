@@ -396,7 +396,9 @@
     </div>
 
     <script>
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -426,7 +428,9 @@
             document.body.classList.toggle('dark-theme');
             themeToggleBtn.setAttribute('aria-pressed', isDarkTheme);
             themeToggleBtn.innerHTML = `<i data-lucide="${isDarkTheme ? 'sun' : 'moon'}" class="w-5 h-5 opacity-70"></i>`;
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
             themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
             themeToggleBtn.classList.remove('animate-pop-spin');
             void themeToggleBtn.offsetWidth;
@@ -438,7 +442,9 @@
             document.body.classList.toggle('no-animations');
             animationToggleBtn.setAttribute('aria-pressed', animationsDisabled);
             animationToggleBtn.innerHTML = `<i data-lucide="${animationsDisabled ? 'pause' : 'play'}" class="w-5 h-5 opacity-70"></i>`;
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
             animationToggleBtn.setAttribute('title', animationsDisabled ? 'Enable motion' : 'Reduce motion');
             animationToggleBtn.classList.remove('animate-pop-spin');
             void animationToggleBtn.offsetWidth;
@@ -450,7 +456,9 @@
             document.body.classList.add('no-animations');
             animationToggleBtn.setAttribute('aria-pressed', 'true');
             animationToggleBtn.innerHTML = `<i data-lucide="pause" class="w-5 h-5 opacity-70"></i>`;
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         }
 
         // Modal Elements
@@ -507,7 +515,9 @@
                 e.preventDefault();
                 formContent.classList.add('hidden');
                 successContent.classList.remove('hidden');
-                lucide.createIcons();
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
             });
         }
     </script>
