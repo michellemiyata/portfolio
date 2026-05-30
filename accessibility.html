@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
-
         <style>
         :root {
             /* Warm, Nostalgic Light Mode */
@@ -32,7 +30,6 @@
             --gradient-2: #F0F0EE;
             --gradient-3: #FDFBF7;
         }
-
         .dark-theme {
             /* Deep, Immersive Dark Mode */
             --bg-primary: #111016;
@@ -42,28 +39,23 @@
             --accent: #9A86A8;
             --focus-ring: rgba(154, 134, 168, 0.6);
             --border-subtle: rgba(54, 50, 68, 0.7);
-
             /* Gradient Backgrounds */
             --gradient-1: #1C152B;
             --gradient-2: #111016;
             --gradient-3: #221D32;
         }
-
         .logo-blend {
             mix-blend-mode: multiply;
         }
-
         .dark-theme .logo-blend {
             filter: invert(1) hue-rotate(180deg) brightness(1.2);
             mix-blend-mode: screen;
         }
-
         @keyframes gradient-breath {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         body {
             font-family: 'Inter', sans-serif;
             font-size: 1.125rem; /* Increased for better readability */
@@ -74,22 +66,18 @@
             transition: color 0.4s ease;
             -webkit-font-smoothing: antialiased;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Inter', sans-serif;
             font-size: 1.125rem; /* Increased for better readability */
             color: var(--text-primary);
         }
-
         .serif {
             font-family: 'Playfair Display', serif;
         }
-
         p {
             color: var(--text-secondary);
             line-height: 1.8;
         }
-
         @media (prefers-reduced-motion: reduce) {
             *, ::before, ::after {
                 animation-duration: 0.01ms !important;
@@ -98,7 +86,6 @@
                 scroll-behavior: auto !important;
             }
         }
-
         .no-animations * {
             animation: none !important;
             transition: none !important;
@@ -107,19 +94,16 @@
         .no-animations body {
             background: var(--bg-primary) !important;
         }
-
         *:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 4px;
             box-shadow: 0 0 0 6px var(--focus-ring);
         }
-
         .fade-up {
             opacity: 0;
             transform: translateY(12px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
         .fade-up.visible {
             opacity: 1;
             transform: none;
@@ -130,12 +114,10 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .link-underline {
             position: relative;
             text-decoration: none;
@@ -143,13 +125,11 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-
         .link-underline:hover,
         .link-underline.active {
             color: var(--text-primary);
             font-weight: 500;
         }
-
         .link-underline::after {
             content: '';
             position: absolute;
@@ -162,52 +142,42 @@
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
         }
-
         .link-underline:hover::after,
         .link-underline.active::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
-
         .dynamic-bg {
             background-color: var(--bg-secondary);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
-
         .dynamic-border {
             border-color: var(--border-subtle);
         }
-
         .project-card:hover .project-image {
             transform: scale(1.02);
         }
-
         @keyframes subtle-breathe {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-
         .animate-breathe {
             animation: subtle-breathe 6s ease-in-out infinite;
         }
-
         @keyframes pop-spin {
             0% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.2) rotate(15deg); }
             100% { transform: scale(1) rotate(0deg); }
         }
-
         .animate-pop-spin {
             animation: pop-spin 0.4s ease-out;
         }
-
         @keyframes page-zoom {
             0% { transform: scale(1); filter: blur(0px); }
             50% { transform: scale(0.98); filter: blur(3px); }
             100% { transform: scale(1); filter: blur(0px); }
         }
-
         body.animate-page-zoom {
             animation: page-zoom 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
         }
@@ -226,10 +196,8 @@
         }
     </style>
 </head>
-
 <body
     class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
-
     <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
         aria-label="Accessibility Controls">
         <button id="animationToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
@@ -241,7 +209,6 @@
             <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
         </button>
     </div>
-
     <!-- Navigation -->
     <nav
         class="w-full max-w-4xl mb-24 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -249,7 +216,7 @@
             <img src="miyata_logo.png" alt="MiyataCreative Logo"
                 class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
             <span
-                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility-Focused UX/UI Designer</span>
+                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
         </a>
         <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
             <a href="index.html" class="link-underline">Home</a>
@@ -259,9 +226,7 @@
             <a href="contact.html" class="link-underline">Contact</a>
         </div>
     </nav>
-
     <main class="w-full max-w-4xl flex-grow" id="main-content">
-
         <!-- INTRO SECTION -->
         <section class="mb-24 md:mb-32 fade-up" style="transition-delay: 0.1s">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
@@ -273,11 +238,9 @@
                 reducing cognitive load, and building products that respect a user's time and mental energy.
             </p>
         </section>
-
         <!-- CORE PRINCIPLES -->
         <section class="mb-32">
             <div class="space-y-24">
-
                 <!-- Principle 1 -->
                 <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
                     <div class="md:col-span-4">
@@ -297,7 +260,6 @@
                         </p>
                     </div>
                 </article>
-
                 <!-- Principle 2 -->
                 <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
                     <div class="md:col-span-4">
@@ -316,7 +278,6 @@
                         </p>
                     </div>
                 </article>
-
                 <!-- Principle 3 -->
                 <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-start fade-up border-t dynamic-border pt-16">
                     <div class="md:col-span-4">
@@ -338,12 +299,9 @@
                         </a>
                     </div>
                 </article>
-
             </div>
         </section>
-
     </main>
-
     <footer
         class="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center text-sm py-8 border-t dynamic-border fade-up text-[var(--text-secondary)] transition-colors duration-400 mt-auto">
         <p>© 2025 Michelle Miyata. All rights reserved.</p>
@@ -356,10 +314,8 @@
                     data-lucide="github" class="w-5 h-5"></i></a>
         </div>
     </footer>
-
     <script>
         lucide.createIcons();
-
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -370,19 +326,15 @@
                     }
                 });
             }, observerOptions);
-
             document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
             setTimeout(() => {
                 document.querySelectorAll('.fade-up:nth-child(-n+4)').forEach(el => el.classList.add('visible'));
             }, 100);
         });
-
         const themeToggleBtn = document.getElementById('themeToggle');
         const animationToggleBtn = document.getElementById('animationToggle');
         let isDarkTheme = false;
         let animationsDisabled = false;
-
         themeToggleBtn.addEventListener('click', () => {
             isDarkTheme = !isDarkTheme;
             document.body.classList.toggle('dark-theme');
@@ -394,7 +346,6 @@
             void themeToggleBtn.offsetWidth;
             themeToggleBtn.classList.add('animate-pop-spin');
 });
-
         animationToggleBtn.addEventListener('click', () => {
             animationsDisabled = !animationsDisabled;
             document.body.classList.toggle('no-animations');
@@ -406,7 +357,6 @@
             void animationToggleBtn.offsetWidth;
             animationToggleBtn.classList.add('animate-pop-spin');
 });
-
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             animationsDisabled = true;
             document.body.classList.add('no-animations');
@@ -416,5 +366,4 @@
         }
     </script>
 </body>
-
 </html>
