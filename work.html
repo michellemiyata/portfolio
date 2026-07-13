@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Michelle Miyata</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+        <style>
+        :root {
+            /* Warm, Nostalgic Light Mode */
+            --bg-primary: #FDFBF7;
+            --bg-secondary: rgba(255, 255, 255, 0.6);
+            --text-primary: #1A1514; /* Darker for a11y */
+            --text-secondary: #4A3E3C; /* Darker for a11y */
+            --accent: #B28F81;
+            --focus-ring: rgba(178, 143, 129, 0.4);
+            --border-subtle: rgba(231, 225, 221, 0.7);
+            
+            /* Gradient Backgrounds */
+            --gradient-1: #FFE9E3;
+            --gradient-2: #F0F0EE;
+            --gradient-3: #FDFBF7;
+        }
+
+        .dark-theme {
+            /* Deep, Immersive Dark Mode */
+            --bg-primary: #111016;
+            --bg-secondary: rgba(26, 24, 33, 0.6);
+            --text-primary: #FFFFFF; /* Brighter for a11y */
+            --text-secondary: #E0DEE8; /* Brighter for a11y */
+            --accent: #9A86A8;
+            --focus-ring: rgba(154, 134, 168, 0.6);
+            --border-subtle: rgba(54, 50, 68, 0.7);
+
+            /* Gradient Backgrounds */
+            --gradient-1: #1C152B;
+            --gradient-2: #111016;
+            --gradient-3: #221D32;
+        }
+
+        .logo-blend {
+            mix-blend-mode: multiply;
+        }
+
+        .dark-theme .logo-blend {
+            filter: invert(1) hue-rotate(180deg) brightness(1.2);
+            mix-blend-mode: screen;
+        }
+
+        @keyframes gradient-breath {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem; /* Increased for better readability */
+            background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3)) !important;
+            background-size: 400% 400%;
+            animation: gradient-breath 20s ease infinite;
+            color: var(--text-primary);
+            transition: color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem; /* Increased for better readability */
+            color: var(--text-primary);
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .no-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .no-animations body {
+            background: var(--bg-primary) !important;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            box-shadow: 0 0 0 6px var(--focus-ring);
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .link-underline {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .link-underline:hover,
+        .link-underline.active {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .link-underline:hover::after,
+        .link-underline.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .dynamic-bg {
+            background-color: var(--bg-secondary);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dynamic-border {
+            border-color: var(--border-subtle);
+        }
+        
+        .glass-card {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 1.5rem;
+        }
+        
+        .glass-card:hover {
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-6px) scale(1.01);
+        }
+
+        .dark-theme .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Unified Smooth Project Image Transitions */
+        .project-image img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .group:hover .project-image img {
+            opacity: 0.9;
+        }
+
+        @keyframes subtle-breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-breathe {
+            animation: subtle-breathe 6s ease-in-out infinite;
+        }
+
+        @keyframes pop-spin {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(15deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .animate-pop-spin {
+            animation: pop-spin 0.4s ease-out;
+        }
+
+        @keyframes page-zoom {
+            0% { transform: scale(1); filter: blur(0px); }
+            50% { transform: scale(0.98); filter: blur(3px); }
+            100% { transform: scale(1); filter: blur(0px); }
+        }
+
+        body.animate-page-zoom {
+            animation: page-zoom 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+        }
+    
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
+
+    <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
+        aria-label="Accessibility Controls">
+        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
+            aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
+            <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
+        </button>
+    </div>
+
+    <nav
+        class="w-full max-w-4xl mb-24 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
+            <img src="miyata_logo.png" alt="MiyataCreative Logo"
+                class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
+            <span
+                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
+        </a>
+        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
+            <a href="index.html" class="link-underline">Home</a>
+            <a href="work.html" class="link-underline active" aria-current="page">Work</a>
+            <a href="about.html" class="link-underline">About</a>
+            <a href="accessibility.html" class="link-underline">Philosophy</a>
+            <a href="contact.html" class="link-underline">Contact</a>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-4xl flex-grow" id="main-content">
+                <header class="mb-24 md:mb-32 fade-up pt-12 md:pt-24" style="transition-delay: 0.1s">
+            <h1 class="text-[3.5rem] leading-[1.1] md:text-8xl lg:text-9xl font-light tracking-tighter mb-8 text-[var(--text-primary)]">
+                Selected <span class="serif italic text-[var(--accent)]">Work</span>
+            </h1>
+            <p class="text-2xl md:text-3xl max-w-2xl font-light text-[var(--text-secondary)] leading-relaxed">
+                A collection of projects exploring emotion, accessibility, and calm technology.
+            </p>
+        </header>
+
+        <section class="mb-32 w-full" aria-label="Project List">
+            <!-- Grid Layout of Tiles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up">
+                
+                <!-- Project 1: The Boxx Art Gallery -->
+                <article class="w-full">
+                    <a href="case_study_theboxx.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                                <img src="wordpress-01.png" alt="The Boxx Art Gallery" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">The Boxx Art Gallery</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">Web Design • WordPress (Co-op)</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 2: TSITP Map -->
+                <article class="w-full">
+                    <a href="case_study_tsitp_map.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                                <img src="tsitp_map_full.png" alt="TSITP Map Interface" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Interactive Transmedia Map</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">Systems Thinking • Data Viz</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 2: Puzzle Piece -->
+                <article class="w-full">
+                    <a href="case_study_1.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-full h-full object-contain drop-shadow-xl scale-110 group-hover:scale-[1.15] transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">Visual Design • Concept</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 3: UnionMoods AR -->
+                <article class="w-full">
+                    <a href="case_study_unionmoods.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App" class="w-[90%] h-[90%] object-contain drop-shadow-2xl scale-105 group-hover:scale-[1.1] transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">UnionMoods AR</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">AR Design • UX Research</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 4: StudyBuddy -->
+                <article class="w-full">
+                    <a href="case_study_studybuddy.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">StudyBuddy</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">Inclusive UI • Productivity</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 5: Kizuna Dining -->
+                <article class="w-full">
+                    <a href="case_study_kizuna.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining" class="w-[80%] h-[80%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Kizuna Dining</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">UX/UI • App Design</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 6: Discover BC -->
+                <article class="w-full">
+                    <a href="case_study_3.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Discover BC</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">UI Design • Mobile</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 7: Emotional Journey TTC -->
+                <article class="w-full">
+                    <a href="case_study_2.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey TTC" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Emotional Journey: TTC</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">Wayfinding • Data Viz</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 8: Puzzle Piece AR -->
+                <article class="w-full">
+                    <a href="case_study_ar_puzzle.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece AR</h3>
+                            <p class="text-[var(--text-secondary)] text-lg font-light">AR Filter • Social</p>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer
+        class="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center text-sm py-8 border-t dynamic-border fade-up text-[var(--text-secondary)] transition-colors duration-400 mt-auto">
+        <p>© 2025 Michelle Miyata. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="LinkedIn Profile"><i
+                    data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="Instagram Profile"><i
+                    data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="GitHub Profile"><i
+                    data-lucide="github" class="w-5 h-5"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            setTimeout(() => {
+                document.querySelectorAll('.fade-up:nth-child(-n+4)').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+
+        const themeToggleBtn = document.getElementById('themeToggle');
+        let isDarkTheme = false;
+
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            document.body.classList.toggle('dark-theme');
+            themeToggleBtn.setAttribute('aria-pressed', isDarkTheme);
+            themeToggleBtn.innerHTML = `<i data-lucide="${isDarkTheme ? 'sun' : 'moon'}" class="w-5 h-5 opacity-70"></i>`;
+            lucide.createIcons();
+            themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
+        themeToggleBtn.classList.remove('animate-pop-spin');
+            void themeToggleBtn.offsetWidth;
+            themeToggleBtn.classList.add('animate-pop-spin');
+        });
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.body.classList.add('no-animations');
+        }
+    </script>
+</body>
+
+
+</html>

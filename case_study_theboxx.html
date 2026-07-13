@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Boxx Art Gallery – Case Study</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Warm, Nostalgic Light Mode */
+            --bg-primary: #FDFBF7;
+            --bg-secondary: rgba(255, 255, 255, 0.6);
+            --text-primary: #1A1514;
+            --text-secondary: #4A3E3C;
+            --accent: #B28F81;
+            --focus-ring: rgba(178, 143, 129, 0.4);
+            --border-subtle: rgba(231, 225, 221, 0.7);
+            
+            /* Gradient Backgrounds */
+            --gradient-1: #FFE9E3;
+            --gradient-2: #F0F0EE;
+            --gradient-3: #FDFBF7;
+        }
+
+        .dark-theme {
+            /* Deep, Immersive Dark Mode */
+            --bg-primary: #111016;
+            --bg-secondary: rgba(26, 24, 33, 0.6);
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0DEE8;
+            --accent: #9A86A8;
+            --focus-ring: rgba(154, 134, 168, 0.6);
+            --border-subtle: rgba(54, 50, 68, 0.7);
+
+            /* Gradient Backgrounds */
+            --gradient-1: #1C152B;
+            --gradient-2: #111016;
+            --gradient-3: #221D32;
+        }
+
+        .logo-blend {
+            mix-blend-mode: multiply;
+        }
+
+        .dark-theme .logo-blend {
+            filter: invert(1) hue-rotate(180deg) brightness(1.2);
+            mix-blend-mode: screen;
+        }
+
+        @keyframes gradient-breath {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
+            background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3)) !important;
+            background-size: 400% 400%;
+            animation: gradient-breath 20s ease infinite;
+            color: var(--text-primary);
+            transition: color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .no-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .no-animations body {
+            background: var(--bg-primary) !important;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            box-shadow: 0 0 0 6px var(--focus-ring);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .link-underline {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .link-underline:hover,
+        .link-underline.active {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .link-underline:hover::after,
+        .link-underline.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .dynamic-bg {
+            background-color: var(--bg-secondary);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dynamic-border {
+            border-color: var(--border-subtle);
+        }
+
+        /* Zoomed State for Lightbox */
+        #lightbox.zoomed-state {
+            cursor: zoom-out;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+
+        #lightbox.zoomed-state > div {
+            align-items: flex-start !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        #lightbox.zoomed-state #lightbox-img {
+            max-height: none !important;
+            width: 100%;
+            max-width: 800px;
+            cursor: zoom-out;
+        }
+
+        #lightbox.zoomed-state #lightbox-prev {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #lightbox.zoomed-state #lightbox-next {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #lightbox.zoomed-state #lightbox-close {
+            position: fixed;
+            right: 2rem;
+            top: 2rem;
+        }
+
+        /* Default Lightbox Cursor */
+        #lightbox:not(.zoomed-state) #lightbox-img {
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased overflow-x-hidden selection:bg-stone-300">
+
+    <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" aria-label="Accessibility Controls">
+        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
+            aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
+            <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
+        </button>
+    </div>
+
+    <!-- Header / Nav -->
+    <div class="w-full max-w-4xl fade-in">
+        <nav class="w-full max-w-4xl mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
+                <img src="miyata_logo.png" alt="MiyataCreative Logo"
+                    class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
+                <span class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
+            </a>
+            <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="work.html" class="link-underline active" aria-current="page">Work</a>
+                <a href="about.html" class="link-underline">About</a>
+                <a href="accessibility.html" class="link-underline">Philosophy</a>
+                <a href="contact.html" class="link-underline">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-6 overflow-hidden w-full">
+
+        <!-- NAV BACK -->
+        <div class="max-w-4xl mx-auto mb-12 fade-in">
+            <a href="work.html" class="inline-flex items-center text-stone-400 hover:text-[var(--text-primary)] transition group">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                Back to Work
+            </a>
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="mb-32 fade-in relative">
+            <div class="text-center mb-16 max-w-5xl mx-auto px-6">
+                <span class="inline-block px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-xs font-semibold tracking-wider uppercase mb-6">
+                    Live Project Demo
+                </span>
+                <h1 class="text-5xl md:text-7xl font-semibold mb-6 tracking-tight">The Boxx Art Gallery</h1>
+                <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-8">
+                    An immersive digital space designed to showcase contemporary art, built as part of the C3 Lab George Brown College co-op.
+                </p>
+                <a href="https://michellemiyata.github.io/theboxx.art/" target="_blank"
+                    class="inline-flex items-center px-8 py-4 bg-[var(--text-primary)] text-[var(--bg-primary)] rounded-full font-medium hover:opacity-90 transition gap-2">
+                    Launch Live Demo <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Hero Image with Browser Look -->
+            <div class="w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] rounded-none overflow-hidden shadow-2xl border-y dynamic-border aspect-video bg-stone-100 dark:bg-stone-900">
+                <img src="wordpress-01.png" class="w-full h-full object-cover object-top" alt="The Boxx Art Gallery Coded Website Homepage" />
+            </div>
+        </section>
+
+        <!-- PROJECT INFO GRID -->
+        <section class="max-w-4xl mx-auto mb-32 fade-in">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y dynamic-border text-base">
+                <div>
+                    <h4 class="text-xs uppercase tracking-wider text-[var(--text-secondary)] mb-2">Role</h4>
+                    <p class="font-medium">Interaction & Web Designer (Co-op)</p>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-wider text-[var(--text-secondary)] mb-2">Timeline</h4>
+                    <p class="font-medium">C3 Lab Internship (In Progress)</p>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-wider text-[var(--text-secondary)] mb-2">Platform</h4>
+                    <p class="font-medium">WordPress & HTML/CSS</p>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-wider text-[var(--text-secondary)] mb-2">Client</h4>
+                    <p class="font-medium">The Boxx Art Space</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT SECTIONS -->
+        <section class="max-w-4xl mx-auto mb-32 fade-in">
+            <h2 class="text-3xl md:text-4xl font-light mb-8">The Challenge & The Vision</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Art galleries depend heavily on scale, lighting, and placement to invoke emotion. Digitizing this experience requires recreating those spatial dynamics inside a web browser without creating friction or cognitive load.
+            </p>
+            <p class="text-lg leading-relaxed">
+                As a Digital Experience Design Intern at C3 Lab, I built the initial prototype and later transitioned the site into a fully content-managed WordPress environment. The goal was to build a clean, minimalist layout that shifts all user focus onto the artwork itself.
+            </p>
+        </section>
+
+        <!-- DESIGN PROGRESSION & PHASES -->
+        <section class="max-w-5xl mx-auto mb-32 fade-in">
+            <h2 class="text-3xl font-light mb-16 text-center">Design & Curation Process</h2>
+            
+            <div class="flex flex-col gap-24">
+                <!-- Phase 01: Low-Fidelity (Wireframing) -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border dynamic-border bg-stone-100/50 dark:bg-stone-900/50 group max-h-[450px] overflow-y-auto cursor-pointer p-4">
+                        <img src="theboxx_wireframe.jpg" class="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]" alt="The Boxx Art Gallery Low-Fidelity Wireframe Layout" />
+                    </div>
+                    <div class="p-4">
+                        <span class="text-amber-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Phase 01</span>
+                        <h3 class="text-3xl font-medium mb-4">Low-Fidelity Wireframing</h3>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)] mb-4">
+                            Designing the foundational architecture of the online gallery. This structural blueprint established a clear hierarchy for the main hero carousel, introductory space, featured exhibitions, and artist profiles.
+                        </p>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)]">
+                            Focusing on a minimalist layout, the wireframe prioritizes white space and simple borders to draw emphasis directly to artist content, mitigating visual distraction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phase 02: Custom HTML/CSS Coded Prototype -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 p-4">
+                        <span class="text-amber-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Phase 02</span>
+                        <h3 class="text-3xl font-medium mb-4">HTML/CSS Coded Prototype</h3>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)] mb-4">
+                            Before migrating to a CMS, I custom-coded a fully interactive prototype using HTML, CSS, and Vanilla Javascript to establish the visual rules, layout structure, and font choices.
+                        </p>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)] mb-6">
+                            This static demo allowed us to test transitions, verify page speed, and refine user interactions in a clean code environment prior to the final WordPress translation.
+                        </p>
+                        <a href="https://michellemiyata.github.io/theboxx.art/" target="_blank"
+                            class="inline-flex items-center px-6 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] rounded-full text-sm font-medium hover:opacity-90 transition gap-2">
+                            Explore Coded Demo <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl border dynamic-border bg-stone-100/50 dark:bg-stone-900/50 group max-h-[450px] overflow-y-auto cursor-pointer p-4">
+                        <img src="coding_theboxx.png" class="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]" alt="Coded prototype home page screen mockup" />
+                    </div>
+                </div>
+
+                <!-- Phase 03: WordPress Integration & Curation -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border dynamic-border bg-stone-100/50 dark:bg-stone-900/50 group max-h-[450px] overflow-y-auto cursor-pointer p-4">
+                        <img src="wordpress-01.png" class="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]" alt="Final WordPress website screen mockup" />
+                    </div>
+                    <div class="p-4">
+                        <span class="text-amber-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Phase 03</span>
+                        <h3 class="text-3xl font-medium mb-4">WordPress Theme Translation</h3>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)] mb-4">
+                            The final phase translated the custom HTML/CSS prototype rules into a dynamic, content-managed WordPress environment. This allowed gallery managers to easily upload exhibitions while preserving the coded spacing systems.
+                        </p>
+                        <p class="text-base leading-relaxed text-[var(--text-secondary)]">
+                            By testing templates directly inside physical gallery rooms, we aligned the digital layouts with real-world display standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHYSICAL TESTING GALLERY -->
+        <section class="max-w-5xl mx-auto mb-32 fade-in">
+            <h2 class="text-3xl font-light mb-12 text-center">Physical Curation & Collaboration</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border dynamic-border aspect-[4/3] group">
+                    <img src="IMG_9721.JPG" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Exhibition projection display screen" />
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border dynamic-border aspect-[4/3] group">
+                    <img src="IMG_3342.JPG" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="George Brown College C3 Lab curation team" />
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-stone-900/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-10 cursor-zoom-out">
+        <div class="relative max-w-5xl w-full max-h-full flex items-center justify-center">
+            <button id="lightbox-prev" class="absolute left-2 md:-left-12 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
+                <i data-lucide="chevron-left" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </button>
+
+            <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" />
+            
+            <button id="lightbox-next" class="absolute right-2 md:-right-12 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
+                <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </button>
+
+            <button id="lightbox-close" class="absolute -top-4 -right-4 md:-top-6 md:-right-6 z-50 text-white/70 hover:text-white bg-stone-900/50 hover:bg-stone-900 p-2 rounded-full backdrop-blur-md transition-all cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center text-sm py-8 border-t dynamic-border fade-in text-[var(--text-secondary)] mt-auto">
+        <p>© 2025 Michelle Miyata. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="LinkedIn Profile"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="Instagram Profile"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="GitHub Profile"><i data-lucide="github" class="w-5 h-5"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in:nth-child(-n+4)').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+
+        const themeToggleBtn = document.getElementById('themeToggle');
+        let isDarkTheme = false;
+
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            document.body.classList.toggle('dark-theme');
+            themeToggleBtn.setAttribute('aria-pressed', isDarkTheme);
+            themeToggleBtn.innerHTML = `<i data-lucide="${isDarkTheme ? 'sun' : 'moon'}" class="w-5 h-5 opacity-70"></i>`;
+            lucide.createIcons();
+            themeToggleBtn.setAttribute('title', isDarkTheme ? 'Toggle light theme' : 'Toggle dark theme');
+            themeToggleBtn.classList.remove('animate-pop-spin');
+            void themeToggleBtn.offsetWidth;
+            themeToggleBtn.classList.add('animate-pop-spin');
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const images = document.querySelectorAll('main img');
+        const imagesArray = Array.from(images).filter(img => !img.classList.contains('logo-blend')); // Exclude logo
+        let currentImageIndex = 0;
+
+        imagesArray.forEach((img, index) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightbox.classList.remove('opacity-0', 'pointer-events-none');
+                lightbox.classList.add('opacity-100');
+                setTimeout(() => {
+                    lightboxImg.classList.remove('scale-95');
+                    lightboxImg.classList.add('scale-100');
+                }, 50);
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('opacity-100', 'zoomed-state');
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightboxImg.src = '';
+            }, 300);
+        };
+
+        const showNextImage = (e) => {
+            if (e) e.stopPropagation();
+            lightbox.classList.remove('zoomed-state');
+            if (imagesArray.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
+                lightboxImg.src = imagesArray[currentImageIndex].src;
+            }
+        };
+
+        const showPrevImage = (e) => {
+            if (e) e.stopPropagation();
+            lightbox.classList.remove('zoomed-state');
+            if (imagesArray.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
+                lightboxImg.src = imagesArray[currentImageIndex].src;
+            }
+        };
+
+        lightbox.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', showNextImage);
+        lightboxPrev.addEventListener('click', showPrevImage);
+
+        lightboxImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightbox.classList.toggle('zoomed-state');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('opacity-100')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') showNextImage();
+                if (e.key === 'ArrowLeft') showPrevImage();
+            }
+        });
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.body.classList.add('no-animations');
+        }
+    </script>
+</body>
+
+</html>
