@@ -224,6 +224,28 @@
             opacity: 0.04;
             background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
         }
+
+        /* Custom SVG underline drawing animation */
+        .underline-path {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .visible .underline-path {
+            stroke-dashoffset: 0;
+        }
+
+        /* Subtle hover wiggle or scale effect on "quiet" underline path */
+        .group:hover .underline-path {
+            animation: draw-wiggle 0.6s ease-in-out forwards;
+        }
+
+        @keyframes draw-wiggle {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(1.5px) scaleY(1.2); }
+            100% { transform: translateY(0); }
+        }
     </style>
 </head>
 
@@ -262,15 +284,45 @@
         <div class="absolute bottom-[10%] right-[-20%] w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-indigo-200 to-purple-200 opacity-20 dark:opacity-[0.07] blur-[130px] pointer-events-none -z-10" style="animation: subtle-breathe 8s ease-in-out infinite alternate;"></div>
 
         <!-- INTRO SECTION -->
-        <section class="mb-24 md:mb-32 fade-up" style="transition-delay: 0.1s">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-8 text-[var(--text-primary)]"
-                style="line-height: 1.15;">
-                A <span class="serif italic text-[var(--text-secondary)]">quiet</span> approach to digital spaces.
+        <section class="mb-24 md:mb-36 relative fade-up max-w-3xl" style="transition-delay: 0.1s">
+            <!-- Large background decorative serif letter Q -->
+            <div class="absolute -top-16 -left-12 text-[14rem] md:text-[20rem] font-light serif text-[var(--text-secondary)] opacity-[0.03] dark:opacity-[0.02] pointer-events-none select-none -z-10 leading-none">
+                Q
+            </div>
+
+            <!-- Category / Status Tag -->
+            <div class="flex items-center gap-3 mb-6 md:mb-8">
+                <span class="text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase">
+                    Philosophy // 01
+                </span>
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-[var(--text-primary)] leading-[1.15] mb-8 md:mb-12 relative z-10">
+                A <span class="relative inline-block group cursor-pointer serif italic text-[var(--text-secondary)]">
+                    quiet
+                    <!-- Custom SVG organic underline -->
+                    <svg class="absolute -bottom-2 left-0 w-full h-3 text-[var(--accent)] opacity-80" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q30,2 50,5 T100,5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="underline-path"></path>
+                    </svg>
+                </span> approach to digital spaces.
             </h1>
-            <p class="text-xl md:text-2xl max-w-2xl font-light text-[var(--text-secondary)] leading-relaxed">
-                Design isn't just about what people see—it's about how they feel. I believe in eliminating friction,
-                reducing cognitive load, and building products that respect a user's time and mental energy.
-            </p>
+
+            <!-- Quote & Supporting Explanation Block -->
+            <div class="flex flex-col gap-6 md:gap-8 border-l-2 border-[var(--accent)] pl-6 md:pl-8 max-w-2xl">
+                <!-- Quote -->
+                <blockquote class="text-2xl md:text-3xl font-light text-[var(--text-primary)] leading-snug serif italic">
+                    "Design isn't just about what people see—it's about how they feel."
+                </blockquote>
+                <!-- Supporting explanation -->
+                <p class="text-lg md:text-xl font-light text-[var(--text-secondary)] leading-relaxed">
+                    I believe in eliminating friction, reducing cognitive load, and building digital products that respect a user's time and mental energy.
+                </p>
+            </div>
         </section>
 
         <!-- CORE PRINCIPLES (GRID OF VISUAL TILES) -->

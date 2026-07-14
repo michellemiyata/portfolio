@@ -265,7 +265,7 @@
     </div>
 
     <nav
-        class="w-full max-w-4xl mb-24 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        class="w-full max-w-4xl mb-12 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
             <img src="miyata_logo.png" alt="MiyataCreative Logo"
                 class="h-6 md:h-8 w-[200px] md:w-60 object-cover object-left logo-blend opacity-90 group-hover:opacity-100 transition-opacity" />
@@ -282,7 +282,7 @@
     </nav>
 
     <main class="w-full max-w-4xl flex-grow" id="main-content">
-                <header class="mb-24 md:mb-32 fade-up pt-12 md:pt-24" style="transition-delay: 0.1s">
+        <header class="mb-12 md:mb-16 fade-up pt-4 md:pt-8" style="transition-delay: 0.1s">
             <h1 class="text-[3.5rem] leading-[1.1] md:text-8xl lg:text-9xl font-light tracking-tighter mb-8 text-[var(--text-primary)]">
                 Selected <span class="serif italic text-[var(--accent)]">Work</span>
             </h1>
@@ -291,7 +291,7 @@
             </p>
         </header>
 
-        <section class="mb-32 w-full" aria-label="Project List">
+        <section class="mb-16 w-full" aria-label="Project List">
             <!-- Grid Layout of Tiles -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up">
                 
@@ -303,9 +303,14 @@
                                 <img src="wordpress-01.png" alt="The Boxx Art Gallery" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">The Boxx Art Gallery</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">Web Design • WordPress (Co-op)</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end animate-fade-in-title">The Boxx Art Gallery</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Web Design · WordPress</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -318,9 +323,14 @@
                                 <img src="tsitp_map_full.png" alt="TSITP Map Interface" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Interactive Transmedia Map</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">Systems Thinking • Data Viz</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Interactive Transmedia Map</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Systems Design · Data Visualization</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -328,14 +338,19 @@
                 <!-- Project 2: Puzzle Piece -->
                 <article class="w-full">
                     <a href="case_study_1.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-full h-full object-contain drop-shadow-xl scale-110 group-hover:scale-[1.15] transition-transform duration-700" />
+                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-[95%] h-[95%] object-contain drop-shadow-xl scale-105 group-hover:scale-[1.1] transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">Visual Design • Concept</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Puzzle Piece</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Visual Design · Installation</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -343,14 +358,19 @@
                 <!-- Project 3: UnionMoods AR -->
                 <article class="w-full">
                     <a href="case_study_unionmoods.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-8">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App" class="w-[90%] h-[90%] object-contain drop-shadow-2xl scale-105 group-hover:scale-[1.1] transition-transform duration-700" />
+                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">UnionMoods AR</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">AR Design • UX Research</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">UnionMoods AR</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">AR Experience · UX Research</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -358,14 +378,19 @@
                 <!-- Project 4: StudyBuddy -->
                 <article class="w-full">
                     <a href="case_study_studybuddy.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">StudyBuddy</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">Inclusive UI • Productivity</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">StudyBuddy</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -373,14 +398,19 @@
                 <!-- Project 5: Kizuna Dining -->
                 <article class="w-full">
                     <a href="case_study_kizuna.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining" class="w-[80%] h-[80%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining" class="w-[90%] h-[90%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Kizuna Dining</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">UX/UI • App Design</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Kizuna Dining</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -388,14 +418,19 @@
                 <!-- Project 6: Discover BC -->
                 <article class="w-full">
                     <a href="case_study_3.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                                <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Discover BC</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">UI Design • Mobile</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Discover BC</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
@@ -403,29 +438,39 @@
                 <!-- Project 7: Emotional Journey TTC -->
                 <article class="w-full">
                     <a href="case_study_2.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey TTC" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                                <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey TTC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Emotional Journey: TTC</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">Wayfinding • Data Viz</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Emotional Journey: TTC</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">Systems Design · Data Visualization</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
 
                 <!-- Project 8: Puzzle Piece AR -->
-                <article class="w-full">
+                <article class="w-full md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto">
                     <a href="case_study_ar_puzzle.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-12">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR" class="w-[90%] h-[90%] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <div class="mt-auto">
-                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece AR</h3>
-                            <p class="text-[var(--text-secondary)] text-lg font-light">AR Filter • Social</p>
+                        <div class="mt-auto flex justify-between items-end gap-4">
+                            <div class="w-full">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Puzzle Piece AR</h3>
+                                <p class="text-[var(--text-secondary)] text-lg font-light">AR Experience · Social Filter</p>
+                            </div>
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </a>
                 </article>
