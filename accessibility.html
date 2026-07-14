@@ -406,16 +406,85 @@
 
     </main>
 
-    <footer
-        class="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center text-sm py-8 border-t dynamic-border fade-up text-[var(--text-secondary)] transition-colors duration-400 mt-auto">
-        <p>© 2025 Michelle Miyata. All rights reserved.</p>
-        <div class="flex gap-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="LinkedIn Profile"><i
-                    data-lucide="linkedin" class="w-5 h-5"></i></a>
-            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="Instagram Profile"><i
-                    data-lucide="instagram" class="w-5 h-5"></i></a>
-            <a href="#" class="hover:text-[var(--text-primary)] transition" aria-label="GitHub Profile"><i
-                    data-lucide="github" class="w-5 h-5"></i></a>
+    <!-- Footer -->
+    <footer class="w-full max-w-4xl mt-24 md:mt-32 mb-12 fade-up mt-auto" aria-label="Global Site Footer">
+        <div class="w-full rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-8 md:p-12 relative overflow-hidden shadow-sm">
+            <!-- Subtle backdrop gradient glow -->
+            <div class="absolute -right-24 -bottom-24 w-80 h-80 rounded-full bg-[var(--accent)] opacity-5 blur-[80px] pointer-events-none"></div>
+            
+            <!-- Top Section: Multi-Column Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12 relative z-10">
+                
+                <!-- Column 1: Brand & Description (Spans 5 cols) -->
+                <div class="md:col-span-5 flex flex-col items-start gap-4">
+                    <a href="index.html" class="block hover:opacity-80 transition-opacity">
+                        <img src="miyata_logo.png" alt="MiyataCreative Logo" class="h-7 w-auto object-contain logo-blend opacity-95" />
+                    </a>
+                    <p class="text-sm font-light text-[var(--text-secondary)] leading-relaxed max-w-sm mt-1">
+                        Designing clean, quiet, and accessible digital spaces that put the human experience first. Let's create something meaningful together.
+                    </p>
+                </div>
+                
+                <!-- Column 2: Navigation Links (Spans 3 cols) -->
+                <div class="md:col-span-3 flex flex-col gap-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[var(--accent)] mb-1">Explore</span>
+                    <a href="index.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform transition-transform">Home</a>
+                    <a href="work.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform transition-transform">Selected Work</a>
+                    <a href="about.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform transition-transform">About Story</a>
+                    <a href="accessibility.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform transition-transform">Philosophy</a>
+                    <a href="contact.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform transition-transform">Get in Touch</a>
+                </div>
+
+                <!-- Column 3: Contact & Socials (Spans 4 cols) -->
+                <div class="md:col-span-4 flex flex-col gap-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[var(--accent)] mb-1">Let's Connect</span>
+                    
+                    <!-- Email Link with animated underline on hover -->
+                    <a href="mailto:miyatacreative@gmail.com" class="text-base text-[var(--text-primary)] hover:text-[var(--accent)] font-medium transition-colors duration-300 w-fit flex items-center gap-2 group">
+                        <span class="border-b border-transparent group-hover:border-[var(--accent)] transition-all pb-0.5">miyatacreative@gmail.com</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                    </a>
+                    
+                    <!-- Social Icon Strip -->
+                    <div class="flex gap-3 mt-2">
+                        <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
+                        </a>
+                        <a href="https://github.com/michellemiyata" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="GitHub Profile">
+                            <i data-lucide="github" class="w-4.5 h-4.5"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="Instagram Profile">
+                            <i data-lucide="instagram" class="w-4.5 h-4.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section: Copyright, Accessibility & Back to Top -->
+            <div class="border-t border-[var(--border-subtle)] pt-8 mt-4 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs text-[var(--text-secondary)] relative z-10">
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <p>© 2026 Michelle Miyata. All rights reserved.</p>
+                    <span class="hidden sm:inline opacity-30">|</span>
+                    <!-- Accessibility Compliance Indicator -->
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-primary)] border border-[var(--border-subtle)]" title="Designed to conform to WCAG 2.1 Level AA criteria">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span>WCAG 2.1 AA Compliant</span>
+                    </div>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 hover:text-[var(--text-primary)] transition-colors duration-300 group cursor-pointer" aria-label="Scroll back to top of the page">
+                    <span>Back to top</span>
+                    <i data-lucide="arrow-up" class="w-3.5 h-3.5 transform group-hover:-translate-y-0.5 transition-transform"></i>
+                </button>
+            </div>
         </div>
     </footer>
 
