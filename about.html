@@ -291,13 +291,17 @@
                 </div>
 
                 <!-- Image Column -->
-                <div class="lg:col-span-5 relative mt-12 lg:mt-0">
+                <div class="lg:col-span-5 relative mt-12 lg:mt-0 flex flex-col items-center">
                     <div
-                        class="relative rounded-t-full rounded-b-3xl overflow-hidden aspect-[3/4] border dynamic-border bg-[var(--bg-secondary)] relative group">
-                        <img src="profile2.jpeg"
-                            class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 transition-all duration-700 animate-breathe group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:opacity-100"
-                            alt="Michelle Miyata Portrait" />
+                        class="w-full max-w-[360px] aspect-square rounded-full overflow-hidden border dynamic-border bg-[var(--bg-secondary)] relative group shadow-md">
+                        <img src="profile_ai.jpg"
+                            class="w-full h-full object-cover transition-all duration-700 animate-breathe group-hover:scale-105"
+                            alt="AI-generated portrait of Michelle Miyata" />
                     </div>
+                    <p class="mt-4 text-xs tracking-wider text-[var(--text-secondary)] uppercase font-medium flex items-center gap-1.5 opacity-75">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[var(--accent)]"></i>
+                        Portrait created with AI
+                    </p>
                 </div>
 
             </div>
