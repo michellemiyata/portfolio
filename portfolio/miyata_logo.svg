@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none" class="miyata-logo">
+  <style>
+    .brand-mark {
+      stroke: #1A1514;
+      stroke-width: 2.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .brand-text-main {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      fill: #1A1514;
+    }
+    .brand-text-sub {
+      font-weight: 300;
+      fill: #4A3E3C;
+    }
+    @media (prefers-color-scheme: dark) {
+      .brand-mark { stroke: #FFFFFF; }
+      .brand-text-main { fill: #FFFFFF; }
+      .brand-text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Monogram: Fluid Organic Ribbon M -> C -->
+  <g class="brand-mark">
+    <!-- Left vertical stem and fluid curve forming M through to C -->
+    <path d="M 6 32 L 6 9 Q 6 8 8 8 Q 10 8 13 13 L 20 25 L 27 13 Q 30 8 32 8 Q 34 8 34 9 L 34 23 Q 34 32 44 32 Q 52 32 54 22" />
+  </g>
+  <!-- Brand Typography -->
+  <text x="68" y="27" class="brand-text-main">Miyata<tspan class="brand-text-sub">Creative</tspan></text>
+</svg>

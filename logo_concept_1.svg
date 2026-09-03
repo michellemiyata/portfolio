@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none" class="miyata-logo">
+  <!-- Monogram: Fluid Organic Ribbon M -> C -->
+  <g class="logo-mark" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left vertical stem of M -->
+    <path d="M 6 32 L 6 9 Q 6 8 8 8 Q 10 8 13 13 L 20 25 L 27 13 Q 30 8 32 8 Q 34 8 34 9 L 34 23 Q 34 32 44 32 Q 52 32 54 22" />
+  </g>
+  <!-- Brand Typography -->
+  <text x="68" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="21" font-weight="600" letter-spacing="-0.02em" fill="currentColor">Miyata<tspan font-weight="300" fill="currentColor" opacity="0.85">Creative</tspan></text>
+</svg>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiyataCreative Logo Concepts & Live Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FDFBF7;
+            --bg-secondary: rgba(255, 255, 255, 0.7);
+            --text-primary: #1A1514;
+            --text-secondary: #4A3E3C;
+            --accent: #B28F81;
+            --border-subtle: rgba(231, 225, 221, 0.8);
+            --gradient-1: #FFE9E3;
+            --gradient-2: #F0F0EE;
+            --gradient-3: #FDFBF7;
+        }
+
+        .dark-theme {
+            --bg-primary: #111016;
+            --bg-secondary: rgba(26, 24, 33, 0.7);
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0DEE8;
+            --accent: #9A86A8;
+            --border-subtle: rgba(54, 50, 68, 0.8);
+            --gradient-1: #1C152B;
+            --gradient-2: #111016;
+            --gradient-3: #221D32;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            background-size: 400% 400%;
+            animation: gradient-breath 20s ease infinite;
+            color: var(--text-primary);
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        @keyframes gradient-breath {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-card {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .dark-theme .glass-card:hover {
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .link-underline {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .link-underline.active {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+        .link-underline.active::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12 flex flex-col items-center">
+
+    <!-- Top Theme Toggle & Controls -->
+    <div class="w-full max-w-5xl flex justify-between items-center mb-8">
+        <div>
+            <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-semibold">Brand Identity Exploration</span>
+            <h1 class="text-2xl md:text-3xl font-light text-[var(--text-primary)]">MiyataCreative Logo Prototypes</h1>
+        </div>
+        <button id="themeToggle" class="px-4 py-2 rounded-full glass-card flex items-center gap-2 hover:opacity-80 transition" aria-label="Toggle Dark Mode">
+            <i data-lucide="moon" class="w-4 h-4 text-[var(--text-primary)]"></i>
+            <span class="text-sm font-medium">Toggle Theme</span>
+        </button>
+    </div>
+
+    <!-- Live Interactive Navbar Simulator -->
+    <div class="w-full max-w-5xl glass-card p-6 md:p-8 mb-12 shadow-sm border border-[var(--border-subtle)]">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-[var(--border-subtle)]">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">Live Header Context Preview</span>
+            <span class="text-xs text-[var(--text-secondary)]">Click any concept card below to test live in this nav bar</span>
+        </div>
+
+        <nav class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-2">
+            <a href="#" class="flex flex-col gap-1 group" id="live-nav-logo-link">
+                <!-- Injected Live Logo Container -->
+                <div id="nav-logo-slot" class="h-6 md:h-7 flex items-center">
+                    <!-- Default Concept 1 -->
+                    <img src="logo_concept_1.svg" alt="MiyataCreative" class="h-full w-auto object-contain" />
+                </div>
+                <span class="text-xs text-[var(--text-secondary)] opacity-80 group-hover:opacity-100 transition-opacity">Accessibility Digital Experience Designer</span>
+            </a>
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-medium">
+                <a href="#" class="link-underline active">Home</a>
+                <a href="#" class="link-underline">Work</a>
+                <a href="#" class="link-underline">About</a>
+                <a href="#" class="link-underline">Philosophy</a>
+                <a href="#" class="link-underline">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Concepts Grid -->
+    <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+        <!-- Original Reference Card -->
+        <div class="glass-card p-6 flex flex-col justify-between border-dashed border-2 border-stone-300 dark:border-stone-700">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Current Logo</span>
+                    <span class="text-xs text-stone-400">Raster PNG</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4">
+                    <img src="miyata_logo.svg" alt="Current Logo" class="h-6 md:h-7 object-contain opacity-90 dark:invert" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">Current Baseline</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Intertwining loop monogram with standard sans typography. Uses blend modes and filter invert in dark mode.
+                </p>
+            </div>
+            <button onclick="previewLogo('miyata_logo.svg', true)" class="w-full py-2 px-3 rounded-lg border border-[var(--border-subtle)] text-xs font-medium hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition">
+                Preview in Nav
+            </button>
+        </div>
+
+        <!-- Concept 1: The Organic Ribbon -->
+        <div class="glass-card p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] cursor-pointer" onclick="previewLogo('logo_concept_1.svg')">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-200">Concept 01 · Vector SVG</span>
+                    <span class="text-xs text-[var(--accent)] font-medium">Recommended</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4 text-[var(--text-primary)]">
+                    <img src="logo_concept_1.svg" alt="Concept 1" class="h-7 w-auto object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">The Organic Ribbon</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Continuous smooth ribbon where the leg of 'M' transitions effortlessly into a receptive 'C'. Fluid, warm, and human-centered.
+                </p>
+            </div>
+            <button class="w-full py-2 px-3 rounded-lg bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-medium hover:opacity-90 transition">
+                Select to Preview in Header
+            </button>
+        </div>
+
+        <!-- Concept 2: The Architectural Gateway & Space -->
+        <div class="glass-card p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] cursor-pointer" onclick="previewLogo('logo_concept_2.svg')">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Concept 02 · Vector SVG</span>
+                    <span class="text-xs text-[var(--text-secondary)]">Japanese Minimalist</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4 text-[var(--text-primary)]">
+                    <img src="logo_concept_2.svg" alt="Concept 2" class="h-7 w-auto object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">The Architectural Space & Gateway</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Dual arches forming the 'M' with wide-tracked letterspacing. Echoes the portfolio theme of "designing quiet, meaningful digital spaces".
+                </p>
+            </div>
+            <button class="w-full py-2 px-3 rounded-lg bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-medium hover:opacity-90 transition">
+                Select to Preview in Header
+            </button>
+        </div>
+
+        <!-- Concept 3: Editorial Serif Duet -->
+        <div class="glass-card p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] cursor-pointer" onclick="previewLogo('logo_concept_3.svg')">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-200">Concept 03 · Vector SVG</span>
+                    <span class="text-xs text-[var(--accent)]">Editorial Studio</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4 text-[var(--text-primary)]">
+                    <img src="logo_concept_3.svg" alt="Concept 3" class="h-7 w-auto object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">Editorial Serif & Modern Sans</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Pairing Playfair Display italic styling with crisp modern sans-serif. Matches the refined editorial typography of your case studies.
+                </p>
+            </div>
+            <button class="w-full py-2 px-3 rounded-lg bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-medium hover:opacity-90 transition">
+                Select to Preview in Header
+            </button>
+        </div>
+
+        <!-- Concept 4: The Kizuna Knot / Endless Loop -->
+        <div class="glass-card p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] cursor-pointer" onclick="previewLogo('logo_concept_4.svg')">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-200">Concept 04 · Vector SVG</span>
+                    <span class="text-xs text-[var(--text-secondary)]">Human Connection</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4 text-[var(--text-primary)]">
+                    <img src="logo_concept_4.svg" alt="Concept 4" class="h-7 w-auto object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">The Kizuna Connection Loop</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Single unbroken loop linking empathy and interaction with a signature terracotta accent dot.
+                </p>
+            </div>
+            <button class="w-full py-2 px-3 rounded-lg bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-medium hover:opacity-90 transition">
+                Select to Preview in Header
+            </button>
+        </div>
+
+        <!-- Concept 5: Minimal Geometric Precision -->
+        <div class="glass-card p-6 flex flex-col justify-between border-2 border-transparent hover:border-[var(--accent)] cursor-pointer" onclick="previewLogo('logo_concept_5.svg')">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-200">Concept 05 · Vector SVG</span>
+                    <span class="text-xs text-[var(--text-secondary)]">Modern UI</span>
+                </div>
+                <div class="h-20 bg-stone-100/50 dark:bg-stone-900/50 rounded-xl flex items-center justify-center p-4 mb-4 text-[var(--text-primary)]">
+                    <img src="logo_concept_5.svg" alt="Concept 5" class="h-7 w-auto object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold mb-1">Minimal Geometric Precision</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                    Architectural M and pure geometric crescent C. Confident, modern, and razor-sharp.
+                </p>
+            </div>
+            <button class="w-full py-2 px-3 rounded-lg bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-medium hover:opacity-90 transition">
+                Select to Preview in Header
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Quick Apply Instructions -->
+    <div class="w-full max-w-5xl glass-card p-6 text-center">
+        <h4 class="text-base font-semibold mb-2">Ready to apply your favorite?</h4>
+        <p class="text-sm text-[var(--text-secondary)] max-w-xl mx-auto">
+            Let me know which concept number (or combination) you prefer, and I'll update all pages across your portfolio instantly!
+        </p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Theme toggle logic
+        const toggleBtn = document.getElementById('themeToggle');
+        toggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-theme');
+            const isDark = document.documentElement.classList.contains('dark-theme');
+            toggleBtn.querySelector('i').setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
+        });
+
+        // Function to dynamically swap header logo
+        function previewLogo(file, isCurrent = false) {
+            const slot = document.getElementById('nav-logo-slot');
+            if (isCurrent) {
+                slot.innerHTML = `<img src="${file}" alt="MiyataCreative" class="h-full w-auto object-contain dark:invert" />`;
+            } else {
+                slot.innerHTML = `<img src="${file}" alt="MiyataCreative" class="h-full w-auto object-contain" />`;
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

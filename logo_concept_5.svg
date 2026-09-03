@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 40" fill="none" class="miyata-logo">
+  <!-- Monogram: Geometric Precision M + C -->
+  <g class="logo-mark" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Clean Minimalist M -->
+    <path d="M 8 32 V 10 L 19 22 L 30 10 V 32" />
+    <!-- Symmetrical C arc adjacent -->
+    <path d="M 46 13 C 38 9, 34 16, 34 21 C 34 26, 38 33, 46 29" stroke-width="2.2" />
+  </g>
+  <!-- Typography -->
+  <text x="60" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.03em" fill="currentColor">Miyata<tspan font-weight="400" opacity="0.75">Creative</tspan></text>
+</svg>
