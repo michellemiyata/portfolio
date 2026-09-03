@@ -1,20 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 54" fill="none">
   <style>
-    .mist-stroke { stroke: #B28F81; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 500; letter-spacing: -0.01em; fill: #1A1514; }
-    .text-sub { font-weight: 300; fill: #B28F81; }
+    .cloud-swirl {
+      stroke: #B28F81;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .text-main {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      fill: #1A1514;
+    }
+    .text-sub {
+      font-weight: 300;
+      fill: #B28F81;
+    }
     @media (prefers-color-scheme: dark) {
-      .mist-stroke { stroke: #9A86A8; }
-      .text-title { fill: #FFFFFF; }
+      .cloud-swirl { stroke: #9A86A8; }
+      .text-main { fill: #FFFFFF; }
       .text-sub { fill: #9A86A8; }
     }
   </style>
-  <!-- MiyataCreative Single-Line Cloud Mist Monogram -->
+
+  <!-- Exact Single-Line Cloud Mist with flourishes & calligraphic MC -->
   <g transform="translate(6, 4)">
-    <!-- Continuous cloud swirl forming MC -->
-    <path d="M 4 23 C 1 20, 2 13, 8 13 C 10 7, 18 5, 23 9 C 27 6, 35 7, 37 13 C 42 15, 43 21, 39 24" class="mist-stroke" fill="none" opacity="0.4" />
-    <path d="M 6 22 C 8 16, 12 11, 16 11 C 19 11, 20 16, 21 21 C 22 16, 24 11, 27 11 C 30 11, 32 17, 31 22" class="mist-stroke" fill="none" />
-    <path d="M 37 13 C 33 10, 29 13, 29 18 C 29 23, 34 25, 38 21" class="mist-stroke" fill="none" />
+    <!-- Top-right delicate cloud loop/spiral flourish -->
+    <path d="M 44 11 C 41 5, 43 1, 48 2 C 52 4, 51 10, 46 12" class="cloud-swirl" fill="none" />
+    
+    <!-- Outer cloud canopy contour -->
+    <path d="M 46 12 C 52 14, 60 19, 58 28 C 56 36, 48 40, 40 38 C 32 41, 24 38, 16 40 C 9 40, 2 34, 4 25 C 1 18, 6 12, 14 13 C 18 6, 28 3, 35 7 C 39 4, 44 6, 46 12" class="cloud-swirl" fill="none" />
+
+    <!-- Left delicate inner swirl loop -->
+    <path d="M 4 25 C 2 20, 5 14, 11 15 C 15 16, 16 22, 12 25 C 8 27, 4 25, 4 20" class="cloud-swirl" fill="none" opacity="0.85" />
+
+    <!-- Center Calligraphic M with gentle rising curve -->
+    <path d="M 12 30 C 16 22, 19 12, 24 12 C 28 12, 28 20, 30 26 C 32 19, 34 12, 38 12 C 43 12, 44 20, 42 30" class="cloud-swirl" fill="none" />
+
+    <!-- Center Calligraphic C with receptive open sweep -->
+    <path d="M 52 15 C 46 10, 39 15, 39 22 C 39 30, 46 33, 52 27" class="cloud-swirl" fill="none" />
   </g>
-  <text x="54" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+
+  <!-- Typography -->
+  <text x="76" y="34" class="text-main">Miyata<tspan class="text-sub">Creative</tspan></text>
 </svg>
