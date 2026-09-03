@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none">
+  <style>
+    .editorial-main {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      fill: #1A1514;
+    }
+    .editorial-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      fill: #B28F81;
+    }
+    @media (prefers-color-scheme: dark) {
+      .editorial-main { fill: #FFFFFF; }
+      .editorial-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Style C: Pure Typographic Luxury Editorial Wordmark -->
+  <g transform="translate(6, 4)">
+    <text x="0" y="19" class="editorial-main">MIYATA</text>
+    <text x="0" y="32" class="editorial-sub">CREATIVE</text>
+  </g>
+</svg>

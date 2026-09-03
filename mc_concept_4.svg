@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .ribbon-m {
+      fill: #1A1514;
+    }
+    .ribbon-c {
+      fill: #B28F81;
+    }
+    .text-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      fill: #1A1514;
+    }
+    .text-sub {
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      fill: #4A3E3C;
+    }
+    @media (prefers-color-scheme: dark) {
+      .ribbon-m { fill: #FFFFFF; }
+      .ribbon-c { fill: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- MC Concept 4: Modern Dimensional Ribbon MC -->
+  <g transform="translate(6, 4)">
+    <!-- Slanted Modern M -->
+    <polygon points="2,30 8,6 13,6 18,20 22,6 27,6 22,30 17,30 14,17 10,30" class="ribbon-m" />
+    <!-- Receptive C sweep looping from right leg -->
+    <path d="M 23 6 C 29 4, 35 10, 35 18 C 35 26, 28 30, 23 30 L 25 25 C 28 25, 30 22, 30 18 C 30 13, 27 9, 23 10 Z" class="ribbon-c" />
+  </g>
+  <!-- Typography -->
+  <text x="52" y="26" class="text-title">MIYATA<tspan class="text-sub">CREATIVE</tspan></text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .blossom-stroke {
+      stroke: #B28F81;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .text-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      fill: #1A1514;
+    }
+    .text-sub {
+      font-weight: 300;
+      fill: #B28F81;
+    }
+    @media (prefers-color-scheme: dark) {
+      .blossom-stroke { stroke: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Soft 3: Soft-Touch Blossom Ribbon -->
+  <g transform="translate(6, 6)">
+    <!-- Organic petal loop M -->
+    <path d="M 4 25 C 2 15, 6 5, 12 5 C 16 5, 18 12, 16 20 C 14 26, 8 26, 12 18 C 16 10, 20 5, 24 5 C 29 5, 31 16, 29 25" class="blossom-stroke" fill="none" />
+    <!-- Rounded blossom C loop -->
+    <path d="M 43 9 C 37 5, 30 9, 30 15 C 30 22, 38 25, 43 20" class="blossom-stroke" fill="none" />
+  </g>
+  <!-- Typography -->
+  <text x="58" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

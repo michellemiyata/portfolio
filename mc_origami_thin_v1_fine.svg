@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .origami-line {
+      stroke: #1A1514;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .text-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      fill: #1A1514;
+    }
+    .text-sub {
+      font-weight: 300;
+      fill: #4A3E3C;
+    }
+    @media (prefers-color-scheme: dark) {
+      .origami-line { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Thin Variation 1: Ultra-Fine Delicate Line Origami MC -->
+  <g transform="translate(6, 4)">
+    <!-- Thin faceted M -->
+    <path d="M 3 28 V 6 L 10 28 M 3 6 L 17 28 M 17 28 L 24 6 M 24 6 L 31 28 V 6" class="origami-line" fill="none" />
+    <!-- Thin faceted C -->
+    <path d="M 45 9 L 37 6 V 28 L 45 25 M 37 17 H 45" class="origami-line" fill="none" />
+  </g>
+  <!-- Typography -->
+  <text x="60" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

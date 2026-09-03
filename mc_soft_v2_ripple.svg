@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .ripple-stroke {
+      stroke: #B28F81;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .text-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      fill: #1A1514;
+    }
+    .text-sub {
+      font-weight: 300;
+      fill: #B28F81;
+    }
+    @media (prefers-color-scheme: dark) {
+      .ripple-stroke { stroke: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Soft 2: Gentle Water Ripple Ribbon -->
+  <g transform="translate(6, 6)">
+    <!-- Gentle wavy M and C -->
+    <path d="M 2 24 C 5 18, 7 5, 12 5 C 16 5, 17 21, 21 21 C 25 21, 26 5, 30 5 C 34 5, 36 15, 34 23" class="ripple-stroke" fill="none" />
+    <path d="M 44 9 C 38 4, 32 8, 32 15 C 32 22, 38 25, 44 21" class="ripple-stroke" fill="none" />
+  </g>
+  <!-- Typography -->
+  <text x="58" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

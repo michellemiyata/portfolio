@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none">
+  <style>
+    .text-top { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.14em; fill: #1A1514; }
+    .text-bottom { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.28em; fill: #B28F81; }
+    @media (prefers-color-scheme: dark) {
+      .text-top { fill: #FFFFFF; }
+      .text-bottom { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Swiss Modernist Wordmark: High Contrast, Geometric Precision -->
+  <g transform="translate(6, 4)">
+    <text x="0" y="18" class="text-top">MIYATA</text>
+    <text x="0" y="32" class="text-bottom">CREATIVE</text>
+  </g>
+</svg>

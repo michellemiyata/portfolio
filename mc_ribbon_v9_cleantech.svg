@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .tech-outer { stroke: #1A1514; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .tech-c { stroke: #1A1514; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.08em; fill: #1A1514; }
+    .text-sub { font-size: 17px; font-weight: 400; letter-spacing: 0.08em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .tech-outer { stroke: #FFFFFF; }
+      .tech-c { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Ribbon Variation 9: Minimalist Clean Tech Vector Ribbon MC -->
+  <g transform="translate(6, 4)">
+    <!-- Architectural M that seamlessly extends into C -->
+    <path d="M 4 28 V 6 L 15 17 L 26 6" class="tech-outer" fill="none" />
+    <path d="M 36 6 H 26 V 28 H 36" class="tech-c" fill="none" />
+  </g>
+  <text x="52" y="26" class="text-title">MIYATA<tspan class="text-sub">CREATIVE</tspan></text>
+</svg>

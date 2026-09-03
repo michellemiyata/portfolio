@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .kumo-scroll { fill: #B28F81; opacity: 0.28; }
+    .kumo-mc { stroke: #1A1514; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 500; letter-spacing: -0.01em; fill: #1A1514; }
+    .text-sub { font-weight: 300; fill: #B28F81; }
+    @media (prefers-color-scheme: dark) {
+      .kumo-scroll { fill: #9A86A8; opacity: 0.32; }
+      .kumo-mc { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Soft Cloud 4: Floating Japanese Kumogata Cloud -->
+  <g transform="translate(6, 4)">
+    <path d="M 2 24 C 6 24, 8 18, 14 18 C 14 10, 22 8, 27 12 C 32 8, 40 10, 42 16 C 47 16, 49 22, 45 26 C 39 26, 36 20, 30 20 C 26 20, 24 24, 18 24 Z" class="kumo-scroll" />
+    <path d="M 14 23 C 16 17, 18 11, 22 11 C 24 11, 25 15, 26 19 C 27 15, 29 11, 31 11 C 34 11, 35 17, 34 23" class="kumo-mc" fill="none" />
+    <path d="M 41 13 C 37 10, 33 13, 33 18 C 33 23, 37 25, 41 22" class="kumo-mc" fill="none" />
+  </g>
+  <text x="58" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

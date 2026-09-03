@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .cloud-fill { fill: #B28F81; opacity: 0.28; }
+    .mc-soft { stroke: #1A1514; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 500; letter-spacing: -0.01em; fill: #1A1514; }
+    .text-sub { font-weight: 300; fill: #B28F81; }
+    @media (prefers-color-scheme: dark) {
+      .cloud-fill { fill: #9A86A8; opacity: 0.32; }
+      .mc-soft { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Soft Cloud 1: Billowy Gentle Cloud -->
+  <g transform="translate(6, 4)">
+    <!-- Pillowy rounded cloud puff -->
+    <path d="M 10 26 C 4 26, 2 20, 5 15 C 3 10, 8 5, 14 6 C 17 2, 25 2, 29 6 C 35 4, 40 8, 39 14 C 43 17, 43 23, 38 26 Z" class="cloud-fill" />
+    <!-- Graceful soft MC inside -->
+    <path d="M 12 23 C 14 17, 16 11, 20 11 C 22 11, 23 15, 24 19 C 25 15, 27 11, 29 11 C 32 11, 33 17, 32 23" class="mc-soft" fill="none" />
+    <path d="M 39 13 C 35 10, 31 13, 31 18 C 31 23, 35 25, 39 22" class="mc-soft" fill="none" />
+  </g>
+  <text x="56" y="25" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

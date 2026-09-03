@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .mark-primary { stroke: #1A1514; }
+    .mark-accent { stroke: #B28F81; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 300; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .mark-primary { stroke: #FFFFFF; }
+      .mark-accent { stroke: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Overlapping Focus / Inclusive Lens Nodes forming M and C -->
+  <g transform="translate(6, 6)">
+    <!-- Lens 1 (Interaction / Perspective) -->
+    <path class="mark-primary" d="M 4 28 C 4 14, 12 6, 20 6 C 28 6, 36 14, 36 28" stroke-width="2.8" stroke-linecap="round" fill="none" />
+    <!-- Overlapping Inner Arc forming M contour -->
+    <path class="mark-accent" d="M 12 28 C 12 18, 16 13, 20 13 C 24 13, 28 18, 28 28" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <!-- Receptive C sweep -->
+    <path class="mark-primary" d="M 48 10 C 42 6, 36 10, 36 17 C 36 24, 42 28, 48 24" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.8" />
+  </g>
+  <!-- Typography -->
+  <text x="66" y="26" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

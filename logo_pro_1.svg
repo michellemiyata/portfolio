@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none">
+  <style>
+    .mark-fill { fill: #1A1514; }
+    .mark-stroke { stroke: #1A1514; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 300; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .mark-fill { fill: #FFFFFF; }
+      .mark-stroke { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Architectural Clarity Monogram: Solid, High-Contrast, Balanced Geometric M + C -->
+  <g transform="translate(6, 6)">
+    <!-- High-clarity geometric M with solid architectural stance -->
+    <path class="mark-fill" fill-rule="evenodd" clip-rule="evenodd" d="M 0 0 H 6.5 L 14 15 L 21.5 0 H 28 V 28 H 22 V 9.5 L 15.5 22.5 H 12.5 L 6 9.5 V 28 H 0 V 0 Z" />
+    <!-- Clean geometric C arc echoing accessibility and openness -->
+    <path class="mark-stroke" d="M 44 6 C 36 6, 32 11, 32 14 C 32 17, 36 22, 44 22" stroke-width="4.5" stroke-linecap="round" fill="none" />
+  </g>
+  <!-- Clean Accessible Wordmark -->
+  <text x="66" y="26" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

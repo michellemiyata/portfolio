@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" fill="none">
+  <style>
+    .mark-accent { fill: #B28F81; }
+    .mark-main { fill: #1A1514; }
+    .mark-line { stroke: #1A1514; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.18em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; font-weight: 300; letter-spacing: 0.22em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .mark-accent { fill: #9A86A8; }
+      .mark-main { fill: #FFFFFF; }
+      .mark-line { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Universal Access Aperture / Open Horizon & Calm Center -->
+  <g transform="translate(6, 6)">
+    <!-- Outer open circle / inclusive portal -->
+    <circle cx="14" cy="14" r="12" stroke-width="2.2" class="mark-line" fill="none" stroke-dasharray="64 12" stroke-linecap="round" />
+    <!-- Architectural central M chevron / gateway -->
+    <path class="mark-line" d="M 7 17 L 14 9 L 21 17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Human-centered focal dot in warm accent -->
+    <circle cx="14" cy="19" r="2" class="mark-accent" />
+  </g>
+  <!-- Wide-Tracked Accessible Modern Typography -->
+  <text x="46" y="25" class="text-title">MIYATA<tspan class="text-sub"> CREATIVE</tspan></text>
+</svg>

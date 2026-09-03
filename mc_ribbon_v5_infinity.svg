@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .mobius-stroke { stroke: #1A1514; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .mobius-inner { stroke: #B28F81; stroke-width: 2.4; stroke-linecap: round; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.08em; fill: #1A1514; }
+    .text-sub { font-size: 17px; font-weight: 400; letter-spacing: 0.08em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .mobius-stroke { stroke: #FFFFFF; }
+      .mobius-inner { stroke: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Ribbon Variation 5: Infinity Möbius Ribbon MC -->
+  <g transform="translate(6, 6)">
+    <!-- Infinity loop with M and C flow -->
+    <path d="M 16 14 C 11 6, 4 7, 4 14 C 4 21, 11 22, 16 14 C 21 6, 28 7, 28 14 C 28 21, 21 22, 16 14" class="mobius-stroke" fill="none" />
+    <path d="M 12 11 C 7 7, 6 12, 8 16 M 20 17 C 25 21, 26 16, 24 12" class="mobius-inner" fill="none" />
+  </g>
+  <text x="50" y="26" class="text-title">MIYATA<tspan class="text-sub">CREATIVE</tspan></text>
+</svg>

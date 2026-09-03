@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .kamon-circle { stroke: #1A1514; stroke-width: 2.8; }
+    .kamon-inner { stroke: #1A1514; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+    .kamon-accent { fill: #B28F81; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -0.02em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 300; letter-spacing: 0.02em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .kamon-circle { stroke: #FFFFFF; }
+      .kamon-inner { stroke: #FFFFFF; }
+      .kamon-accent { fill: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Geometric Kamon: Circle Enclosing Balanced Structural M & C -->
+  <g transform="translate(6, 4)">
+    <!-- Outer Kamon Ring -->
+    <circle cx="16" cy="16" r="14.5" class="kamon-circle" fill="none" />
+    <!-- Architectural M -->
+    <path d="M 6.5 25 V 10 L 16 19 L 25.5 10 V 25" class="kamon-inner" fill="none" />
+    <!-- Subtle upper geometry chevron accent -->
+    <polygon points="16,6.5 22,12 10,12" class="kamon-accent" opacity="0.8" />
+  </g>
+  <!-- Typography -->
+  <text x="50" y="26" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>

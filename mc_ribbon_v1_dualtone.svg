@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .ribbon-m { fill: #1A1514; }
+    .ribbon-c { fill: #B28F81; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.08em; fill: #1A1514; }
+    .text-sub { font-size: 17px; font-weight: 400; letter-spacing: 0.08em; fill: #B28F81; }
+    @media (prefers-color-scheme: dark) {
+      .ribbon-m { fill: #FFFFFF; }
+      .ribbon-c { fill: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Ribbon Variation 1: Dual-Tone Ribbon (Charcoal M + Terracotta C) -->
+  <g transform="translate(6, 4)">
+    <!-- Slanted Modern M in Primary Dark -->
+    <polygon points="2,30 8,5 13,5 18,20 22,5 27,5 22,30 17,30 14,17 10,30" class="ribbon-m" />
+    <!-- Overlapping Fold into Receptive C in Warm Terracotta Accent -->
+    <path d="M 23 5 C 29 3, 36 9, 36 17.5 C 36 26, 28 30.5, 22 30.5 L 24 25.5 C 28 25.5, 31 22, 31 17.5 C 31 12.5, 27 8.5, 23 9.5 Z" class="ribbon-c" />
+  </g>
+  <!-- Typography -->
+  <text x="52" y="26" class="text-title">MIYATA<tspan class="text-sub">CREATIVE</tspan></text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <defs>
+    <linearGradient id="sculptGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1514" />
+      <stop offset="100%" stop-color="#4A3E3C" />
+    </linearGradient>
+    <linearGradient id="accentGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B28F81" />
+      <stop offset="100%" stop-color="#8F6C5F" />
+    </linearGradient>
+    <linearGradient id="sculptGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E0DEE8" />
+    </linearGradient>
+    <linearGradient id="accentGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A86A8" />
+      <stop offset="100%" stop-color="#7C668C" />
+    </linearGradient>
+  </defs>
+  <style>
+    .sculpt-m { fill: url(#sculptGradLight); }
+    .sculpt-c { fill: url(#accentGradLight); }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.08em; fill: #1A1514; }
+    .text-sub { font-size: 17px; font-weight: 400; letter-spacing: 0.08em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .sculpt-m { fill: url(#sculptGradDark); }
+      .sculpt-c { fill: url(#accentGradDark); }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Ribbon Variation 4: Sculptural Dimensional Ribbon -->
+  <g transform="translate(6, 4)">
+    <polygon points="2,30 8,5 13,5 18,20 22,5 27,5 22,30 17,30 14,17 10,30" class="sculpt-m" />
+    <path d="M 23 5 C 30 3, 37 9, 37 17.5 C 37 26, 29 30.5, 22 30.5 L 25 25.5 C 29 25.5, 32 22, 32 17.5 C 32 12.5, 28 8.5, 23 9.5 Z" class="sculpt-c" />
+  </g>
+  <!-- Typography -->
+  <text x="52" y="26" class="text-title">MIYATA<tspan class="text-sub">CREATIVE</tspan></text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .mark-fill { fill: #1A1514; }
+    .mark-stroke { stroke: #B28F81; }
+    .text-serif { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 600; font-style: italic; fill: #1A1514; }
+    .text-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .mark-fill { fill: #FFFFFF; }
+      .mark-stroke { stroke: #9A86A8; }
+      .text-serif { fill: #FFFFFF; }
+      .text-sans { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Architectural Serif M with embracing accent circle -->
+  <g transform="translate(6, 6)">
+    <!-- Circle anchor -->
+    <circle cx="14" cy="14" r="13" class="mark-stroke" stroke-width="1.8" fill="none" opacity="0.4" />
+    <!-- Sharp Serif M glyph -->
+    <text x="14" y="21" font-family="'Playfair Display', serif" font-size="20" font-weight="600" text-anchor="middle" class="mark-fill">M</text>
+  </g>
+  <!-- Balanced Editorial Wordmark -->
+  <text x="44" y="26" class="text-serif">Miyata</text>
+  <text x="124" y="24" class="text-sans">CREATIVE</text>
+</svg>

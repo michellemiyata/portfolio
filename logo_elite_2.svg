@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .arch-outer { stroke: #B28F81; stroke-width: 3.2; stroke-linecap: round; }
+    .arch-inner { stroke: #1A1514; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.12em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.22em; fill: #B28F81; }
+    @media (prefers-color-scheme: dark) {
+      .arch-outer { stroke: #9A86A8; }
+      .arch-inner { stroke: #FFFFFF; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #9A86A8; }
+    }
+  </style>
+  <!-- Architectural Archway Emblem: Defined Pathways & Quiet Spaces -->
+  <g transform="translate(6, 4)">
+    <!-- Outer Portal Arch -->
+    <path d="M 3 28 V 16 C 3 7.7, 9.7 1, 18 1 C 26.3 1, 33 7.7, 33 16 V 28" class="arch-outer" fill="none" />
+    <!-- Inner Bold M Arch -->
+    <path d="M 9 28 V 16 C 9 12, 12 9, 18 17 C 24 9, 27 12, 27 16 V 28" class="arch-inner" fill="none" />
+  </g>
+  <!-- Stacked / Horizontal Architectural Typography -->
+  <text x="52" y="21" class="text-title">MIYATA</text>
+  <text x="52" y="34" class="text-sub">CREATIVE</text>
+</svg>

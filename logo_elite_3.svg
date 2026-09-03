@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="none">
+  <style>
+    .ring-main { stroke: #1A1514; stroke-width: 3.2; }
+    .ring-accent { stroke: #B28F81; stroke-width: 3.2; }
+    .text-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; fill: #1A1514; }
+    .text-sub { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 19px; font-weight: 400; fill: #4A3E3C; }
+    @media (prefers-color-scheme: dark) {
+      .ring-main { stroke: #FFFFFF; }
+      .ring-accent { stroke: #9A86A8; }
+      .text-title { fill: #FFFFFF; }
+      .text-sub { fill: #E0DEE8; }
+    }
+  </style>
+  <!-- Interlocking Rings: Inclusivity & Connection -->
+  <g transform="translate(6, 6)">
+    <!-- Primary Left Ring -->
+    <circle cx="13" cy="14" r="11.5" class="ring-main" fill="none" />
+    <!-- Interlocking Accent Right Ring -->
+    <circle cx="25" cy="14" r="11.5" class="ring-accent" fill="none" />
+    <!-- Overlap mask path for true physical weave -->
+    <path d="M 13 2.5 C 16.5 2.5, 19.8 4.2, 22 7" stroke="#1A1514" class="ring-main" stroke-width="3.2" fill="none" stroke-linecap="round" />
+  </g>
+  <!-- Typography -->
+  <text x="56" y="26" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+</svg>
