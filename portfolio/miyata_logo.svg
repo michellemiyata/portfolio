@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 46" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 46" fill="none">
   <style>
     .cloud-light { display: block; }
     .cloud-dark { display: none; }
@@ -32,5 +32,5 @@
   </g>
 
   <!-- Typography with exact 8px gap -->
-  <text x="89" y="29" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
+  <text x="82" y="29" class="text-title">Miyata<tspan class="text-sub">Creative</tspan></text>
 </svg>
