@@ -223,36 +223,62 @@
     </style>
 </head>
 
-<body class="  font-sans selection:bg-indigo-100 selection:text-indigo-900" class="overflow-x-hidden">
+<body class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-20 antialiased selection:bg-stone-300 overflow-x-hidden">
 
-    <!-- HEADER -->
-    <div class="flex justify-center w-full pt-12 md:pt-20 px-6">
-        <nav class="w-full max-w-4xl mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
-                <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-10 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
-                <span
-                    class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
+        <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-full focus:bg-[var(--text-primary)] focus:text-[var(--bg-primary)] focus:text-sm focus:font-medium focus:shadow-xl">
+        Skip to main content
+    </a>
+
+    <!-- Top Reading / Scroll Progress Bar -->
+    <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-[var(--accent)] z-[60] transition-all duration-150" style="width: 0%;" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+    <!-- Sticky Glassmorphic Navigation Header -->
+    <header class="w-full max-w-4xl mx-auto sticky top-4 z-40 mb-8 md:mb-12">
+        <nav aria-label="Primary Navigation" class="w-full px-5 py-3.5 md:px-7 md:py-4 rounded-2xl dynamic-bg border dynamic-border shadow-sm backdrop-blur-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all duration-300">
+            <a href="index.html" class="flex flex-col gap-0.5 group" aria-label="Michelle Miyata Home">
+                <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-9 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
+                <span class="text-[11px] text-[var(--text-secondary)] opacity-75 group-hover:opacity-100 transition-opacity duration-300 hidden sm:inline">Accessibility Digital Experience Designer</span>
             </a>
-            <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
-                <a href="index.html" class=" hover: transition-colors">Home</a>
-                <a href="work.html" class="link-underline active" aria-current="page">Work</a>
-                <a href="about.html" class=" hover: transition-colors">About</a>
-                <a href="accessibility.html"
-                    class=" hover: transition-colors">Philosophy</a>
-                <a href="contact.html" class=" hover: transition-colors">Contact</a>
+            <div class="flex flex-wrap items-center gap-x-5 md:gap-x-7 gap-y-2 text-sm md:text-base font-medium w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2">
+                    <a href="index.html" class="link-underline">Home</a>
+                    <a href="work.html" class="link-underline active" aria-current="page">Work</a>
+                    <a href="about.html" class="link-underline">About</a>
+                    <a href="accessibility.html" class="link-underline">Philosophy</a>
+                    <a href="contact.html" class="link-underline">Contact</a>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-full border dynamic-border bg-[var(--bg-primary)] hover:border-[var(--accent)] hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0" aria-label="Toggle High-Contrast Dark/Light UI" aria-pressed="false" title="Toggle dark/light theme">
+                    <i data-lucide="moon" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>
+                </button>
             </div>
         </nav>
-    </div>
+    </header>
 
-    <main class="max-w-6xl mx-auto px-6 overflow-hidden">
+    <main id="main-content" class="max-w-6xl mx-auto px-6 overflow-hidden">
 
-        <!-- NAV BACK -->
-        <div class="max-w-4xl mx-auto mb-12 fade-in">
-            <a href="work.html" class="inline-flex items-center text-stone-400 hover: transition group">
-                <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i>
-                Back to Work
-            </a>
-        </div>
+                <!-- Breadcrumb & Quick Case Study Switcher -->
+        <nav aria-label="Breadcrumb" class="max-w-4xl mx-auto mb-12 py-3 px-5 rounded-2xl dynamic-bg border dynamic-border flex flex-wrap items-center justify-between gap-4">
+            <ol class="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                <li><a href="index.html" class="hover:text-[var(--text-primary)] transition-colors">Home</a></li>
+                <li aria-hidden="true" class="opacity-40">/</li>
+                <li><a href="work.html" class="hover:text-[var(--text-primary)] transition-colors">Work</a></li>
+                <li aria-hidden="true" class="opacity-40">/</li>
+                <li class="text-[var(--text-primary)] font-medium truncate max-w-[180px] sm:max-w-none" aria-current="page">Puzzle Piece AR</li>
+            </ol>
+            <div class="flex items-center gap-2 text-xs font-medium">
+                <a href="case_study_2.html" class="px-3 py-1.5 rounded-lg border dynamic-border bg-[var(--bg-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all flex items-center gap-1.5" title="Previous Project: Emotional Journey: TTC">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                    <span class="hidden sm:inline">Prev:</span>
+                    <span class="truncate max-w-[100px]">Emotional Journey: TTC</span>
+                </a>
+                <a href="case_study_theboxx.html" class="px-3 py-1.5 rounded-lg border dynamic-border bg-[var(--bg-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all flex items-center gap-1.5" title="Next Project: The Boxx Art Gallery">
+                    <span class="hidden sm:inline">Next:</span>
+                    <span class="truncate max-w-[100px]">The Boxx Art Gallery</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </nav>
 
         <!-- HERO SECTION -->
         <section class="mb-32 fade-in relative">
@@ -434,19 +460,134 @@
             </div>
         </section>
 
+    
+        <!-- Continue Exploring: Previous & Next Case Study Navigation -->
+        <section aria-label="More Case Studies" class="max-w-4xl mx-auto mt-24 mb-12 pt-12 border-t dynamic-border">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] block mb-1">Continue Exploring</span>
+                    <h2 class="text-2xl md:text-3xl font-light text-[var(--text-primary)]">More Selected Work</h2>
+                </div>
+                <a href="work.html" class="px-4 py-2 rounded-full dynamic-bg border dynamic-border text-xs font-semibold uppercase tracking-wider hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all flex items-center gap-1.5">
+                    <i data-lucide="grid" class="w-3.5 h-3.5"></i> All 9 Projects
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Previous Project Card -->
+                <a href="case_study_2.html" class="group p-6 rounded-2xl dynamic-bg border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="flex items-center gap-2 text-xs font-medium text-[var(--text-secondary)] mb-3">
+                        <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[var(--accent)]"></i>
+                        <span>Previous Project</span>
+                        <span class="opacity-40">·</span>
+                        <span>Web & Systems</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors mb-1">Emotional Journey: TTC</h3>
+                        <p class="text-sm text-[var(--text-secondary)] font-light line-clamp-2">Mapping the emotional highs, friction points, and sensory load of daily transit commuters.</p>
+                    </div>
+                </a>
+
+                <!-- Next Project Card -->
+                <a href="case_study_theboxx.html" class="group p-6 rounded-2xl dynamic-bg border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left md:text-right">
+                    <div class="flex items-center md:justify-end gap-2 text-xs font-medium text-[var(--text-secondary)] mb-3">
+                        <span>Web & Systems</span>
+                        <span class="opacity-40">·</span>
+                        <span>Next Project</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform text-[var(--accent)]"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors mb-1">The Boxx Art Gallery</h3>
+                        <p class="text-sm text-[var(--text-secondary)] font-light line-clamp-2">An immersive digital gallery space showcasing contemporary art, built during my C3 Lab co-op.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER NAV -->
-    <div class="dynamic-bg py-12 border-t dynamic-border">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class=" mb-6">Explore More Work</h3>
-            <div class="flex justify-center gap-4">
-                <a href="work.html"
-                    class="px-6 py-3 dynamic-bg border dynamic-border rounded-full hover:shadow-md transition ">All
-                    Projects</a>
+    <!-- Global Site Footer -->
+    <footer class="w-full max-w-4xl mx-auto mt-24 md:mt-32 mb-12 fade-up" aria-label="Global Site Footer">
+        <div class="w-full rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-8 md:p-12 relative overflow-hidden shadow-sm backdrop-blur-md">
+            <!-- Subtle backdrop gradient glow -->
+            <div class="absolute -right-24 -bottom-24 w-80 h-80 rounded-full bg-[var(--accent)] opacity-5 blur-[80px] pointer-events-none"></div>
+            
+            <!-- Top Section: Multi-Column Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12 relative z-10">
+                
+                <!-- Column 1: Brand & Description (Spans 5 cols) -->
+                <div class="md:col-span-5 flex flex-col items-start gap-4">
+                    <a href="index.html" class="block group" aria-label="Michelle Miyata Home">
+                        <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-10 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
+                    </a>
+                    <p class="text-sm font-light text-[var(--text-secondary)] leading-relaxed max-w-sm text-balance mt-1">
+                        Designing clean, quiet, and accessible digital spaces that put the human experience first. Let's create something meaningful together.
+                    </p>
+                </div>
+                
+                <!-- Column 2: Navigation Links (Spans 3 cols) -->
+                <div class="md:col-span-3 flex flex-col gap-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[var(--accent)] mb-1">Explore</span>
+                    <a href="index.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform">Home</a>
+                    <a href="work.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform">Selected Work</a>
+                    <a href="about.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform">About</a>
+                    <a href="accessibility.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform">Philosophy</a>
+                    <a href="contact.html" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 w-fit hover:translate-x-1 transform">Get in Touch</a>
+                </div>
+
+                <!-- Column 3: Contact & Socials (Spans 4 cols) -->
+                <div class="md:col-span-4 flex flex-col gap-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[var(--accent)] mb-1">Let's Connect</span>
+                    
+                    <!-- Email Link with animated underline on hover -->
+                    <a href="mailto:miyatacreative@gmail.com" class="text-base text-[var(--text-primary)] hover:text-[var(--accent)] font-medium transition-colors duration-300 w-fit flex items-center gap-2 group">
+                        <span class="border-b border-transparent group-hover:border-[var(--accent)] transition-all pb-0.5">miyatacreative@gmail.com</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                    </a>
+                    
+                    <!-- Social Icon Strip -->
+                    <div class="flex gap-3 mt-2">
+                        <a href="https://www.linkedin.com/in/michelle-miyata" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/michellemiyata" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="GitHub Profile">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                           class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] hover:scale-105 transition-all duration-300 shadow-sm" aria-label="Instagram Profile">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section: Copyright, Accessibility & Back to Top -->
+            <div class="border-t border-[var(--border-subtle)] pt-8 mt-4 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs text-[var(--text-secondary)] relative z-10">
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <p>© 2026 Michelle Miyata. All rights reserved.</p>
+                    <span class="hidden sm:inline opacity-30">|</span>
+                    <!-- Accessibility Compliance Indicator -->
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-primary)] border border-[var(--border-subtle)]" title="Designed to conform to WCAG 2.1 Level AA criteria">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span>WCAG 2.1 AA Compliant</span>
+                    </div>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 hover:text-[var(--text-primary)] transition-colors duration-300 group cursor-pointer" aria-label="Scroll back to top of the page">
+                    <span>Back to top</span>
+                    <i data-lucide="arrow-up" class="w-4 h-4 transform group-hover:-translate-y-0.5 transition-transform"></i>
+                </button>
             </div>
         </div>
-    </div>
+    </footer>
+
+    
 
 
     <script>
@@ -597,6 +738,77 @@
             }
         });
     </script>
+
+    <!-- Floating Back to Top Button -->
+    <button id="floatingBackToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full dynamic-bg border dynamic-border shadow-lg text-[var(--text-primary)] hover:text-[var(--accent)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 opacity-0 pointer-events-none cursor-pointer flex items-center gap-2 group"
+        aria-label="Scroll back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        <span class="text-xs font-medium pr-1 hidden md:inline">Top</span>
+    </button>
+
+    <script id="global-ux-script">
+        (function() {
+            // 1. Persistent Theme Management (localStorage)
+            const savedTheme = localStorage.getItem('miyata-theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const themeBtn = document.getElementById('themeToggle');
+
+            function applyTheme(dark) {
+                if (dark) {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+                if (themeBtn) {
+                    themeBtn.setAttribute('aria-pressed', String(dark));
+                    themeBtn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+                    themeBtn.innerHTML = `<i data-lucide="${dark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            let isDark = savedTheme ? (savedTheme === 'dark') : false;
+            applyTheme(isDark);
+
+            if (themeBtn) {
+                // Clone to clear any duplicate legacy event listeners
+                const newThemeBtn = themeBtn.cloneNode(true);
+                themeBtn.parentNode.replaceChild(newThemeBtn, themeBtn);
+                newThemeBtn.addEventListener('click', () => {
+                    isDark = !document.body.classList.contains('dark-theme');
+                    localStorage.setItem('miyata-theme', isDark ? 'dark' : 'light');
+                    applyTheme(isDark);
+                    newThemeBtn.innerHTML = `<i data-lucide="${isDark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                });
+            }
+
+            // 2. Scroll Progress & Floating Back-to-Top
+            const progressBar = document.getElementById('reading-progress');
+            const backToTopBtn = document.getElementById('floatingBackToTop');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                if (progressBar && docHeight > 0) {
+                    const pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+                    progressBar.style.width = pct + '%';
+                    progressBar.setAttribute('aria-valuenow', Math.round(pct));
+                }
+                if (backToTopBtn) {
+                    if (scrollTop > 400) {
+                        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.add('opacity-100');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
 
 </html>

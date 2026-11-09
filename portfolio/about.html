@@ -227,38 +227,50 @@
     </style>
 </head>
 
-<body
-    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
+<body class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-20 antialiased selection:bg-stone-300 overflow-x-hidden">
 
-    <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
-        aria-label="Accessibility Controls">
-        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
-            aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
-            <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
-        </button>
-    </div>
+        <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-full focus:bg-[var(--text-primary)] focus:text-[var(--bg-primary)] focus:text-sm focus:font-medium focus:shadow-xl">
+        Skip to main content
+    </a>
 
-    <!-- Navigation -->
-    <nav
-        class="w-full max-w-4xl mb-24 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
-            <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-10 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
-            <span
-                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
-        </a>
-        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
-            <a href="index.html" class="link-underline">Home</a>
-            <a href="work.html" class="link-underline">Work</a>
-            <a href="about.html" class="link-underline active" aria-current="page">About</a>
-            <a href="accessibility.html" class="link-underline">Philosophy</a>
-            <a href="contact.html" class="link-underline">Contact</a>
-        </div>
-    </nav>
+    <!-- Top Reading / Scroll Progress Bar -->
+    <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-[var(--accent)] z-[60] transition-all duration-150" style="width: 0%;" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+    <!-- Sticky Glassmorphic Navigation Header -->
+    <header class="w-full max-w-4xl mx-auto sticky top-4 z-40 mb-16 md:mb-24">
+        <nav aria-label="Primary Navigation" class="w-full px-5 py-3.5 md:px-7 md:py-4 rounded-2xl dynamic-bg border dynamic-border shadow-sm backdrop-blur-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all duration-300">
+            <a href="index.html" class="flex flex-col gap-0.5 group" aria-label="Michelle Miyata Home">
+                <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-9 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
+                <span class="text-[11px] text-[var(--text-secondary)] opacity-75 group-hover:opacity-100 transition-opacity duration-300 hidden sm:inline">Accessibility Digital Experience Designer</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-5 md:gap-x-7 gap-y-2 text-sm md:text-base font-medium w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2">
+                    <a href="index.html" class="link-underline">Home</a>
+                    <a href="work.html" class="link-underline">Work</a>
+                    <a href="about.html" class="link-underline active" aria-current="page">About</a>
+                    <a href="accessibility.html" class="link-underline">Philosophy</a>
+                    <a href="contact.html" class="link-underline">Contact</a>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-full border dynamic-border bg-[var(--bg-primary)] hover:border-[var(--accent)] hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0" aria-label="Toggle High-Contrast Dark/Light UI" aria-pressed="false" title="Toggle dark/light theme">
+                    <i data-lucide="moon" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
     <main class="w-full max-w-4xl flex-grow" id="main-content">
 
+                <!-- On-Page Quick Jump Bar -->
+        <nav aria-label="About Page Sections" class="mb-12 flex flex-wrap items-center gap-3 fade-up">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mr-1">Jump to:</span>
+            <a href="#about-intro" class="px-4 py-1.5 rounded-full text-xs font-medium dynamic-bg border dynamic-border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Introduction</a>
+            <a href="#experience-section" class="px-4 py-1.5 rounded-full text-xs font-medium dynamic-bg border dynamic-border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Experience (5)</a>
+            <a href="#education-section" class="px-4 py-1.5 rounded-full text-xs font-medium dynamic-bg border dynamic-border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Education &amp; Certifications</a>
+        </nav>
+
         <!-- INTRO SECTION -->
-        <section class="mb-32 fade-up" style="transition-delay: 0.1s">
+        <section id="about-intro" class="mb-32 fade-up" style="transition-delay: 0.1s">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
                 <!-- Text Column -->
@@ -308,87 +320,103 @@
 
         <hr class="border-t dynamic-border opacity-50 fade-up mb-24" aria-hidden="true" />
 
-        <!-- EXPERIENCE -->
-        <section class="mb-32 fade-up">
-            <h2 class="text-4xl font-light mb-12 text-[var(--text-primary)]">Experience</h2>
+                <!-- EXPERIENCE -->
+        <section id="experience-section" class="mb-32 fade-up scroll-mt-28">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <h2 class="text-4xl font-light text-[var(--text-primary)]">Experience</h2>
+                <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Click any project role to read its case study</span>
+            </div>
 
             <div class="flex flex-col gap-8 w-full">
 
                 <!-- C3 Lab Intern -->
-                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:-translate-y-1 transition-transform duration-300">
+                <a href="case_study_theboxx.html" class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 items-start">
                         <div class="w-full md:w-1/4 text-[var(--text-secondary)] font-light text-sm md:mt-2">Completed · July 2026</div>
                         <div class="w-full md:w-3/4">
-                            <h3 class="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-2 group-hover:opacity-70 transition-opacity">Digital Experience Design Intern (Co-op)</h3>
-                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-6">C3 Lab (George Brown College)</p>
-                            <p class="text-[var(--text-secondary)] text-lg md:text-xl font-light leading-relaxed">
-                                Designed and built "The Boxx" art gallery website using WordPress. Customized themes and optimized user interactions for a seamless digital gallery experience.
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Digital Experience Design Intern (Co-op)</h3>
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-[var(--accent)] shrink-0 mt-2">Read Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+                            </div>
+                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-4">C3 Lab (George Brown College) · The Boxx Art Gallery</p>
+                            <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                                Designed and built "The Boxx" art gallery website using WordPress and custom HTML/CSS prototypes. Customized themes and optimized user interactions for a seamless digital gallery experience.
                             </p>
                         </div>
                     </div>
-                </article>
+                </a>
 
                 <!-- YES Show Committee -->
-                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:-translate-y-1 transition-transform duration-300">
+                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border transition-transform duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 items-start">
                         <div class="w-full md:w-1/4 text-[var(--text-secondary)] font-light text-sm md:mt-2">Completed · May 2026</div>
                         <div class="w-full md:w-3/4">
-                            <h3 class="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-2 group-hover:opacity-70 transition-opacity">Coding Team</h3>
-                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-6">YES Show Committee (Website)</p>
-                            <p class="text-[var(--text-secondary)] text-lg md:text-xl font-light leading-relaxed">
-                                Contributed to the web development and coding team for the Year End Show (YES).
+                            <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2">Coding Team</h3>
+                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-4">YES Show Committee (Website)</p>
+                            <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                                Contributed to the web development and coding team for the George Brown School of Design Year End Show (YES).
                             </p>
                         </div>
                     </div>
                 </article>
 
-                <!-- Item 1 -->
-                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:-translate-y-1 transition-transform duration-300">
+                <!-- UnionMoods -->
+                <a href="case_study_unionmoods.html" class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 items-start">
                         <div class="w-full md:w-1/4 text-[var(--text-secondary)] font-light text-sm md:mt-2">Completed · Fall 2025</div>
                         <div class="w-full md:w-3/4">
-                            <h3 class="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-2 group-hover:opacity-70 transition-opacity">Lead UX/UI Designer</h3>
-                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-6">UnionMoods (AR Experience)</p>
-                            <p class="text-[var(--text-secondary)] text-lg md:text-xl font-light leading-relaxed">
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Lead UX/UI Designer</h3>
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-[var(--accent)] shrink-0 mt-2">Read Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+                            </div>
+                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-4">UnionMoods (AR Experience)</p>
+                            <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
                                 Led the design of an emotional AR wayfinding system for Union Station. Focused on connecting commuter moods with physical space.
                             </p>
                         </div>
                     </div>
-                </article>
+                </a>
 
-                <!-- Item 2 -->
-                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:-translate-y-1 transition-transform duration-300">
+                <!-- StudyBuddy -->
+                <a href="case_study_studybuddy.html" class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 items-start">
                         <div class="w-full md:w-1/4 text-[var(--text-secondary)] font-light text-sm md:mt-2">Completed · Fall 2025</div>
                         <div class="w-full md:w-3/4">
-                            <h3 class="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-2 group-hover:opacity-70 transition-opacity">UX/UI Designer</h3>
-                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-6">StudyBuddy App</p>
-                            <p class="text-[var(--text-secondary)] text-lg md:text-xl font-light leading-relaxed">
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">UX/UI Designer</h3>
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-[var(--accent)] shrink-0 mt-2">Read Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+                            </div>
+                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-4">StudyBuddy App</p>
+                            <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
                                 Designed accessible productivity features including read-aloud, live transcription, and sensory-friendly focus tools.
                             </p>
                         </div>
                     </div>
-                </article>
+                </a>
 
-                <!-- Item 3 -->
-                <article class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:-translate-y-1 transition-transform duration-300">
+                <!-- Puzzle Piece -->
+                <a href="case_study_1.html" class="group block bg-[var(--bg-secondary)] rounded-3xl p-8 md:p-10 border dynamic-border hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 items-start">
                         <div class="w-full md:w-1/4 text-[var(--text-secondary)] font-light text-sm md:mt-2">Completed · Summer 2025</div>
                         <div class="w-full md:w-3/4">
-                            <h3 class="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-2 group-hover:opacity-70 transition-opacity">Designer</h3>
-                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-6">Puzzle Piece Emotional Design</p>
-                            <p class="text-[var(--text-secondary)] text-lg md:text-xl font-light leading-relaxed">
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Designer</h3>
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-[var(--accent)] shrink-0 mt-2">Read Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+                            </div>
+                            <p class="text-sm font-medium tracking-wide uppercase text-[var(--text-secondary)] mb-4">Puzzle Piece Emotional Design</p>
+                            <p class="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
                                 Created a conceptual framework and visual series exploring alignment, clarity, and emotional resonance in digital interfaces.
                             </p>
                         </div>
                     </div>
-                </article>
+                </a>
+            </div>
         </section>
 
         <hr class="border-t dynamic-border opacity-50 fade-up mb-24" aria-hidden="true" />
 
         <!-- EDUCATION -->
-        <section class="mb-32 fade-up">
+        <section id="education-section" class="mb-32 fade-up scroll-mt-28">
             <h2 class="text-3xl font-light mb-12 text-[var(--text-primary)]">Education</h2>
             <div class="space-y-12">
                 <div class="grid md:grid-cols-12 gap-4 md:gap-8">
@@ -553,6 +581,77 @@
 
         // Setup sliders logic removed
     </script>
+
+    <!-- Floating Back to Top Button -->
+    <button id="floatingBackToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full dynamic-bg border dynamic-border shadow-lg text-[var(--text-primary)] hover:text-[var(--accent)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 opacity-0 pointer-events-none cursor-pointer flex items-center gap-2 group"
+        aria-label="Scroll back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        <span class="text-xs font-medium pr-1 hidden md:inline">Top</span>
+    </button>
+
+    <script id="global-ux-script">
+        (function() {
+            // 1. Persistent Theme Management (localStorage)
+            const savedTheme = localStorage.getItem('miyata-theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const themeBtn = document.getElementById('themeToggle');
+
+            function applyTheme(dark) {
+                if (dark) {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+                if (themeBtn) {
+                    themeBtn.setAttribute('aria-pressed', String(dark));
+                    themeBtn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+                    themeBtn.innerHTML = `<i data-lucide="${dark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            let isDark = savedTheme ? (savedTheme === 'dark') : false;
+            applyTheme(isDark);
+
+            if (themeBtn) {
+                // Clone to clear any duplicate legacy event listeners
+                const newThemeBtn = themeBtn.cloneNode(true);
+                themeBtn.parentNode.replaceChild(newThemeBtn, themeBtn);
+                newThemeBtn.addEventListener('click', () => {
+                    isDark = !document.body.classList.contains('dark-theme');
+                    localStorage.setItem('miyata-theme', isDark ? 'dark' : 'light');
+                    applyTheme(isDark);
+                    newThemeBtn.innerHTML = `<i data-lucide="${isDark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                });
+            }
+
+            // 2. Scroll Progress & Floating Back-to-Top
+            const progressBar = document.getElementById('reading-progress');
+            const backToTopBtn = document.getElementById('floatingBackToTop');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                if (progressBar && docHeight > 0) {
+                    const pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+                    progressBar.style.width = pct + '%';
+                    progressBar.setAttribute('aria-valuenow', Math.round(pct));
+                }
+                if (backToTopBtn) {
+                    if (scrollTop > 400) {
+                        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.add('opacity-100');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
 
 </html>

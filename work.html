@@ -253,32 +253,37 @@
     </style>
 </head>
 
-<body
-    class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-24 antialiased selection:bg-stone-300 selection:" class="overflow-x-hidden">
+<body class="min-h-screen flex flex-col items-center p-6 md:p-12 lg:p-20 antialiased selection:bg-stone-300 overflow-x-hidden">
 
-    <div class="fixed top-6 right-6 z-50 flex gap-4 fade-up" style="transition-delay: 0.2s"
-        aria-label="Accessibility Controls">
-        <button id="themeToggle" class="p-2 rounded-full dynamic-bg hover:opacity-70 hover:scale-110 active:scale-95 transition-all"
-            aria-label="Toggle High-Contrast UI" aria-pressed="false" title="Toggle dark theme">
-            <i data-lucide="moon" class="w-5 h-5 opacity-70"></i>
-        </button>
-    </div>
+        <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-full focus:bg-[var(--text-primary)] focus:text-[var(--bg-primary)] focus:text-sm focus:font-medium focus:shadow-xl">
+        Skip to main content
+    </a>
 
-    <nav
-        class="w-full max-w-4xl mb-12 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <a href="index.html" class="flex flex-col gap-1 group" aria-label="Michelle Miyata Home">
-            <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-10 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
-            <span
-                class="text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Accessibility Digital Experience Designer</span>
-        </a>
-        <div class="flex flex-wrap gap-x-5 gap-y-3 md:gap-8 text-base md:text-lg font-medium mt-2 md:mt-0">
-            <a href="index.html" class="link-underline">Home</a>
-            <a href="work.html" class="link-underline active" aria-current="page">Work</a>
-            <a href="about.html" class="link-underline">About</a>
-            <a href="accessibility.html" class="link-underline">Philosophy</a>
-            <a href="contact.html" class="link-underline">Contact</a>
-        </div>
-    </nav>
+    <!-- Top Reading / Scroll Progress Bar -->
+    <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-[var(--accent)] z-[60] transition-all duration-150" style="width: 0%;" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+    <!-- Sticky Glassmorphic Navigation Header -->
+    <header class="w-full max-w-4xl mx-auto sticky top-4 z-40 mb-12 md:mb-20">
+        <nav aria-label="Primary Navigation" class="w-full px-5 py-3.5 md:px-7 md:py-4 rounded-2xl dynamic-bg border dynamic-border shadow-sm backdrop-blur-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all duration-300">
+            <a href="index.html" class="flex flex-col gap-0.5 group" aria-label="Michelle Miyata Home">
+                <img src="miyata_logo.svg" alt="MiyataCreative Logo" class="h-8 md:h-9 w-auto object-contain opacity-95 group-hover:opacity-100 transition-all" />
+                <span class="text-[11px] text-[var(--text-secondary)] opacity-75 group-hover:opacity-100 transition-opacity duration-300 hidden sm:inline">Accessibility Digital Experience Designer</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-5 md:gap-x-7 gap-y-2 text-sm md:text-base font-medium w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2">
+                    <a href="index.html" class="link-underline">Home</a>
+                    <a href="work.html" class="link-underline active" aria-current="page">Work</a>
+                    <a href="about.html" class="link-underline">About</a>
+                    <a href="accessibility.html" class="link-underline">Philosophy</a>
+                    <a href="contact.html" class="link-underline">Contact</a>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-full border dynamic-border bg-[var(--bg-primary)] hover:border-[var(--accent)] hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0" aria-label="Toggle High-Contrast Dark/Light UI" aria-pressed="false" title="Toggle dark/light theme">
+                    <i data-lucide="moon" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
     <main class="w-full max-w-4xl flex-grow" id="main-content">
         <header class="mb-12 md:mb-16 fade-up pt-4 md:pt-8" style="transition-delay: 0.1s">
@@ -290,44 +295,77 @@
             </p>
         </header>
 
-        <section class="mb-16 w-full" aria-label="Project List">
+                <section class="mb-16 w-full" aria-label="Project List">
+            <!-- Interactive Category Filter Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b dynamic-border fade-up" role="toolbar" aria-label="Filter projects by category">
+                <div class="flex flex-wrap gap-2.5" id="work-filter-buttons">
+                    <button type="button" data-filter="all" aria-pressed="true"
+                        class="filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-sm">
+                        All Projects <span class="opacity-75 text-xs ml-1">(9)</span>
+                    </button>
+                    <button type="button" data-filter="ux-product" aria-pressed="false"
+                        class="filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer dynamic-bg border dynamic-border text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)]">
+                        UX/UI &amp; Product <span class="opacity-60 text-xs ml-1">(3)</span>
+                    </button>
+                    <button type="button" data-filter="web-systems" aria-pressed="false"
+                        class="filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer dynamic-bg border dynamic-border text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)]">
+                        Web &amp; Systems <span class="opacity-60 text-xs ml-1">(3)</span>
+                    </button>
+                    <button type="button" data-filter="ar-visual" aria-pressed="false"
+                        class="filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer dynamic-bg border dynamic-border text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)]">
+                        AR &amp; Visual <span class="opacity-60 text-xs ml-1">(3)</span>
+                    </button>
+                </div>
+                <p id="filter-status" class="text-xs uppercase tracking-wider text-[var(--text-secondary)] font-medium" aria-live="polite">
+                    Showing all 9 case studies
+                </p>
+            </div>
+
             <!-- Grid Layout of Tiles -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up" id="projects-grid">
+
                 <!-- Project 1: The Boxx Art Gallery -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="web-systems">
                     <a href="case_study_theboxx.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">Web & Systems</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Web Design · WordPress</span>
+                        </div>
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative ">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
                                 <img src="theboxx_home1.jpg" alt="The Boxx Art Gallery" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end animate-fade-in-title">The Boxx Art Gallery</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Web Design · WordPress</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">The Boxx Art Gallery</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">An immersive digital gallery space showcasing contemporary art, built during my C3 Lab co-op.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
                     </a>
                 </article>
 
-                <!-- Project 2: TSITP Map -->
-                <article class="w-full">
+                <!-- Project 2: Interactive Transmedia Map -->
+                <article class="w-full project-card transition-all duration-300 " data-category="web-systems">
                     <a href="case_study_tsitp_map.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
-                                <img src="tsitp_map_full.png" alt="TSITP Map Interface" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">Web & Systems</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Systems Design · Data Visualization</span>
+                        </div>
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative ">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="tsitp_map_full.png" alt="Interactive Transmedia Map" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Interactive Transmedia Map</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Systems Design · Data Visualization</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Interactive Transmedia Map</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">An interactive spatial storytelling and data visualization system mapping narrative arcs.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -335,19 +373,23 @@
                 </article>
 
                 <!-- Project 3: Puzzle Piece -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="ar-visual">
                     <a href="case_study_1.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">AR & Visual</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Visual Design · Installation</span>
+                        </div>
                         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-[95%] h-[95%] object-contain drop-shadow-xl scale-105 group-hover:scale-[1.1] transition-transform duration-700" />
+                                <img src="puzzle_piece.png" alt="Puzzle Piece" class="w-[92%] h-[92%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Puzzle Piece</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Visual Design · Installation</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">A visual and conceptual study exploring emotional alignment, clarity, and connection.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -355,19 +397,23 @@
                 </article>
 
                 <!-- Project 4: UnionMoods AR -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="ar-visual">
                     <a href="case_study_unionmoods.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">AR & Visual</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">AR Experience · UX Research</span>
+                        </div>
                         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR App" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
+                                <img src="unionmoods_AR/unionmoods_highfidelity_screenshot.png" alt="UnionMoods AR" class="w-[92%] h-[92%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">UnionMoods AR</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">AR Experience · UX Research</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">UnionMoods AR</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">An emotional AR wayfinding experience designed to reduce commuter stress at Union Station.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -375,19 +421,23 @@
                 </article>
 
                 <!-- Project 5: StudyBuddy -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="ux-product">
                     <a href="case_study_studybuddy.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">UX/UI & Product</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Product Design · Mobile App</span>
+                        </div>
                         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy App Interface" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
+                                <img src="studybuddy_app/Homepage.svg" alt="StudyBuddy" class="w-[92%] h-[92%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">StudyBuddy</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">StudyBuddy</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">An inclusive productivity app featuring read-aloud, live transcription, and sensory-friendly focus tools.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -395,19 +445,23 @@
                 </article>
 
                 <!-- Project 6: Kizuna Dining -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="ux-product">
                     <a href="case_study_kizuna.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">UX/UI & Product</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Product Design · Mobile App</span>
+                        </div>
                         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining" class="w-[90%] h-[90%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
+                                <img src="restaurant_kizuna_app/images/Welcome%20Back.png" alt="Kizuna Dining" class="w-[92%] h-[92%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Kizuna Dining</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Kizuna Dining</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">A warm, frictionless mobile dining and ordering experience rooted in hospitality.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -415,19 +469,23 @@
                 </article>
 
                 <!-- Project 7: Discover BC -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="ux-product">
                     <a href="case_study_3.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">UX/UI & Product</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Product Design · Mobile App</span>
+                        </div>
                         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative p-4 flex items-center justify-center">
                             <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
-                                <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC" class="w-[95%] h-[95%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
+                                <img src="Screenshot 2025-11-08 113155.png" alt="Discover BC" class="w-[92%] h-[92%] object-contain drop-shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Discover BC</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Product Design · Mobile App</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Discover BC</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">A calm travel companion app helping explorers discover accessible trails and destinations in BC.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -435,19 +493,23 @@
                 </article>
 
                 <!-- Project 8: Emotional Journey: TTC -->
-                <article class="w-full">
+                <article class="w-full project-card transition-all duration-300 " data-category="web-systems">
                     <a href="case_study_2.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
-                                <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey TTC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">Web & Systems</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">Systems Design · Data Visualization</span>
+                        </div>
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative ">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="Screenshot 2025-10-08 143959.png" alt="Emotional Journey: TTC" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Emotional Journey: TTC</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">Systems Design · Data Visualization</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Emotional Journey: TTC</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">Mapping the emotional highs, friction points, and sensory load of daily transit commuters.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
@@ -455,27 +517,79 @@
                 </article>
 
                 <!-- Project 9: Puzzle Piece AR -->
-                <article class="w-full md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto">
+                <article class="w-full project-card transition-all duration-300 md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto" data-category="ar-visual">
                     <a href="case_study_ar_puzzle.html" class="block w-full h-full focus:outline-none p-6 md:p-8 glass-card flex flex-col group">
-                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative">
-                            <div class="w-full h-full project-image transition-transform duration-700 ease-out">
-                                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium dynamic-bg border dynamic-border text-[var(--text-secondary)]">AR & Visual</span>
+                            <span class="text-xs text-[var(--text-secondary)] opacity-70">AR Experience · Social Filter</span>
+                        </div>
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg-primary)] shadow-sm mb-6 relative ">
+                            <div class="w-full h-full project-image transition-transform duration-700 ease-out flex items-center justify-center">
+                                <img src="puzzlepieceAR/Screenshot 2025-12-06 154825.png" alt="Puzzle Piece AR" class="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity" />
                             </div>
                         </div>
                         <div class="mt-auto flex justify-between items-end gap-4">
                             <div class="w-full">
-                                <h3 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors min-h-[3.5rem] md:min-h-[4.5rem] flex items-end">Puzzle Piece AR</h3>
-                                <p class="text-[var(--text-secondary)] text-lg font-light">AR Experience · Social Filter</p>
+                                <h2 class="text-2xl md:text-3xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">Puzzle Piece AR</h2>
+                                <p class="text-[var(--text-secondary)] text-base font-light leading-relaxed">Extending the Puzzle Piece philosophy into an interactive augmented reality social experience.</p>
                             </div>
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1 mr-2 md:mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0 mb-1">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </div>
                         </div>
                     </a>
                 </article>
-
             </div>
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const filterBtns = document.querySelectorAll('#work-filter-buttons .filter-pill');
+                const cards = document.querySelectorAll('#projects-grid .project-card');
+                const statusEl = document.getElementById('filter-status');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const filter = btn.getAttribute('data-filter');
+
+                        filterBtns.forEach(b => {
+                            const active = (b === btn);
+                            b.setAttribute('aria-pressed', String(active));
+                            if (active) {
+                                b.className = 'filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-sm';
+                            } else {
+                                b.className = 'filter-pill px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer dynamic-bg border dynamic-border text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)]';
+                            }
+                        });
+
+                        let count = 0;
+                        cards.forEach(card => {
+                            const cat = card.getAttribute('data-category');
+                            if (filter === 'all' || cat === filter) {
+                                card.style.display = '';
+                                count++;
+                                // Center single trailing card only when showing all 9
+                                if (card.querySelector('a').getAttribute('href') === 'case_study_ar_puzzle.html') {
+                                    if (filter === 'all') {
+                                        card.classList.add('md:col-span-2', 'md:w-[calc(50%-1rem)]', 'md:mx-auto');
+                                    } else {
+                                        card.classList.remove('md:col-span-2', 'md:w-[calc(50%-1rem)]', 'md:mx-auto');
+                                    }
+                                }
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+
+                        if (statusEl) {
+                            statusEl.textContent = filter === 'all'
+                                ? `Showing all ${count} case studies`
+                                : `Showing ${count} project${count === 1 ? '' : 's'}`;
+                        }
+                    });
+                });
+            });
+        </script>
     </main>
 
     <!-- Footer -->
@@ -600,6 +714,77 @@
             document.body.classList.add('no-animations');
         }
     </script>
+
+    <!-- Floating Back to Top Button -->
+    <button id="floatingBackToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full dynamic-bg border dynamic-border shadow-lg text-[var(--text-primary)] hover:text-[var(--accent)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 opacity-0 pointer-events-none cursor-pointer flex items-center gap-2 group"
+        aria-label="Scroll back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        <span class="text-xs font-medium pr-1 hidden md:inline">Top</span>
+    </button>
+
+    <script id="global-ux-script">
+        (function() {
+            // 1. Persistent Theme Management (localStorage)
+            const savedTheme = localStorage.getItem('miyata-theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const themeBtn = document.getElementById('themeToggle');
+
+            function applyTheme(dark) {
+                if (dark) {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+                if (themeBtn) {
+                    themeBtn.setAttribute('aria-pressed', String(dark));
+                    themeBtn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+                    themeBtn.innerHTML = `<i data-lucide="${dark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            let isDark = savedTheme ? (savedTheme === 'dark') : false;
+            applyTheme(isDark);
+
+            if (themeBtn) {
+                // Clone to clear any duplicate legacy event listeners
+                const newThemeBtn = themeBtn.cloneNode(true);
+                themeBtn.parentNode.replaceChild(newThemeBtn, themeBtn);
+                newThemeBtn.addEventListener('click', () => {
+                    isDark = !document.body.classList.contains('dark-theme');
+                    localStorage.setItem('miyata-theme', isDark ? 'dark' : 'light');
+                    applyTheme(isDark);
+                    newThemeBtn.innerHTML = `<i data-lucide="${isDark ? 'sun' : 'moon'}" class="w-4 h-4 text-[var(--text-primary)] opacity-80"></i>`;
+                    if (window.lucide) lucide.createIcons();
+                });
+            }
+
+            // 2. Scroll Progress & Floating Back-to-Top
+            const progressBar = document.getElementById('reading-progress');
+            const backToTopBtn = document.getElementById('floatingBackToTop');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                if (progressBar && docHeight > 0) {
+                    const pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+                    progressBar.style.width = pct + '%';
+                    progressBar.setAttribute('aria-valuenow', Math.round(pct));
+                }
+                if (backToTopBtn) {
+                    if (scrollTop > 400) {
+                        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.add('opacity-100');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        backToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
 
 
